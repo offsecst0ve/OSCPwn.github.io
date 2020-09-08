@@ -1,109 +1,144 @@
-# The Dinky theme
+# GitBook API Theme
 
-[![Build Status](https://travis-ci.org/pages-themes/dinky.svg?branch=master)](https://travis-ci.org/pages-themes/dinky) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-dinky.svg)](https://badge.fury.io/rb/jekyll-theme-dinky)
+Theme for using GitBook to publish an API documentation.
 
-*Dinky is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/dinky), or even [use it today](#usage).*
+This theme works perfectly with search plugins (like [the default plugin](https://github.com/GitbookIO/plugin-search) or [algolia](https://github.com/GitbookIO/plugin-algolia)).
 
-![Thumbnail of Dinky](thumbnail.png)
+![Screenshot](img/theme-api.png)
 
-## Usage
+It also integrates well with the default fontsettings plugin to use the Dark theme.
 
-To use the Dinky theme:
+![Dark theme](img/theme-dark.png)
 
-1. Add the following to your site's `_config.yml`:
+### Usage
 
-    ```yml
-    theme: jekyll-theme-dinky
-    ```
+This theme requires GitBook version 3 or later.
 
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+Add the theme to your book's configuration (book.json):
 
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
-
-## Customizing
-
-### Configuration variables
-
-Dinky will respect the following variables, if set in your site's `_config.yml`:
-
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
+```json
+{
+    "plugins": ["theme-api"]
+}
 ```
 
-Additionally, you may choose to set the following optional variables:
+To use the Dark theme by default:
 
-```yml
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
+```json
+{
+    "plugins": ["theme-api"],
+    "pluginsConfig": {
+        "theme-api": {
+            "theme": "dark"
+        }
+    }
+}
 ```
 
-### Stylesheet
+### Defining methods
 
-If you'd like to add your own custom styles:
+The theme allows to easily define methods with examples for different languages, using the templating blocks syntax.
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+A method block can contain any number of nested `sample` and `common` blocks.
 
-    @import "{{ site.theme }}";
+Those nested blocks are documented below.
+
+#### Sample blocks
+
+While the body of the method block will be used as the definition for your method, each `sample` will be used to display examples. To do so, each `sample` block should specify a language using the `lang` arguments.
+
+This is great for managing examples in different languages, for instance when documenting multiple API clients.
+
+    {% method %}
+    ## Install {#install}
+
+    The first thing is to get the GitBook API client.
+
+    {% sample lang="js" %}
+    ```bash
+    $ npm install gitbook-api
     ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
 
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
-
-### Layouts
-
-If you'd like to change the theme's HTML layout:
-
-1. [Copy the original template](https://github.com/pages-themes/dinky/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
-
-### Overriding GitHub-generated URLs
-
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
-
-1. Look at [the template source](https://github.com/pages-themes/dinky/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
+    {% sample lang="go" %}
+    ```bash
+    $ go get github.com/GitbookIO/go-gitbook-api
     ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
+    {% endmethod %}
 
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
+![JS Sample](img/sample-js.png)
+![Go sample](img/sample-go.png)
 
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
+On each page containing `method` blocks with samples, a switcher is automatically added at the top-right corner to easily select which language to display.
 
-## Roadmap
+The name of each language can be configured in your `book.json` file, with it's `lang` property corresponding to the `sample` block `lang` argument:
 
-See the [open issues](https://github.com/pages-themes/dinky/issues) for a list of proposed features (and known issues).
+```json
+{
+  "plugins": ["theme-api"],
+  "pluginsConfig": {
+    "theme-api": {
+      "languages": [
+        {
+          "lang": "js",          // sample lang argument
+          "name": "JavaScript",  // corresponding name to be displayed
+          "default": true        // default language to show
+        },
+        {
+          "lang": "go",
+          "name": "Go"
+        }
+      ]
+    }
+  }
+}
+```
 
-## Project philosophy
+![Language switcher](img/lang-switcher.png)
 
-The Dinky theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+Most programming languages are supported by default, with name mapping following the [highlight.js convention](http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html#language-names-and-aliases).
 
-## Contributing
+Note that a `sample` block can contain any markdown content to be displayed for this language, not only code blocks, as illustrated below.
 
-Interested in contributing to Dinky? We'd love your help. Dinky is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
 
-### Previewing the theme locally
+#### Common blocks
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
+Common blocks are used to display content to be displayed for all languages in your examples.
 
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/dinky`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+    {% method %}
+    ## Simple method
 
-### Running tests
+    {% sample lang="js" %}
+    This text will only appear for JavaScript.
 
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` one before the test script will work.
+    {% sample lang="go" %}
+    This text will only appear for Go.
+
+    {% common %}
+    This will appear for both JavaScript and Go.
+    {% endmethod %}
+
+
+### Layout
+
+The theme provides two layouts to display your examples: one-column or two-columns (split).
+
+###### One column layout
+![One column](img/one-column.png)
+
+###### Split layout
+![Split](img/split.png)
+
+The layout can be toggled from the toolbar using the layout icon: ![Layout icon](img/layout-icon.png)
+
+The default aspect can also be set in the theme configuration in the `book.json` file:
+
+```json
+{
+  "plugins": ["theme-api"],
+  "pluginsConfig": {
+    "theme-api": {
+      "split": true
+    }
+  }
+}
+```
