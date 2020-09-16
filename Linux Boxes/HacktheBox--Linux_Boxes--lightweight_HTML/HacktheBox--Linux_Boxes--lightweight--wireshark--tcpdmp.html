@@ -1,0 +1,66 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>tcpdmp</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--lightweight.html">lightweight</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--nmapAuto.html">nmapAuto</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--nmapAuto--nmap_vulns.html">nmap vulns</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ldap.html">ldap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ldap--ldapsearch_with_DC.html">ldapsearch with DC</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ldap--ldapsearch_with_DC--passwords.html">passwords</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ldap--ldapsearch_with_DC--$6$x_module.html">$6$x module</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--http--info.php.html">info.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--http--status.php.html">status.php</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--http--user.php.html">user.php</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ssh.html">ssh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ssh---etc-passwd.html">/etc/passwd</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ssh--LinEnum.html">LinEnum</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--ssh--LinEnum--report.html">report</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark.html">wireshark</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark--tcpdmp.html">tcpdmp</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark--lightweight.ens33.cap.html">lightweight.ens33.cap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark--refresh_all_the_webpages_and_intercept_LDAP_packets.html">refresh all the webpages and intercept LDAP packets</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--wireshark--privesc_to_ldapuser2.html">privesc to ldapuser2</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1.html">privesc to ldapuser1</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--7z2John.html">7z2John</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--hashcat_the_7z2john_hash.html">hashcat the 7z2john hash</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--unzip_7z_w-_pass.html">unzip 7z w/ pass</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--unzip_7z_w-_pass--status.php.html">status.php</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_ldapuser1--privesc.html">privesc</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_root--gtfo_bins_openssl.html">gtfo bins openssl</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_root--testing_openssl_to_view_-etc-shadow.html">testing openssl to view /etc/shadow</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--privesc_to_root--privesc_via_sudoers_config_file.html">privesc via sudoers config file</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--lightweight--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>tcpdmp</u></b></h1><span style="color:#24ff00;">lets run a live </span><span style="color:#ffa500;">tcpdump</span><span style="color:#24ff00;"> in and pipe the packets through a live feed wireshark:</span><br /><br /><strong><span style="color:#ffa500;">ssh 10.10.14.62@10.10.10.119 "/usr/sbin/tcpdump -i lo -U -s0 -w - 'not port 22'" | wireshark -k -i -</span></strong><strong><span style="color:#000000;"> </span></strong><span style="color:#000000;"><br />(stdin)</span><br /><span style="color:#24ff00;">where</span><br /><span style="color:#ffa500;">/usr/sbin/tcpdump </span><span style="color:#24ff00;">is the binary we want to run through our </span><span style="color:#ffa500;">ssh</span><span style="color:#24ff00;"> tunnel</span><br /><span style="color:#ffa500;">-i</span><span style="color:#24ff00;"> for interface </span><span style="color:#ffa500;">lo</span><span style="color:#24ff00;"> for loopback</span><br /><span style="color:#ffa500;">-U </span><span style="color:#24ff00;">for unbuffered packets</span><br /><span style="color:#ffa500;">-s0</span> <span style="color:#24ff00;">Sets the snaplen to </span><span style="color:#ffa500;">0</span><span style="color:#24ff00;"> which allows tcpdump to work with older versions of tcpdump</span><br /><span style="color:#ffa500;">-w </span><span style="color:#24ff00;">for file and Standard output is used with ‘</span><span style="color:#ffa500;">-</span><span style="color:#24ff00;">’</span><br /><span style="color:#ffa500;">‘not port 22’</span> <span style="color:#24ff00;">filters out ssh packets</span><br /><br /><span style="color:#24ff00;">then we pipe the dump to wireshark</span><br /><span style="color:#24ff00;">where </span><br /><span style="color:#ffa500;">-k </span><span style="color:#24ff00;">starts the capture immeditately </span><br /><span style="color:#ffa500;">-i</span> <span style="color:#24ff00;">to capture all interfaces</span> <span style="color:#24ff00;">‘</span><span style="color:#ffa500;">-</span><span style="color:#24ff00;">’</span><br /><br /><img src="images/1497-1.png" alt="images/1497-1.png" /></div></div>
+</body></html>

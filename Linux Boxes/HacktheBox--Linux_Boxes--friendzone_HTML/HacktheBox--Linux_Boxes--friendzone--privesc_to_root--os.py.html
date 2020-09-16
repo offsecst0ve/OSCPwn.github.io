@@ -1,0 +1,68 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>os.py</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--friendzone.html">friendzone</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http--ssl_cert.html">ssl cert</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http--ssl_cert---etc-hosts.html">/etc/hosts</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http--ssl_cert---etc-hosts--https--friendzoneportal.red.html">https://friendzoneportal.red</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--http--ssl_cert---etc-hosts--https--friendzone.red.html">https://friendzone.red</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--smb.html">smb</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--smb--smbmap.html">smbmap</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer.html">dig zone xfer</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts.html">update /etc/hosts</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--administrator1.friendzone.red_LFI.html">administrator1.friendzone.red LFI</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--administrator1.friendzone.red_LFI---dashboard.php.html">/dashboard.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--administrator1.friendzone.red_LFI---dashboard.php--timestamp.html">timestamp</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--administrator1.friendzone.red_LFI---dashboard.php--dashboard.html">dashboard</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--admin.friendzone.red.html">admin.friendzone.red</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--dig_zone_xfer--update_-etc-hosts--uploads.friendzone.red.html">uploads.friendzone.red</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--initial_foothold--LFI_to_RCE_test.html">LFI to RCE test</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--initial_foothold--LFI_to_RCE_test--php-reverse-shell_smb_upload_to_LFI_RCE.html">php-reverse-shell smb upload to LFI RCE</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_user_friend.html">privesc to user friend</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--linux_smart_enum.html">linux smart enum</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--procmon.sh.html">procmon.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--reporter.py.html">reporter.py</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--payloadallthethings.html">payloadallthethings</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--payloadallthethings--shell.py_&_some_sed_macros.html">shell.py & some sed macros</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--privesc_to_root--os.py.html">os.py</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--friendzone--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>os.py</u></b></h1><span style="color:#24ff00;">lets add a python reverse shell to our </span><span style="color:#ffa500;">os.py </span><span style="color:#24ff00;">code so it runs whenever the</span><span style="color:#ffa500;"> reporter.py </span><span style="color:#24ff00;">script is called by </span><span style="color:#ffff00;">root</span><br /><span style="color:#24ff00;">because the vi editor on friendzone is a little wonky, lets transfer it to our box, and alter it locally</span><br /><br /><br /><img src="images/1007-1.png" alt="images/1007-1.png" /><br /><br /><br /><span style="color:#24ff00;">first copy the os.py file from its orginal directory into the Development smb share<br /></span><img src="images/1007-2.png" alt="images/1007-2.png" /><br /><br /><img src="images/1007-3.png" alt="images/1007-3.png" /><br />then download <span style="color:#ffa500;">os.py </span><span style="color:#24ff00;">with </span><span style="color:#ffa500;">get</span><span style="color:#24ff00;"> <br /></span><img src="images/1007-4.png" alt="images/1007-4.png" /><br /><br />now we can <br /><img src="images/1007-5.png" alt="images/1007-5.png" /><br /><br />now reupload our <span style="color:#ffa500;">os.py</span><span style="color:#24ff00;"> back into the share with </span><span style="color:#ffa500;">put</span><br /><img src="images/1007-6.png" alt="images/1007-6.png" /><br /><br />and copy it to its original location, from here we just need to open a netcat listener and wait for<span style="color:#ffa500;"> reporter.py</span><span style="color:#24ff00;"> to run </span><span style="color:#ffa500;">os</span> as <span style="color:#ffff00;">root</span><br /><img src="images/1007-7.png" alt="images/1007-7.png" /><br /><br /><img src="images/1007-8.png" alt="images/1007-8.png" /><br /><br /><img src="images/1007-9.png" alt="images/1007-9.png" /><br /><br /><br /></div></div>
+</body></html>

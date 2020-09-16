@@ -1,0 +1,43 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>lse report</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--bashed.html">bashed</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--phpbash_github.html">phpbash github</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--phpbash_github--phpbash.php_source_code.html">phpbash.php source code</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster--dev-phpbash.min.php.html">dev/phpbash.min.php</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster--dev-phpbash.min.php--foothold_calling_back_reverse_shell_with_php.rev.html">foothold calling back reverse shell with php.rev</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_scriptmanager.html">priv esc to scriptmanager</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root.html">priv esc to root</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration.html">Linux smart enumeration</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration--upload_lse.sh.html">upload lse.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration--lse_report.html">lse report</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--test.py_cron_job.html">test.py cron job</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--bashed--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--bashed--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>lse report</u></b></h1><h2>lets use -level 1 to output some interesting finds to document, skip passed the password prompt since we don't know scriptmanager's password</h2><br /><br /><h2>lse.sh -l 1</h2><br /><br /><h2>according to the report, there is a sessionclean script that runs every minute but we unfortunately cannot read what it does, lets keep it in mind and move on</h2><br /><img src="images/2034-1.png" alt="images/2034-1.png" /><br /><br /><h2>the report also indicates that the cron jobs are all run with root permissions, this indicates we can most likely exploit it to gain root privilieges if we can overwrite or hijack a script that the sessionclean cron job uses</h2><br /><img src="images/2034-2.png" alt="images/2034-2.png" /><br /><br /><br /><h2>we see also from the report we can write to few files that may be worth looking into, lets check out the scripts folder</h2><br /><img src="images/2034-3.png" alt="images/2034-3.png" /></div></div>
+</body></html>

@@ -1,0 +1,59 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>step 3: hijack system call</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF).html">safe (linux BoF)</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--nmapAutomator.html">nmapAutomator</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--http--port_1337.html">port 1337</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--ghidra.html">ghidra</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow.html">buffer overflow</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--checksec.html">checksec</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_1_crash_the_application.html">step 1: crash the application</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_2_find_the_offset.html">step 2: find the offset</a></li>
+<ol>
+<li><a href="afe_(linux_BoF)--initial_foothold--buffer_overflow--step_2_find_the_offset--overwriting_$rsp_register_to_test_calling_main_function_twice.html">overwriting $rsp register to test calling main function twice</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_3_hijack_system_call.html">step 3: hijack system call</a></li>
+<li><a href="ox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_4_collect_all_the_necessary_parameters_for_a_ROP_chain_exploit.html">step 4: collect all the necessary parameters for a ROP chain exploit</a></li>
+<ol>
+<li><a href="es--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_4_collect_all_the_necessary_parameters_for_a_ROP_chain_exploit--disass_main.html">disass main</a></li>
+<li><a href="es--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_4_collect_all_the_necessary_parameters_for_a_ROP_chain_exploit--disass_test.html">disass test</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_5_write_exploit.py.html">step 5 write exploit.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_5_write_exploit.py--tweak_for_safe_box.html">tweak for safe box</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--step_5_write_exploit.py--run.html">run</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--initial_foothold--buffer_overflow--obj_dump_system_&_test.html">obj dump system & test</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation.html">privilege escalation</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--dropping_ssh_key.html">dropping ssh key</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--exfiltrate_keepass.html">exfiltrate keepass</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--crack_keepass.html">crack keepass</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--crack_keepass--organize_picture_files_hashes.html">organize picture files hashes</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--crack_keepass--hashcat.html">hashcat</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--kpcli.html">kpcli</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--privilege_escalation--sudo_into_root.html">sudo into root</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--safe_(linux_BoF)--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>step 3: hijack system call</u></b></h1><span style="color:#24ff00;">Now that we know that we can overwrite </span><span style="color:#ffa500;">./myapp's $rsp</span><span style="color:#24ff00;"> register to call a function of our choosing, we want to </span><span style="color:#ffff00;">hijack</span><span style="color:#24ff00;"> main's </span><span style="color:#ffa500;">system</span><span style="color:#24ff00;"> call because that will run whatever function we want (</span><span style="color:#ffa500;">/bin/bash</span><span style="color:#24ff00;">)</span><br /><br /><img src="images/520-1.png" alt="images/520-1.png" /><br /><br /><span style="color:#24ff00;">Using </span><span style="color:#ffa500;">Ghidra</span><span style="color:#24ff00;">, look at the main function memory addresses and note the system call's location at </span><span style="color:#ffa500;">0040116e</span><br /><img src="images/520-2.png" alt="images/520-2.png" /><br /><br /><span style="color:#24ff00;">lets set a </span><span style="color:#ffff00;">breakpoint</span><span style="color:#24ff00;"> at this memory address and run our exploit <br /></span><img src="images/520-3.png" alt="images/520-3.png" /><br />set a <span style="color:#ffff00;">breakpoint</span><span style="color:#24ff00;"> to the memory address of main's system call with</span><br /><span style="color:#ffa500;">b *0x40116e</span><br /><img src="images/520-4.png" alt="images/520-4.png" /><br /><img src="images/520-5.png" alt="images/520-5.png" /><br /><br /><span style="color:#24ff00;">what </span><span style="color:#ffa500;">myapp</span><span style="color:#24ff00;"> is doing is first loading a variable into </span><img src="images/520-6.png" alt="images/520-6.png" /> with <img src="images/520-7.png" alt="images/520-7.png" /> which stands for <span style="color:#ffa500;">load effective address</span><br /><span style="color:#24ff00;">the </span><span style="color:#ffa500;">system</span><span style="color:#24ff00;"> call is located at</span> <img src="images/520-8.png" alt="images/520-8.png" /><br /><br /><br /><img src="images/520-9.png" alt="images/520-9.png" /><br /><span style="color:#24ff00;">since </span><span style="color:#ffa500;">system</span><span style="color:#24ff00;"> is only taking </span><span style="color:#ffff00;">1</span><span style="color:#24ff00;"> argument, only </span><span style="color:#ffff00;">1</span><span style="color:#24ff00;"> argument gets loaded so if we do<br /></span><span style="color:#ffa500;">x/s $rdi </span><span style="color:#24ff00;">we see theres no memory address saved to our variable<br /></span><img src="images/520-10.png" alt="images/520-10.png" /><br /><br />step through once with<span style="color:#ffa500;"> si </span> <br /><img src="images/520-11.png" alt="images/520-11.png" /><br />right here is what we're loading into register <span style="color:#ffa500;">$rdi</span><br /><img src="images/520-12.png" alt="images/520-12.png" /><br /><br />step through the program again with <span style="color:#ffa500;">si</span><br /><img src="images/520-13.png" alt="images/520-13.png" /><br /><br /><img src="images/520-14.png" alt="images/520-14.png" /><br /><img src="images/520-15.png" alt="images/520-15.png" /><br /><span style="color:#24ff00;">we see </span><span style="color:#ffa500;">/usr/bin/uptime</span><span style="color:#24ff00;"> is loaded into the $rdi register</span><br /><br /><span style="color:#24ff00;">All we have to do to exploit this now is to find out to put our string</span><span style="color:#ffff00;"> (/bin/bash) </span><span style="color:#24ff00;">into $rdi</span><br /><span style="color:#24ff00;">This is where the </span><span style="color:#ffa500;">Test</span><span style="color:#24ff00;"> method comes in<br /></span><img src="images/520-16.png" alt="images/520-16.png" /><br /><img src="images/520-17.png" alt="images/520-17.png" /><br />first 2 things set up the stack for being in a function<br />we push the base pointer to the stack and then we copy the rsp stack pointer into the base pointer<br /><br />code begins here <img src="images/520-18.png" alt="images/520-18.png" /><br />we take the stack pointer and putting it into rdi and then jumping into whatever is in <span style="color:#ffa500;">R13</span><br /><br />gef has a built in tool call ropper that will allow us to take a closer look at what <img src="images/520-19.png" alt="images/520-19.png" /> does<br />ropper --search “pop r13”<br /><img src="images/520-20.png" alt="images/520-20.png" /><br />we see it is located in memory at <img src="images/520-21.png" alt="images/520-21.png" /> and pops 3 arguments off the stack onto the stack pointer <img src="images/520-22.png" alt="images/520-22.png" /> so although we only need r13 to load our /bin/bash system call, we can load null bytes into r14 and r15 and get everything we need out of the test function<br /><br /><img src="images/520-23.png" alt="images/520-23.png" /><br /><img src="images/520-24.png" alt="images/520-24.png" /><br /><img src="images/520-25.png" alt="images/520-25.png" /><br /><img src="images/520-26.png" alt="images/520-26.png" /><br /><br /><strong><span style="color:#ffa500;">0x0000000000401206: pop r13; pop r14; pop r15; ret;</span></strong><br /></div></div>
+</body></html>
