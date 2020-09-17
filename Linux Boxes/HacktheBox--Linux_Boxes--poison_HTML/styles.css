@@ -20,8 +20,11 @@ Colours:
 
 body {
     font-size: 13px;
-    font-family: "Open Sans", sans-serif !important;
+    font-family:  "Times New Roman", Times, serif;
+    color: white;
     padding: 20x; 
+    background-color: #001b33;
+    font-size: 125%;
 }
 
 div.main {
@@ -30,10 +33,10 @@ div.main {
 
 div.tree {
     width: 300px;
-    /*background-color: #EEEEEE;
+    background-color: #EEEEEE;
     border-top: 1px solid #DDDDDD;
     border-bottom: 1px solid #DDDDDD;
-    margin-bottom: 20px;*/
+    margin-bottom: 20px;
     padding: 0.75em 0 0.75em 20px;
     float: left;
     position: fixed;
@@ -95,7 +98,7 @@ div.tree a.show, div.tree a.hide { display: none; }
 /* TABLES */
 
 table {
-    border: 1px solid #AAAAAA;
+    border: 1px solid #4BA8BA;
 }
 
 th {
@@ -111,25 +114,35 @@ td {
 /* HEADINGS */
 
 div.main h1 {
-    font-weight: bold;
+font-weight: bold;
+
+font-size: 175%;
+color: #FF0000;
 }
 
 div.main h2 {
-    padding-top: 1em;
-    /*padding-bottom: 0.5em;*/
-    font-weight: bold;
-    font-size: 150%;
-    color: #666666;
+padding-top: 0.75em;
+/padding-bottom: 0.5em;/
+font-weight: bold;
+font-size: 125%;
+
+display: inline;
 }
 
 div.main h3 {
-    padding-top: 0.75em;
-    font-weight: bold;
-    font-size: 125%;
-    color: #666666;
+padding-top: 0.75em;
+font-weight: bold;
+font-size: 100%;
+color: #2E8B57;
+display: inline;
 }
 
+p {
+  font-size: 1.275em; /* 14px/16=0.875em */
+}
 /* LINKS */
+
+
 
 /*div.main a, div.main a:visited {
     color: #005BCA;
@@ -156,7 +169,7 @@ div.codebox, div.main code, div.main pre {
 
 div.main p.tagged-text
 div.main code {
-    /*color: #859C00;*/
+    color: #859C00;
     padding-left: 0.25em;
     padding-right: 0.25em;
 }
