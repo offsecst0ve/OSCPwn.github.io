@@ -1,0 +1,47 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>all ports</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--chatterbox.html">chatterbox</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--nmap--all_ports.html">all ports</a></li>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--nmap--targeted.html">targeted</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--AChat.html">AChat</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--AChat--serachsploit.html">serachsploit</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--AChat--serachsploit--code.html">code</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--initial_foothold--msfvenom.html">msfvenom</a></li>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--initial_foothold--buff_overflow_code.html">buff overflow code</a></li>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--initial_foothold--user_Alfred_enum.html">user Alfred enum</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--priv_esc_w-_icacls.html">priv esc w/ icacls</a></li>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--priv_esc_with_powershell.html">priv esc with powershell</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--priv_esc_with_powershell--msfvenom_w-_powershell_reverse_tcp_payload.html">msfvenom w/ powershell reverse tcp payload</a></li>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--priv_esc_with_powershell--msfvenom_with_cmd-exec_download.html">msfvenom with cmd/exec download</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--priv_esc_with_powershell--msfvenom_with_cmd-exec_download--msfvenom_windows-exec.html">msfvenom windows/exec</a></li>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--priv_esc_with_powershell--msfvenom_with_cmd-exec_download--listener_on_6666.html">listener on 6666</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--priv_esc_with_powershell--powerup.ps1.html">powerup.ps1</a></li>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--priv_esc_with_powershell--privileged_reverse_shell.html">privileged reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--chatterbox--Lessons_learned.html">Lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>all ports</u></b></h1><span style="color:#ffa500;">nmap -p- -T5 -oA nmap/full 10.10.10.74</span><br /><img src="images/954-1.png" alt="images/954-1.png" /><br /><br /><span style="color:#24ff00;">we see there are services running on ports </span><span style="color:#ffa500;">9255</span><span style="color:#24ff00;"> and </span><span style="color:#ffa500;">9256</span><span style="color:#24ff00;">, but since mon and unknown don't tell us much about the services attached to these ports, lets enumerate their scripts and versions in a targeted scan</span></div></div>
+</body></html>

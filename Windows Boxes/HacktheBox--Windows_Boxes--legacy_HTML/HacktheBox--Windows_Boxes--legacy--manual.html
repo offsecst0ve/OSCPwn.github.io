@@ -1,0 +1,23 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>manual</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--legacy.html">legacy</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--legacy--nmap.html">nmap</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--legacy--nmap--nmap_vuln.html">nmap vuln</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--legacy--metasploit.html">metasploit</a></li>
+<li><a href="HacktheBox--Windows_Boxes--legacy--manual.html">manual</a></li>
+<li><a href="HacktheBox--Windows_Boxes--legacy--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--legacy--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>manual</u></b></h1><span style="color:#24ff00;">for our manual exploit we're going to use </span><span style="color:#ffa500;">eternal blue</span><br /><br /><span style="color:#24ff00;">clone </span><a href="https://github.com/helviojunior/MS17-010">eternal blue repo</a> <br /><img src="images/1643-1.png" alt="images/1643-1.png" /><br /><br /><span style="color:#24ff00;">create reverse shell with msfvenom</span> <span style="color:#24ff00;">named</span><span style="color:#ffa500;"> eternal_blue.exe</span><br /><img src="images/1643-2.png" alt="images/1643-2.png" /><br /><br /><span style="color:#24ff00;">out of the following codes,</span><br /><img src="images/1643-3.png" alt="images/1643-3.png" /><br /><br /><span style="color:#24ff00;">use </span><span style="color:#ffa500;">send_and_execute.py</span><span style="color:#24ff00;"> with target IP and reverse shell code</span><br /><span style="color:#ffa500;">python send_and_execute.py 10.10.10.4 eternal_blue.exe</span><br /><img src="images/1643-4.png" alt="images/1643-4.png" /><br /><br /><span style="color:#24ff00;">we get back a shell!</span><br /><img src="images/1643-5.png" alt="images/1643-5.png" /><br /><br /><span style="color:#24ff00;">unfortunately our shell is a bit </span><span style="color:#ff0000;">limited</span><span style="color:#24ff00;"> to baseline commands such as </span><span style="color:#ffa500;">whoami</span><span style="color:#24ff00;"> but after navigating around, our owned <br />user has </span><span style="color:#ffff00;">system</span><span style="color:#24ff00;"> privileges</span><br /><img src="images/1643-6.png" alt="images/1643-6.png" /></div></div>
+</body></html>

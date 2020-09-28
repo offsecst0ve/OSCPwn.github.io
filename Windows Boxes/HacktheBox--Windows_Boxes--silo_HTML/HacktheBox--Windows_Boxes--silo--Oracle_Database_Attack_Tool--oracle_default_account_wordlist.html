@@ -1,0 +1,31 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>oracle default account wordlist</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--silo.html">silo</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool.html">Oracle Database Attack Tool</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--SID_Guesser.html">SID Guesser</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--oracle_default_account_wordlist.html">oracle default account wordlist</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_passwordguesser.html">odat passwordguesser</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload.html">odat upload</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--odat_utlfile_-h.html">odat utlfile -h</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--msfvenom.html">msfvenom</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_upload--utlfile.html">utlfile</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--Oracle_Database_Attack_Tool--odat_externaltable.html">odat externaltable</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--silo--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--silo--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>oracle default account wordlist</u></b></h1><span style="color:#24ff00;">There is a special user wordlist stored within the metasploit-framework that is perfect for enumerating potential oracle database users located at</span><br /><span style="color:#ffa500;">/usr/share/metasploit-framework/data/wordlists/oracle_default_userpass.txt</span><br /><span style="color:#24ff00;">lets copy it over to our working directory </span><br /><img src="images/694-1.png" alt="images/694-1.png" /><br /><br /><span style="color:#24ff00;">The username and passwords in this list are separated by a space instead of a forward slash (/). We’ll have to change it to forward slash so that the ODAT tool is able to parse the file. This can be done in vi using the following command.</span><br /><br /><img src="images/694-2.png" alt="images/694-2.png" /><br /><span style="color:#ffa500;">:%s/ /\//g</span><br /><img src="images/694-3.png" alt="images/694-3.png" /><img src="images/694-4.png" alt="images/694-4.png" /><br /><br /><br />Now that we have a proper list, we can use the passwordguesser module to brute force credentials.<br /><br /></div></div>
+</body></html>

