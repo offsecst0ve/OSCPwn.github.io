@@ -48,6 +48,8 @@ div.page {
     width: 100%;
     padding-left: 380px; /* div.tree width + L/R margins + padding */
     box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 100%
 }
 
 .clear {
@@ -115,7 +117,7 @@ td {
 
 div.main h1 {
 font-weight: bold;
-
+font-family: "Courier New", Courier, monospace;
 font-size: 175%;
 color: #ECA50B;
 }
@@ -135,10 +137,13 @@ font-weight: bold;
 font-size: 100%;
 color: #2E8B57;
 display: inline;
+font-family: "Courier New", Courier, monospace;
 }
 
 p {
   font-size: 1.275em; /* 14px/16=0.875em */
+  font-family:  "Times New Roman", Times, serif;
+
 }
 /* LINKS */
 
@@ -178,6 +183,7 @@ div.main pre {
     padding: 0.25em;
     overflow: auto !important;
     width: 75%;
+
 }
 
 

