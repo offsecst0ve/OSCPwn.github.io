@@ -80,8 +80,7 @@
 <li><a href="#user/root">user/root</a></li>
 <li><a href="#lessons learned">lessons learned</a></li>
 </ol></div>
-<div class="page"><h1><b><u>poison</u></b></h1><br/><img alt="images/21-1.png" src="images/21-1.png"/><br/><img alt="images/21-2.png" src="images/21-2.png"/></div>
-</body></html><div class="page" id="poison"><h1><b><u>poison</u></b></h1><br/><img alt="images/21-1.png" src="images/21-1.png"/><br/><img alt="images/21-2.png" src="images/21-2.png"/></div>
+<div class="page" id="poison"><h1><b><u>poison</u></b></h1><br/><img alt="images/21-1.png" src="images/21-1.png"/><br/><img alt="images/21-2.png" src="images/21-2.png"/></div>
 <div class="page" id="nmap"><h1><b><u>nmap</u></b></h1><strong><span style="color:#ffa500;">nmap -sV -sC -oA poison --stylesheet nmap-bootstrap.xsl 10.10.10.84</span></strong><br/><br/><img alt="images/22-1.png" src="images/22-1.png"/></div>
 <div class="page" id="all ports"><h1><b><u>all ports</u></b></h1><span style="color:#24ff00;">no alternative ports were found open</span><br/><br/> <img alt="images/2012-1.png" src="images/2012-1.png"/></div>
 <div class="page" id="http"><h1><b><u>http</u></b></h1><img alt="images/330-1.png" src="images/330-1.png"/></div>
@@ -119,6 +118,6 @@
 <div class="page" id="tunnel port 5901 through localhost"><h1><b><u>tunnel port 5901 through localhost</u></b></h1><span style="color:#24ff00;">The victim machine does not allow us to use vncviewer on its machine, but we can use port forwarding to forward one of our local ports to our victim machine's ports and run our local binaries/scripts on it not installed on the victim<br/></span><br/><span style="color:#24ff00;">Lets test it out by first tunneling our localhost port to charix's ssh session</span><br/><span style="color:#ffa500;">ssh -L &lt;remote port&gt;:localhost:5901 charix@10.10.10.84</span><br/><img alt="images/359-1.png" src="images/359-1.png"/></div>
 <div class="page" id="vncviewer within tunneled localhost"><h1><b><u>vncviewer within tunneled localhost</u></b></h1><span style="color:#24ff00;">we can now unzip and pass/Use Secret.zip from earlier as credentials to vnc into root:</span><br/><br/><img alt="images/360-1.png" src="images/360-1.png"/></div>
 <div class="page" id="root"><h1><b><u>root</u></b></h1><span style="color:#24ff00;">Voila! we successfully vnc'd into the root's </span><span style="color:#ffa500;">TightVNC</span><span style="color:#24ff00;"> session. </span><br/><br/><img alt="images/361-1.png" src="images/361-1.png"/></div>
-<div class="page" id="user/root"><h1><b><u>user/root</u></b></h1><img alt="images/354-1.png" src="images/354-1.png"/><span style="color:#ffff00;"><br/>user: eaacdfb2d141b72a589233063604209c<br/><br/></span><img alt="images/354-2.png" src="images/354-2.png"/><br/>root: 716d04b188419cf2bb99d891272361f5</div>
+<div class="page" id="user/root"><h1><b><u>user/root</u></b></h1><img alt="images/354-1.png" src="images/354-1.png"/><span style="color:#ffff00;"><br/>user: eaacdfb2d141b72a589233063604209c<br/><br/><img alt="images/354-2.png" src="images/354-2.png"/><br/>root: 716d04b188419cf2bb99d891272361f5</span></div>
 <div class="page" id="lessons learned"><h1><b><u>lessons learned</u></b></h1><span style="color:#24ff00;">Check out Rana Khalil's OSCP writeups and prep at</span> <a href="https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/">https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/</a><br/><br/><img alt="images/1955-1.png" src="images/1955-1.png"/></div>
 </div></body></html>
