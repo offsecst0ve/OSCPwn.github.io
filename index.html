@@ -5,254 +5,346 @@
 <title>Linux Boxes</title>
 <meta content="CherryTree" name="generator"/>
 <link href="styles.css" rel="stylesheet" type="text/css"/>
+<style>
+    /* New styles for the layout */
+    body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+    
+    .container {
+        display: flex;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 30px;
+    }
+    
+    .oscp-content {
+        flex: 3;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .sidebar {
+        flex: 1;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        min-width: 250px;
+    }
+    
+    .tree {
+        margin-top: 20px;
+    }
+    
+    .tree p {
+        margin: 10px 0;
+    }
+    
+    .tree a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .tree a:hover {
+        color: #007acc;
+    }
+    
+    h1 {
+        color: #333;
+        border-bottom: 2px solid #007acc;
+        padding-bottom: 10px;
+        margin-top: 0;
+    }
+    
+    h2 {
+        color: #444;
+        margin-top: 30px;
+    }
+    
+    h3 {
+        color: #555;
+    }
+    
+    section {
+        margin-bottom: 30px;
+    }
+    
+    ul, ol {
+        padding-left: 20px;
+    }
+    
+    li {
+        margin-bottom: 10px;
+    }
+    
+    strong {
+        color: #333;
+    }
+</style>
 </head>
-<body><div class="main"><div class="tree">
-<p><a href="/OSCPwn.github.io/Linux Boxes/HacktheBox--Linux_Boxes.html">Linux Boxes</a></p>
-<p><a href="/OSCPwn.github.io/Windows Boxes/HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
-</div>
-
 <body>
-  <article>
+<div class="container">
+    <!-- OSCP Journey Content - Left Side -->
+    <div class="oscp-content">
+        <article>
+            <header>
+                <h1>My OSCP Journey — A Review</h1>
+                <p>
+                    This post describes the journey that I went through while studying for the
+                    Offensive Security Certified Professional (OSCP) certification.
+                </p>
+            </header>
 
-    <header>
-      <h1>My OSCP Journey — A Review</h1>
-      <p>
-        This post describes the journey that I went through while studying for the
-        Offensive Security Certified Professional (OSCP) certification.
-      </p>
-    </header>
+            <section id="introduction">
+                <p>
+                    It outlines my personal experience and therefore is very subjective. I don't
+                    go into any details about the OSCP labs and exam due to restrictions set by
+                    Offensive Security. Instead, I've structured it in such a way that it gives
+                    the advice that I wish I had gotten when I first started the certification.
+                </p>
+            </section>
 
-    <section id="introduction">
-      <p>
-        It outlines my personal experience and therefore is very subjective. I don’t
-        go into any details about the OSCP labs and exam due to restrictions set by
-        Offensive Security. Instead, I’ve structured it in such a way that it gives
-        the advice that I wish I had gotten when I first started the certification.
-      </p>
-    </section>
+            <section id="beginnings">
+                <h2>When It All Began — Or So I Thought…</h2>
 
-    <section id="beginnings">
-      <h2>When It All Began — Or So I Thought…</h2>
+                <p>
+                    I first enrolled in the OSCP certification at the beginning of last year. I
+                    had just finished a Master's degree in Computer Science and started my first
+                    full time position as a Security Assessment Analyst.
+                </p>
 
-      <p>
-        I first enrolled in the OSCP certification at the beginning of last year. I
-        had just finished a Master’s degree in Computer Science and started my first
-        full time position as a Security Assessment Analyst.
-      </p>
+                <p>
+                    At the time, I had a background in web security; however, I recognized that
+                    there was a huge gap in my knowledge of the entire process of penetration
+                    testing. This is what piqued my interest in the OSCP certification.
+                </p>
 
-      <p>
-        At the time, I had a background in web security; however, I recognized that
-        there was a huge gap in my knowledge of the entire process of penetration
-        testing. This is what piqued my interest in the OSCP certification.
-      </p>
+                <p>
+                    Without doing much research into the prerequisites of the certification, I
+                    enrolled in the PWK v1.1.6 course and made the incorrect assumption that it
+                    would be like any other course I had taken.
+                </p>
 
-      <p>
-        Without doing much research into the prerequisites of the certification, I
-        enrolled in the PWK v1.1.6 course and made the incorrect assumption that it
-        would be like any other course I had taken.
-      </p>
+                <p>
+                    And boy was I wrong.
+                </p>
 
-      <p>
-        And boy was I wrong.
-      </p>
+                <p>
+                    The course material did not go in depth on techniques required to compromise
+                    a host or escalate privileges. Despite completing most of the exercises, I
+                    felt completely lost in the labs.
+                </p>
 
-      <p>
-        The course material did not go in depth on techniques required to compromise
-        a host or escalate privileges. Despite completing most of the exercises, I
-        felt completely lost in the labs.
-      </p>
+                <p>
+                    Between starting a new job and finishing a Master's degree, I didn't realize
+                    how burnt out I already was. I let my lab time (and exam attempt) expire and
+                    decided to focus on my job.
+                </p>
 
-      <p>
-        Between starting a new job and finishing a Master’s degree, I didn’t realize
-        how burnt out I already was. I let my lab time (and exam attempt) expire and
-        decided to focus on my job.
-      </p>
+                <h3>Advice #1</h3>
+                <p>
+                    I would not recommend enrolling in the OSCP course unless you have previous
+                    experience with:
+                </p>
 
-      <h3>Advice #1</h3>
-      <p>
-        I would not recommend enrolling in the OSCP course unless you have previous
-        experience with:
-      </p>
+                <ul>
+                    <li>Reconnaissance</li>
+                    <li>Initial foothold</li>
+                    <li>Privilege escalation</li>
+                </ul>
 
-      <ul>
-        <li>Reconnaissance</li>
-        <li>Initial foothold</li>
-        <li>Privilege escalation</li>
-      </ul>
+                <p>
+                    This experience can come from work or self-study platforms such as Hack The
+                    Box (HTB).
+                </p>
+            </section>
 
-      <p>
-        This experience can come from work or self-study platforms such as Hack The
-        Box (HTB).
-      </p>
-    </section>
+            <section id="preparation">
+                <h2>Pre-Preparation — TJ_Null's List to the Rescue!</h2>
 
-    <section id="preparation">
-      <h2>Pre-Preparation — TJ_Null’s List to the Rescue!</h2>
+                <p>
+                    Fast forward to the summer of last year, I decided to start studying again
+                    but was still intent on not extending my lab time until I felt fully
+                    prepared.
+                </p>
 
-      <p>
-        Fast forward to the summer of last year, I decided to start studying again
-        but was still intent on not extending my lab time until I felt fully
-        prepared.
-      </p>
+                <p>
+                    The most useful resource I came across was TJ_Null's list of OSCP-like Hack
+                    The Box machines.
+                </p>
 
-      <p>
-        The most useful resource I came across was TJ_Null’s list of OSCP-like Hack
-        The Box machines.
-      </p>
+                <p>
+                    Around that time, I also led a study group where I designed the syllabus and
+                    facilitated discussions.
+                </p>
 
-      <p>
-        Around that time, I also led a study group where I designed the syllabus and
-        facilitated discussions.
-      </p>
+                <p>
+                    Each week consisted of:
+                </p>
 
-      <p>
-        Each week consisted of:
-      </p>
+                <ul>
+                    <li>One chapter from the CompTIA Pentest+ book</li>
+                    <li>Two Hack The Box machines from TJ_Null's list</li>
+                </ul>
 
-      <ul>
-        <li>One chapter from the CompTIA Pentest+ book</li>
-        <li>Two Hack The Box machines from TJ_Null’s list</li>
-      </ul>
+                <p>
+                    The group unanimously agreed that the Pentest+ book was not helpful, while
+                    IppSec's methodology was invaluable.
+                </p>
 
-      <p>
-        The group unanimously agreed that the Pentest+ book was not helpful, while
-        IppSec’s methodology was invaluable.
-      </p>
+                <p>
+                    I began publishing writeups for each box, which helped reinforce my own
+                    understanding and anticipate questions.
+                </p>
 
-      <p>
-        I began publishing writeups for each box, which helped reinforce my own
-        understanding and anticipate questions.
-      </p>
+                <h3>Advice #2</h3>
+                <p>
+                    If you have the time, blog your box writeups. If not, take detailed notes.
+                    Don't solve a box and immediately move on.
+                </p>
+            </section>
 
-      <h3>Advice #2</h3>
-      <p>
-        If you have the time, blog your box writeups. If not, take detailed notes.
-        Don’t solve a box and immediately move on.
-      </p>
-    </section>
+            <section id="labs">
+                <h2>OSCP Labs — Second Time's a Charm</h2>
 
-    <section id="labs">
-      <h2>OSCP Labs — Second Time’s a Charm</h2>
+                <p>
+                    After completing all 47 boxes, I enrolled in PWK v2 with a one-month lab
+                    subscription.
+                </p>
 
-      <p>
-        After completing all 47 boxes, I enrolled in PWK v2 with a one-month lab
-        subscription.
-      </p>
+                <p>
+                    PWK v2 was a massive improvement over v1. The course material was more
+                    thorough and assumed less prior knowledge.
+                </p>
 
-      <p>
-        PWK v2 was a massive improvement over v1. The course material was more
-        thorough and assumed less prior knowledge.
-      </p>
+                <p>
+                    I completed the lab report, resulting in a 285-page document, and spent the
+                    remaining time compromising approximately 25 machines.
+                </p>
 
-      <p>
-        I completed the lab report, resulting in a 285-page document, and spent the
-        remaining time compromising approximately 25 machines.
-      </p>
+                <h3>Advice #3</h3>
+                <p>
+                    Complete TJ_Null's list and watch IppSec's videos. You won't realize how
+                    accurate the list is until you start the OSCP labs.
+                </p>
 
-      <h3>Advice #3</h3>
-      <p>
-        Complete TJ_Null’s list and watch IppSec’s videos. You won’t realize how
-        accurate the list is until you start the OSCP labs.
-      </p>
+                <h3>Advice #4</h3>
+                <p>
+                    If possible, enroll in the 3-month lab option. The additional time is
+                    invaluable for Active Directory and pivoting practice.
+                </p>
+            </section>
 
-      <h3>Advice #4</h3>
-      <p>
-        If possible, enroll in the 3-month lab option. The additional time is
-        invaluable for Active Directory and pivoting practice.
-      </p>
-    </section>
+            <section id="exam">
+                <h2>OSCP Exam — The Dreaded 24-Hour Exam</h2>
 
-    <section id="exam">
-      <h2>OSCP Exam — The Dreaded 24-Hour Exam</h2>
+                <p>
+                    Before the exam, I did multiple dry runs suggested by the community.
+                </p>
 
-      <p>
-        Before the exam, I did multiple dry runs suggested by the community.
-      </p>
+                <h3>Advice #5</h3>
+                <p>
+                    Doing a dry run helps you refine your methodology and accept that getting
+                    stuck is part of the process.
+                </p>
 
-      <h3>Advice #5</h3>
-      <p>
-        Doing a dry run helps you refine your methodology and accept that getting
-        stuck is part of the process.
-      </p>
+                <p>
+                    I scheduled the exam the day before and passed within the first 9.5 hours,
+                    despite hitting a wall later.
+                </p>
 
-      <p>
-        I scheduled the exam the day before and passed within the first 9.5 hours,
-        despite hitting a wall later.
-      </p>
+                <h3>Advice #6</h3>
+                <p>
+                    Stay calm during the exam. Don't be afraid to use Metasploit strategically
+                    when appropriate.
+                </p>
 
-      <h3>Advice #6</h3>
-      <p>
-        Stay calm during the exam. Don’t be afraid to use Metasploit strategically
-        when appropriate.
-      </p>
+                <p>
+                    Within a week of submitting my report, I received confirmation that I passed
+                    on my first attempt.
+                </p>
+            </section>
 
-      <p>
-        Within a week of submitting my report, I received confirmation that I passed
-        on my first attempt.
-      </p>
-    </section>
+            <section id="closing">
+                <h2>Parting Thoughts</h2>
 
-    <section id="closing">
-      <h2>Parting Thoughts</h2>
+                <p>
+                    OSCP is a beginner certification that is achievable with time and effort. If
+                    you're struggling, that's okay — many others have been there too.
+                </p>
+            </section>
 
-      <p>
-        OSCP is a beginner certification that is achievable with time and effort. If
-        you’re struggling, that’s okay — many others have been there too.
-      </p>
-    </section>
+            <section id="qa">
+                <h2>Commonly Asked Q&amp;A</h2>
 
-    <section id="qa">
-      <h2>Commonly Asked Q&amp;A</h2>
+                <ol>
+                    <li>
+                        <strong>I'm a beginner, how do I get started?</strong>
+                        <p>
+                            Start with easy HTB boxes from TJ_Null's list and learn through repetition
+                            and guided walkthroughs.
+                        </p>
+                    </li>
 
-      <ol>
-        <li>
-          <strong>I’m a beginner, how do I get started?</strong>
-          <p>
-            Start with easy HTB boxes from TJ_Null’s list and learn through repetition
-            and guided walkthroughs.
-          </p>
-        </li>
+                    <li>
+                        <strong>Which service should I enumerate first?</strong>
+                        <p>
+                            Scan all TCP and common UDP ports first, then prioritize unusual services
+                            before common ones like HTTP.
+                        </p>
+                    </li>
 
-        <li>
-          <strong>Which service should I enumerate first?</strong>
-          <p>
-            Scan all TCP and common UDP ports first, then prioritize unusual services
-            before common ones like HTTP.
-          </p>
-        </li>
+                    <li>
+                        <strong>How do I avoid rabbit holes?</strong>
+                        <p>
+                            Develop a checklist per service and move on once you exhaust all
+                            reasonable vectors.
+                        </p>
+                    </li>
 
-        <li>
-          <strong>How do I avoid rabbit holes?</strong>
-          <p>
-            Develop a checklist per service and move on once you exhaust all
-            reasonable vectors.
-          </p>
-        </li>
+                    <li>
+                        <strong>I struggle with Windows boxes.</strong>
+                        <p>
+                            Focus on shell quality and privilege escalation methodology.
+                        </p>
+                    </li>
 
-        <li>
-          <strong>I struggle with Windows boxes.</strong>
-          <p>
-            Focus on shell quality and privilege escalation methodology.
-          </p>
-        </li>
+                    <li>
+                        <strong>How do I improve at privilege escalation?</strong>
+                        <p>
+                            Practice structured enumeration and consider dedicated privesc courses.
+                        </p>
+                    </li>
+                </ol>
+            </section>
 
-        <li>
-          <strong>How do I improve at privilege escalation?</strong>
-          <p>
-            Practice structured enumeration and consider dedicated privesc courses.
-          </p>
-        </li>
-      </ol>
-    </section>
-
-    <section id="resources">
-      <h2>Resources</h2>
-      <p>
-        This section compiles all tools, courses, and references mentioned throughout
-        the blog.
-      </p>
-    </section>
-
-  </article>
+            <section id="resources">
+                <h2>Resources</h2>
+                <p>
+                    This section compiles all tools, courses, and references mentioned throughout
+                    the blog.
+                </p>
+            </section>
+        </article>
+    </div>
+    
+    <!-- Navigation Sidebar - Right Side -->
+    <div class="sidebar">
+        <div class="tree">
+            <p><a href="/OSCPwn.github.io/Linux Boxes/HacktheBox--Linux_Boxes.html">Linux Boxes</a></p>
+            <p><a href="/OSCPwn.github.io/Windows Boxes/HacktheBox--Windows_Boxes.html">Windows Boxes</a></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
